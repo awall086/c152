@@ -27,7 +27,7 @@
 
  <model>
    <name>asi</name>
-   <path>Aircraft/c152/Models/Panel/Instruments/asi/asi.xml</path>
+   <path>Aircraft/c152/Models/Interior/Panel/Instruments/asi/asi.xml</path>
    <offsets>
      <x-m>1.653</x-m>
      <y-m>-0.425</y-m>
