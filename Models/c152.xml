@@ -34,6 +34,16 @@
      <z-m>0.205</z-m>
    </offsets>
  </model>
+ 
+  <model>
+   <name>tachometer</name>
+   <path>Aircraft/c152/Models/Interior/Panel/Instruments/tachometer/tachometer.xml</path>
+   <offsets>
+     <x-m>1.666</x-m>
+     <y-m>0.255</y-m>
+     <z-m>0.206</z-m>
+   </offsets>
+ </model>
 
 <!-- Cockpit Switches -->
 <animation>
