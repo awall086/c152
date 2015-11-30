@@ -27,7 +27,7 @@
 
  <model>
    <name>asi</name>
-   <path>Aircraft/c152/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+   <path>Interior/Panel/Instruments/asi/asi.xml</path>
    <offsets>
      <x-m>1.653</x-m>
      <y-m>-0.425</y-m>
@@ -37,13 +37,30 @@
  
   <model>
    <name>tachometer</name>
-   <path>Aircraft/c152/Models/Interior/Panel/Instruments/tachometer/tachometer.xml</path>
+   <path>Interior/Panel/Instruments/tachometer/tachometer.xml</path>
    <offsets>
      <x-m>1.666</x-m>
      <y-m>0.255</y-m>
      <z-m>0.206</z-m>
    </offsets>
  </model>
+ 
+    <model>
+        <name>vac</name>
+        <path>Interior/Panel/Instruments/vac/vac.xml</path>
+        <offsets>
+            <x-m>1.2755</x-m>
+            <y-m>-0.2928</y-m>
+            <z-m>0.1159</z-m>
+        </offsets>
+    </model>
+    <animation>
+        <object-name>vac</object-name>
+        <type>scale</type>
+        <x-offset>1.3</x-offset>
+        <y-offset>1.3</y-offset>
+        <z-offset>1.3</z-offset>
+    </animation>
 
 <!-- Cockpit Switches -->
 <animation>
