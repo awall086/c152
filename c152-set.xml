@@ -53,9 +53,11 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             </sound>
         </model>
 
+        <!--
         <startup>
             <splash-texture>Aircraft/c172p/splash.png</splash-texture>
         </startup>
+        -->
 
   <!-- position the pilot viewpoint and angle -->
  
