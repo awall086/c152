@@ -101,6 +101,70 @@
             <z-m>0.098</z-m>
         </offsets>
     </model>
+    
+    <model>
+        <name>avor</name>
+        <path>Interior/Panel/Instruments/vor/vor.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.0833</y-m>
+            <z-m>0.2047</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>VSI</name>
+        <path>Interior/Panel/Instruments/VSI/VSI.xml</path>
+        <offsets>
+            <x-m>1.884</x-m>
+            <y-m>-0.192</y-m>
+            <z-m>0.111</z-m>
+        </offsets>
+    </model>
+    <animation>
+        <object-name>VSI</object-name>
+        <type>scale</type>
+        <x-offset>0.88</x-offset>
+        <y-offset>0.88</y-offset>
+        <z-offset>0.88</z-offset>
+    </animation>
+    
+    <model>
+        <name>clock</name>
+        <path>Interior/Panel/Instruments/clock/clock.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.252</y-m>
+            <z-m>0.1687</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>EGT</name>
+        <path>Interior/Panel/Instruments/EGT/EGT.xml</path>
+        <offsets>
+             <x-m>1.106</x-m>
+             <y-m>0.231</y-m>
+             <z-m>0.135</z-m>
+        </offsets>
+    </model>
+    <animation>
+        <object-name>EGT</object-name>
+        <type>scale</type>
+        <x-offset>1.5</x-offset>
+        <y-offset>1.5</y-offset>
+        <z-offset>1.5</z-offset>
+    </animation>
+    
+    <model>
+        <name>adf</name>
+        <path>Interior/Panel/Instruments/kr87-adf/ki227_228.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.0833</y-m>
+            <z-m>0.098</z-m>
+        </offsets>
+    </model>
 
 <!-- Cockpit Switches -->
 <animation>
