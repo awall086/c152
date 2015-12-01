@@ -25,25 +25,25 @@
 
 <!-- Cockpit Instruments -->
 
- <model>
-   <name>asi</name>
-   <path>Interior/Panel/Instruments/asi/asi.xml</path>
-   <offsets>
-     <x-m>1.653</x-m>
-     <y-m>-0.425</y-m>
-     <z-m>0.205</z-m>
-   </offsets>
- </model>
+    <model>
+        <name>asi</name>
+        <path>Interior/Panel/Instruments/asi/asi.xml</path>
+        <offsets>
+          <x-m>1.658</x-m>
+          <y-m>-0.425</y-m>
+          <z-m>0.205</z-m>
+        </offsets>
+    </model>
  
-  <model>
-   <name>tachometer</name>
-   <path>Interior/Panel/Instruments/tachometer/tachometer.xml</path>
-   <offsets>
-     <x-m>1.666</x-m>
-     <y-m>0.255</y-m>
-     <z-m>0.206</z-m>
-   </offsets>
- </model>
+    <model>
+        <name>tachometer</name>
+        <path>Interior/Panel/Instruments/tachometer/tachometer.xml</path>
+        <offsets>
+             <x-m>1.666</x-m>
+             <y-m>0.255</y-m>
+             <z-m>0.206</z-m>
+        </offsets>
+    </model>
  
     <model>
         <name>vac</name>
@@ -61,6 +61,46 @@
         <y-offset>1.3</y-offset>
         <z-offset>1.3</z-offset>
     </animation>
+    
+    <model>
+        <name>AI</name>
+        <path>Interior/Panel/Instruments/AI/AI.xml</path>
+        <offsets>
+            <x-m>1.668</x-m>
+            <y-m>-0.3379</y-m>
+            <z-m>0.20363</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>Altimeter</name>
+        <path>Interior/Panel/Instruments/alt/alt.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.169</y-m>
+            <z-m>0.2047</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Turn</name>
+        <path>Interior/Panel/Instruments/tc/tc.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.4245</y-m>
+            <z-m>0.098</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>hi</name>
+        <path>Interior/Panel/Instruments/hi/hi.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.3385</y-m>
+            <z-m>0.098</z-m>
+        </offsets>
+    </model>
 
 <!-- Cockpit Switches -->
 <animation>
