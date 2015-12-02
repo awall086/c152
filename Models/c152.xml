@@ -165,7 +165,84 @@
             <z-m>0.098</z-m>
         </offsets>
     </model>
-
+    
+    <model>
+        <name>mag_sw</name>
+        <path>Interior/Panel/Instruments/magneto-switch/magneto-switch.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.334</y-m>
+            <z-m>-0.047</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>PanelLight</name>
+        <path>Interior/Panel/Instruments/light/light_control.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.284</y-m>
+            <z-m>-0.037</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>LeftYoke</name>
+        <path>Interior/Yoke/yoke.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m>-0.252</y-m>
+            <z-m>0.093</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>RightYoke</name>
+        <path>Interior/Yoke/yoke.xml</path>
+        <offsets>
+            <x-m>1.658</x-m>
+            <y-m> 0.272</y-m>
+            <z-m>0.093</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>FlapSwitch</name>
+        <path>Interior/Panel/Flaps/flaps.xml</path>
+        <offsets>
+            <x-m>2.07875</x-m>
+            <y-m>0.1375</y-m>
+            <z-m>-0.0146</z-m>
+        </offsets>
+    </model>
+    <animation>
+        <object-name>FlapSwitch</object-name>
+        <type>scale</type>
+        <x-offset>0.8</x-offset>
+        <y-offset>0.8</y-offset>
+        <z-offset>0.8</z-offset>
+    </animation>
+    
+    <!-- Pedals -->
+    <model>
+        <name>PilotPedals</name>
+        <path>Interior/Pedals/pedals.xml</path>
+        <offsets>
+            <x-m>1.758</x-m>
+            <y-m>-0.24</y-m>
+            <z-m>-0.25</z-m>
+        </offsets>
+    </model>
+    <model>
+        <name>CoPilotPedals</name>
+        <path>Interior/Pedals/pedals.xml</path>
+        <offsets>
+            <x-m>1.758</x-m>
+            <y-m>0.24</y-m>
+            <z-m>-0.25</z-m>
+        </offsets>
+    </model>
+    
 <!-- Cockpit Switches -->
 <animation>
     <type>rotate</type>
