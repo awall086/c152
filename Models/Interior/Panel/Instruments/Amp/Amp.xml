@@ -22,6 +22,15 @@
             <x-m>0</x-m>
             <y-m>0</y-m>
             <z-m>0</z-m>  
-        </center>
-    </animation>        
+        </center>      
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>Amp-Instrument</tooltip-id>
+                <label>Load Amps: %s</label>
+                <mapping>on-off</mapping>
+                <property>systems/electrical/amps</property>
+            </binding>
+        </hovered>
+    </animation> 
 </PropertyList>

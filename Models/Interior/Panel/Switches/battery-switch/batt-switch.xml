@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>batt-switch.ac</path>
+
+<!--	battery switch		-->
+<animation>
+    <type>rotate</type>
+    <object-name>Batt_Switch</object-name>
+    <property>controls/engines/engine[0]/master-bat</property>
+    <factor>-15</factor>
+    <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+    </axis>
+    <center>
+        <x-m>0</x-m>
+        <y-m>0</y-m>
+        <z-m>0</z-m>
+    </center>
+</animation>
+<animation>
+   <type>pick</type>
+   <object-name>Batt_Switch</object-name>
+   <visible>true</visible>
+   <action>
+     <button>0</button>
+     <repeatable>false</repeatable>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/engines/engine[0]/master-bat</property>
+     </binding>
+   </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>Master-switch</tooltip-id>
+      <label>Master Batt: %s</label>
+      <mapping>on-off</mapping>
+      <property>controls/engines/engine[0]/master-bat</property>
+   </binding>
+   </hovered>
+</animation>        
+
+</PropertyList>
+
+
