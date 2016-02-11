@@ -71,6 +71,42 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             </config>
         </view>
   
+      <view n="1">
+        <config>
+          <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="2">
+        <config>
+          <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="3">
+        <config>
+          <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="4">
+        <config>
+          <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="5">
+        <config>
+          <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="6">
+        <config>
+          <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+        </config>
+      </view>
+      
         <systems>
             <electrical>
 <!--                <path>c152-electrical.xml</path> -->
