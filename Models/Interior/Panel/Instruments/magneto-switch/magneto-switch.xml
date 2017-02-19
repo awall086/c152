@@ -81,7 +81,7 @@
      <binding>
        <command>property-assign</command>
        <property>/controls/switches/starter</property>
-       <value >1</value>
+       <value>1</value>
      </binding>
      <binding>
        <command>nasal</command>
@@ -111,26 +111,28 @@
  </animation>
 <!--   key animations  -->   
  <animation>
-  <name>mags-key</name>
-  <type>rotate</type>
-  <object-name>key</object-name>
-  <property>/controls/switches/magnetos</property>
-  <factor>30</factor>
+    <name>mags-key</name>
+    <type>rotate</type>
+    <object-name>key</object-name>
+    <object-name>key.1</object-name>
+    <property>/controls/switches/magnetos</property>
+  <factor>35</factor>
   <center>
-   <x-m>0.0257195</x-m>
-   <y-m>3.91249e-006</y-m>
-   <z-m>8.14768e-006</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
+   <x-m>0.010</x-m>
+   <y-m>0.001</y-m>
+   <z-m>-0.004</z-m>
+    </center>
+    <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
  </animation>
 
 <animation>
  <type>select</type>
   <object-name>key</object-name>
+  <object-name>key.1</object-name>
   <condition>
    <not>
     <property>/controls/switches/starter</property>
@@ -141,6 +143,7 @@
 <animation>
  <type>select</type>
   <object-name>start</object-name>
+  <object-name>start.1</object-name>
   <condition>
     <property>/controls/switches/starter</property>
   </condition>
