@@ -13,7 +13,7 @@
  </params>
 
  <path>vor.ac</path>
-
+<!--
  <effect>
   <inherits-from>../../../../Effects/interior/c172p-flashlight</inherits-from>
   <object-name>Face</object-name>
@@ -28,7 +28,7 @@
   <object-name>GS_in_range</object-name>
   <object-name>disk</object-name>
  </effect>
- 
+--> 
  <animation>
   <type>material</type>
   <object-name>Face</object-name>

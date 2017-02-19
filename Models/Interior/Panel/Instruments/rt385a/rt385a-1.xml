@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+  <!--
+  Bendix/King KX155/165 COMM/NAV radio
+  Use this instrument as COMM1/NAV1 radio
+
+  Created by Torsten Dreyer, October 2008
+
+  You might want to use the following code in your aircraft's nasal
+  init function to keep the settings of the radio persistent between
+  flightgear sessions
+
+  aircraft.data.add(
+    "instrumentation/comm[0]/volume",
+    "instrumentation/comm[0]/frequencies/selected-mhz",
+    "instrumentation/comm[0]/frequencies/standby-mhz",
+    "instrumentation/comm[0]/frequencies/dial-khz",
+    "instrumentation/comm[0]/frequencies/dial-mhz",
+    "instrumentation/comm[0]/test-btn",
+    "instrumentation/nav[0]/audio-btn",
+    "instrumentation/nav[0]/power-btn",
+    "instrumentation/nav[0]/frequencies/selected-mhz",
+    "instrumentation/nav[0]/frequencies/standby-mhz",
+    "instrumentation/nav[0]/frequencies/dial-khz",
+    "instrumentation/nav[0]/frequencies/dial-mhz",
+  );
+  -->
+
+  <params>
+    <comm-serviceable>instrumentation/comm[0]/serviceable</comm-serviceable>
+    <nav-serviceable>instrumentation/nav[0]/serviceable</nav-serviceable>
+    <power-nav>instrumentation/nav[0]/power-btn</power-nav>
+    <power-comm>instrumentation/comm[0]/power-btn</power-comm>
+
+    <comm-frq-selected>instrumentation/comm[0]/frequencies/selected-mhz</comm-frq-selected>
+    <comm-dial-khz>instrumentation/comm[0]/frequencies/dial-khz</comm-dial-khz>
+    <comm-dial-mhz>instrumentation/comm[0]/frequencies/dial-mhz</comm-dial-mhz>
+    <comm-volume>instrumentation/comm[0]/volume</comm-volume>
+    <comm-test>instrumentation/comm[0]/test-btn</comm-test>
+
+    <nav-frq-selected>instrumentation/nav[0]/frequencies/selected-mhz</nav-frq-selected>
+    <nav-dial-khz>instrumentation/nav[0]/frequencies/dial-khz</nav-dial-khz>
+    <nav-dial-mhz>instrumentation/nav[0]/frequencies/dial-mhz</nav-dial-mhz>
+    <nav-volume>instrumentation/nav[0]/volume</nav-volume>
+    <nav-audio>instrumentation/nav[0]/audio-btn</nav-audio>
+    
+    <dimming>instrumentation/comm[0]/dimming-norm</dimming>
+    <red>1</red>
+    <green>1</green>
+    <blue>1</blue>
+    
+
+  </params>
+
+  <path>rt385a.ac</path>
+
+  <animation>
+    <object-name>CommKnobs</object-name>
+    <object-name>CommKHz</object-name>
+    <object-name>CommMHz</object-name>
+    <object-name>CommVolume</object-name>
+    <object-name>CommUse</object-name>
+    <object-name>CommUse100K</object-name>
+    <object-name>CommUse100M</object-name>
+    <object-name>CommUse10K</object-name>
+    <object-name>CommUse10M</object-name>
+    <object-name>CommUse1M</object-name>
+    <object-name>CommUseDot</object-name>
+    <object-name>NavKnobs</object-name>
+    <object-name>NavKHz</object-name>
+    <object-name>NavMHz</object-name>
+    <object-name>NavVolume</object-name>
+    <object-name>NavUse</object-name>
+    <object-name>NavUse100K</object-name>
+    <object-name>NavUse100M</object-name>
+    <object-name>NavUse10K</object-name>
+    <object-name>NavUse10M</object-name>
+    <object-name>NavUse1M</object-name>
+    <object-name>NavUseDot</object-name>
+    <object-name>Chassis</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>CommKnobs</object-name>
+    <object-name>CommKHz</object-name>
+    <object-name>CommMHz</object-name>
+    <object-name>CommVolume</object-name>
+    <object-name>CommUse</object-name>
+    <object-name>CommUse100K</object-name>
+    <object-name>CommUse100M</object-name>
+    <object-name>CommUse10K</object-name>
+    <object-name>CommUse10M</object-name>
+    <object-name>CommUse1M</object-name>
+    <object-name>CommUseDot</object-name>
+    <object-name>NavKnobs</object-name>
+    <object-name>NavKHz</object-name>
+    <object-name>NavMHz</object-name>
+    <object-name>NavVolume</object-name>
+    <object-name>NavUse</object-name>
+    <object-name>NavUse100K</object-name>
+    <object-name>NavUse100M</object-name>
+    <object-name>NavUse10K</object-name>
+    <object-name>NavUse10M</object-name>
+    <object-name>NavUse1M</object-name>
+    <object-name>NavUseDot</object-name>
+    <object-name>Chassis</object-name>
+
+    <property-base>/sim/instrumentation/comm[0]</property-base>
+    <texture-prop>texture-file</texture-prop>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>CommKnobs</object-name>
+    <object-name>CommKHz</object-name>
+    <object-name>CommMHz</object-name>
+    <object-name>CommVolume</object-name>
+    <object-name>NavKnobs</object-name>
+    <object-name>NavKHz</object-name>
+    <object-name>NavMHz</object-name>
+    <object-name>NavVolume</object-name>
+    <object-name>Chassis</object-name>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <emission>
+      <red alias="../../../params/red"/>
+      <green alias="../../../params/green"/>
+      <blue alias="../../../params/blue"/>
+      <factor-prop alias="../../../params/dimming"/>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>CommUse</object-name>
+    <condition>
+      <and>
+        <property alias="../../../../params/comm-serviceable"/>
+        <property alias="../../../../params/power-comm"/>
+        <greater-than>
+          <property>systems/electrical/outputs/comm[0]</property>
+          <value>6.0</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>NavUse</object-name>
+    <condition>
+      <and>
+        <property alias="../../../../params/nav-serviceable"/>
+        <property alias="../../../../params/power-comm"/>
+        <greater-than>
+          <property>systems/electrical/outputs/comm[0]</property>
+          <value>6.0</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>CommUse</object-name>
+    <object-name>NavUse</object-name>
+  </effect>
+  
+  <!-- comm part -->
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>CommUse100M</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>100</step>
+    <factor>0.001</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>CommUse10M</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>10</step>
+    <factor>0.01</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>CommUse1M</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>1</step>
+    <factor>0.1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>CommUse100K</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>0.1</step>
+    <factor>1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>CommUse10K</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>0.01</step>
+    <factor>10</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- NAV part -->
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>NavUse100M</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>100</step>
+    <factor>0.001</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>NavUse10M</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>10</step>
+    <factor>0.01</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>NavUse1M</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>1</step>
+    <factor>0.1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>NavUse100K</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>0.1</step>
+    <factor>1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>NavUse10K</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>0.01</step>
+    <factor>10</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- knobs and buttons -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>NavVolume</object-name>
+    <property alias="../../params/nav-audio"/>
+    <factor>0.002</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- actions -->
+
+  <!-- Comm part -->
+
+  <animation>
+    <type>knob</type>
+    <object-name>CommVolume</object-name>
+    <property alias="../../params/comm-volume"/>
+    <factor>-65</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>-0.007</x-m>
+      <y-m>-0.043</y-m>
+      <z-m>-0.031</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/comm-volume"/>
+        <factor>0.1</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property alias="../../../../params/power-comm"/>
+        <value>1</value>
+        <condition>
+          <greater-than>
+            <property alias="../../../../../../params/comm-volume"/>
+            <value>0.05</value>
+          </greater-than>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property alias="../../../../params/power-comm"/>
+        <value>0</value>
+        <condition>
+          <less-than>
+            <property alias="../../../../../../params/comm-volume"/>
+            <value>0.05</value>
+          </less-than>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property alias="../../../../params/power-nav"/>
+        <value>1</value>
+        <condition>
+          <greater-than>
+            <property alias="../../../../../../params/comm-volume"/>
+            <value>0.05</value>
+          </greater-than>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property alias="../../../../params/power-nav"/>
+        <value>0</value>
+        <condition>
+          <less-than>
+            <property alias="../../../../../../params/comm-volume"/>
+            <value>0.05</value>
+          </less-than>
+        </condition>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>c152.click("rt385a-1-dial")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>comm-volume</tooltip-id>
+        <label>Volume: %3d%%</label>
+        <property alias="../../../../params/comm-volume"/>
+        <mapping>percent</mapping>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>CommKHz</object-name>
+    <property alias="/params/comm-dial-khz"/>
+    <factor>-0.25</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.019</x-m>
+      <y-m>-0.025</y-m>
+      <z-m>-0.014</z-m>
+    </center>
+    <action>
+      <binding>
+        <condition>
+          <property alias="../../../../../params/power-comm"/>
+        </condition>
+        <command>property-adjust</command>
+        <property alias="/params/comm-frq-selected"/>
+        <factor>0.025</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <resolution>0.025</resolution>
+        <wrap>true</wrap>
+        <mask>decimal</mask>
+      </binding>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/comm-dial-khz"/>
+        <factor>4</factor>
+        <min>0</min>
+        <max>360</max>
+        <wrap>true</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>c152.click("rt385a-1-dial")</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>CommMHz</object-name>
+    <property alias="/params/comm-dial-mhz"/>
+    <factor>-0.25</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.019</x-m>
+      <y-m>-0.061</y-m>
+      <z-m>-0.014</z-m>
+    </center>
+    <action>
+      <binding>
+        <condition>
+          <property alias="../../../../../params/power-comm"/>
+        </condition>
+        <command>property-adjust</command>
+        <property alias="/params/comm-frq-selected"/>
+        <factor>1</factor>
+        <min>118.0</min>
+        <max>137.0</max>
+        <wrap>true</wrap>
+        <mask>integer</mask>
+      </binding>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/comm-dial-mhz"/>
+        <factor>4</factor>
+        <min>0</min>
+        <max>360</max>
+        <wrap>true</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>c152.click("rt385a-1-dial")</script>
+      </binding>
+    </action>
+  </animation>
+
+  
+  <!-- Nav part -->
+
+  <animation>
+    <type>knob</type>
+    <object-name>NavVolume</object-name>
+    <property alias="../../params/nav-volume"/>
+    <factor>-65</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>-0.007</x-m>
+      <y-m>0.045</y-m>
+      <z-m>-0.031</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/nav-volume"/>
+        <factor>0.1</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>c152.click("rt385a-1-dial")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>nav-volume</tooltip-id>
+        <label>Volume: %3d%%</label>
+        <property alias="../../../../params/nav-volume"/>
+        <mapping>percent</mapping>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>NavKHz</object-name>
+    <property alias="/params/nav-dial-khz"/>
+    <factor>-0.25</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.019</x-m>
+      <y-m>0.062</y-m>
+      <z-m>-0.014</z-m>
+    </center>
+    <action>
+      <binding>
+        <condition>
+          <property alias="../../../../../params/power-comm"/>
+        </condition>
+        <command>property-adjust</command>
+        <property alias="/params/nav-frq-selected"/>
+        <factor>0.05</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <resolution>0.050</resolution>
+        <wrap>true</wrap>
+        <mask>decimal</mask>
+      </binding>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/nav-dial-khz"/>
+        <factor>4</factor>
+        <min>0</min>
+        <max>360</max>
+        <wrap>true</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>c152.click("rt385a-1-dial")</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>NavMHz</object-name>
+    <property alias="/params/nav-dial-mhz"/>
+    <factor>-0.25</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.019</x-m>
+      <y-m>0.026</y-m>
+      <z-m>-0.014</z-m>
+    </center>
+    <action>
+      <binding>
+        <condition>
+          <property alias="../../../../../params/power-comm"/>
+        </condition>
+        <command>property-adjust</command>
+        <property alias="/params/nav-frq-selected"/>
+        <factor>1</factor>
+        <min>108.0</min>
+        <max>118.0</max>
+        <wrap>true</wrap>
+        <mask>integer</mask>
+      </binding>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/nav-dial-mhz"/>
+        <factor>4</factor>
+        <min>0</min>
+        <max>360</max>
+        <wrap>true</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>c152.click("rt385a-1-dial")</script>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

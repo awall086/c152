@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>shadow.ac</path>
+
+    <offsets>
+        <pitch-deg>-0.3</pitch-deg>
+        <z-m>-0.38</z-m>
+    </offsets>
+
+    <animation>
+        <object-name>shadow</object-name>
+        <type>select</type>
+        <condition>
+            <not>
+                <property>/sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+    </animation>
+
+    <effect>
+        <inherits-from>Effects/shadow-vol</inherits-from>
+        <object-name>shadow</object-name>
+    </effect>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>shadow</object-name>
+    </animation>
+
+    <!-- pitch -->
+    <animation>
+        <type>rotate</type>
+        <object-name>shadow</object-name>
+        <property>/orientation/pitch-deg</property>
+        <factor>-1.0</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- roll -->
+    <animation>
+        <type>rotate</type>
+        <object-name>shadow</object-name>
+        <property>/orientation/roll-deg</property>
+        <factor>1.0</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

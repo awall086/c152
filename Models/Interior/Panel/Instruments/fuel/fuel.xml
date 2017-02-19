@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>fuel.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Fuel_base</object-name>
+  <object-name>LFuelNeedle</object-name>
+  <object-name>RFuelNeedle</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>0.2</green>
+   <blue>0.0</blue>
+   <factor-prop>sim/model/material/instruments/factor</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>LFuelNeedle</object-name>
+  <property>consumables/fuel/tank[0]/level-gal_us</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>-43</dep>
+   </entry>
+   <entry>
+    <ind>4.7</ind>
+    <dep>-18</dep>
+   </entry>
+   <entry>
+    <ind>9.35</ind>
+    <dep>8</dep>
+   </entry>
+   <entry>
+    <ind>15</ind>
+    <dep>25</dep>
+   </entry>
+   <entry>
+    <ind>18.7</ind>
+    <dep>38</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.000</x-m>
+   <y-m>-0.020</y-m>
+   <z-m>-0.011</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RFuelNeedle</object-name>
+  <property>consumables/fuel/tank[1]/level-gal_us</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>-43</dep>
+   </entry>
+   <entry>
+    <ind>4.7</ind>
+    <dep>-18</dep>
+   </entry>
+   <entry>
+    <ind>9.35</ind>
+    <dep>8</dep>
+   </entry>
+   <entry>
+    <ind>15</ind>
+    <dep>25</dep>
+   </entry>
+   <entry>
+    <ind>18.7</ind>
+    <dep>38</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.000</x-m>
+   <y-m>0.020</y-m>
+   <z-m>-0.011</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+
