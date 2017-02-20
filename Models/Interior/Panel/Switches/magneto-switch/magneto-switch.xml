@@ -42,13 +42,13 @@
    <increase>
      <binding>
        <command>nasal</command>
-       <script>c172p.click("magneto-forward")</script>
+       <script>c152.click("magneto-forward")</script>
      </binding>
    </increase>
    <decrease>
      <binding>
        <command>nasal</command>
-       <script>c172p.click("magneto-back")</script>
+       <script>c152.click("magneto-back")</script>
      </binding>
    </decrease>
    <hovered>
@@ -85,7 +85,7 @@
      </binding>
      <binding>
        <command>nasal</command>
-       <script>c172p.click("magneto-forward")</script>
+       <script>c152.click("magneto-forward")</script>
      </binding>
      <mod-up>
        <binding>
@@ -95,7 +95,7 @@
        </binding>
        <binding>
          <command>nasal</command>
-         <script>c172p.click("magneto-back")</script>
+         <script>c152.click("magneto-back")</script>
        </binding>
      </mod-up>
    </action>

@@ -9,13 +9,13 @@
   <cylinders>         4.0  </cylinders>
   <bore unit="IN"> 4.375 </bore>
   <stroke unit="IN">  3.875  </stroke>
-  <idlerpm>      600.0 </idlerpm>
-  <maxrpm>      2800.0 </maxrpm>
+  <idlerpm>      550.0 </idlerpm>
+  <maxrpm>      2700.0 </maxrpm>
   <maxthrottle>    1.0 </maxthrottle><!-- Deprecated -->
   <minthrottle>    0.1 </minthrottle><!-- Deprecated -->
   <sparkfaildrop>  0.1 </sparkfaildrop>
-  <volumetric-efficiency> 0.85 </volumetric-efficiency>
-  <compression-ratio> 6.5 </compression-ratio>
+<!--  <volumetric-efficiency> 0.85 </volumetric-efficiency>
+  <compression-ratio> 6.5 </compression-ratio> -->
 
 <!-- Optional items that affect engine performance -->
  <!-- Defining <bsfc> over-rides the built-in horsepower calculations -->

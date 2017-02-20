@@ -28,9 +28,9 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
   
         <rating>
             <FDM type="int">3</FDM>
-            <systems type="int">4</systems>
-            <model type="int">5</model>
-            <cockpit type="int">4</cockpit>
+            <systems type="int">3</systems>
+            <model type="int">3</model>
+            <cockpit type="int">3</cockpit>
         </rating>
 
         <flight-model archive="y">jsb</flight-model>
@@ -53,11 +53,12 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             </sound>
         </model>
 
-        <!--
+        <menubar include="gui/dialogs/c152-menu.xml"/>
+
         <startup>
-            <splash-texture>Aircraft/c172p/splash.png</splash-texture>
+            <splash-texture>Splash1.png</splash-texture>
         </startup>
-        -->
+
 
   <!-- position the pilot viewpoint and angle -->
  
@@ -71,11 +72,52 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             </config>
         </view>
   
+        <view n="1">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="2">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="3">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="4">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="5">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="6">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+  
         <systems>
-            <electrical>
-<!--                <path>c152-electrical.xml</path> -->
-                <path></path>
-            </electrical>
+            <property-rule n="100">
+                <name>FiltersOnly</name>
+                <path>Systems/instruments.xml</path>
+            </property-rule>
+          
+            <property-rule n="101">
+                <name>gear_agl_m</name>
+                <path archive="y">Aircraft/c152/Systems/gearAGL.xml</path>
+            </property-rule>            
         </systems>
 
         <sound>
@@ -95,8 +137,11 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
                 <name type="string">C152II Flight Recorder</name>
             </config>
         </flight-recorder>
+
+        <instrumentation>
+            <path>Systems/instrumentation.xml</path>
+        </instrumentation>
         
-        <!--menubar include="gui/dialogs/c152-menu.xml"/-->
     </sim>
 
     <!-- trim for level cruise -->
@@ -110,9 +155,10 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
 
         <engines>
             <engine n="0">
-                <magnetos type="int">3</magnetos>
+                <magnetos type="int">0</magnetos>
                 <master-bat type="bool">false</master-bat>
                 <master-alt type="bool">false</master-alt>
+                <mixture type="double">0</mixture>
             </engine>
         </engines>
     
@@ -137,8 +183,14 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         <switches> 
             <master-avionics type="bool">true</master-avionics>
             <starter type="bool">false</starter>
+            <master-alt type="bool">false</master-alt>
+            <master-bat type="bool">false</master-bat>
+            <magnetos type="int">0</magnetos>
         </switches>
 
+        <gear>
+            <brake-parking type="bool">true</brake-parking>
+        </gear>
     </controls>
 
     <consumables>
@@ -193,9 +245,11 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
     
     </limits>
  
+ 
     <nasal> 
         <c152>
             <file>Nasal/light.nas</file>
+            <file>Aircraft/Instruments-3d/ki266/ki266.nas</file>
         </c152>
         <electrical>
             <file>Nasal/c152-electrical.nas</file>

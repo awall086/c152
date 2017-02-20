@@ -29,7 +29,7 @@
   <property alias="/params/engine/rpm"/>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
-   <entry><ind>3500</ind><dep>270</dep></entry>
+   <entry><ind>2700</ind><dep>200</dep></entry>
   </interpolation>
   <axis> 
    <x>-1</x>
