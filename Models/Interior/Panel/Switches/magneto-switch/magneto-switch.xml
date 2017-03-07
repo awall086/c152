@@ -26,10 +26,9 @@
 <!--		magneto switch		-->
  <animation>
    <type>knob</type>
-   <object-name>click-L</object-name>
-   <object-name>click-R</object-name>
+   <object-name>key</object-name>
    
-   <visible>false</visible>
+   <visible>true</visible>
    <action>
      <binding>
        <command>property-adjust</command>

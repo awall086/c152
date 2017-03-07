@@ -269,7 +269,7 @@
 
     <model>
         <name>Fuel</name>
-        <path>Interior/Panel/Instruments/Fuel/Fuel.xml</path>
+        <path>Interior/Panel/Instruments/fuel/fuel.xml</path>
         <offsets>
             <x-m>1.658</x-m>
             <y-m>-0.354</y-m>
@@ -279,7 +279,7 @@
 
     <model>
         <name>Oil</name>
-        <path>Interior/Panel/Instruments/Oil/Oil.xml</path>
+        <path>Interior/Panel/Instruments/oil/oil.xml</path>
         <offsets>
             <x-m>1.658</x-m>
             <y-m>-0.185</y-m>

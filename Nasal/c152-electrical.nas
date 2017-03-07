@@ -4,6 +4,9 @@
 # gauge modeling.
 #
 
+controls.startEngine = func(v) {
+    setprop("/controls/switches/starter", v);
+};
 
 ##
 # Initialize internal values
