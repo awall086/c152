@@ -8,6 +8,14 @@
             <label>Cessna C152 II</label>
             <enabled type="bool">true</enabled>
 
+             <item>
+                <label>Autostart</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>c152.autostart()</script>
+                </binding>
+            </item>
+ 
             <item>
                 <label>Aircraft Options</label>
                 <binding>
@@ -17,13 +25,18 @@
             </item>
 	    
             <item>
-                <label>Select Livery</label>
-                <binding>
-                    <command>nasal</command>
-                    <script>aircraft.livery.dialog.toggle()</script>
-                </binding>
+                <label>------------------</label>
+                <enabled>false</enabled>
             </item>
-	    
+            
+            <item>
+                <label>About This Aircraft</label>
+                <binding>
+                    <command>dialog-show</command>
+                    <dialog-name>c152-about-dialog</dialog-name>
+                </binding>
+
+            </item>	    
         </menu>
 
     </default>
