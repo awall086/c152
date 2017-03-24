@@ -33,6 +33,10 @@
        <command>property-toggle</command>
        <property>controls/engines/engine[0]/master-alt</property>
      </binding>
+     <binding>
+       <command>nasal</command>
+       <script>c152.click("master-alt")</script>
+     </binding>
    </action>
    <hovered>
     <binding>

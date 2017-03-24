@@ -210,26 +210,134 @@
    </pitch>
   </wind>
         
-        <click>
-            <name>click-on</name>
-            <type>avionics</type>
+        <switch>
+            <name>click-master-bat-switch</name>
+            <mode>once</mode>
             <path>Sounds/click.wav</path>
             <condition>
-                    <property>sim/sound/click</property>
+                <property>/sim/model/c152/sound/click-master-bat</property>
             </condition>
-        </click>
-
-        <click>
-            <name>click-off</name>
-            <type>avionics</type>
-            <path>Sounds/click.wav</path>
-            <condition>
-                <not>
-                    <property>sim/sound/click</property>
-                </not>
-            </condition>
-        </click> 
+            <position>
+                <x>-0.3660</x>
+                <y>0.3350</y>
+                <z>-0.3500</z>
+            </position>
+            <reference-dist>0.2</reference-dist>
+            <max-dist>5.0</max-dist>
+        </switch>
   
+        <switch>
+            <name>click-master-alt-switch</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <property>/sim/model/c152/sound/click-master-alt</property>
+            </condition>
+            <position>
+                <x>-0.3660</x>
+                <y>0.3350</y>
+                <z>-0.3500</z>
+            </position>
+            <reference-dist>0.2</reference-dist>
+            <max-dist>5.0</max-dist>
+        </switch>
+
+        <switch>
+            <name>click-landing-light-switch</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <property>/sim/model/c152/sound/click-landing-light</property>
+            </condition>
+            <position>
+                <x>-0.3660</x>
+                <y>0.3350</y>
+                <z>-0.3500</z>
+            </position>
+            <reference-dist>0.2</reference-dist>
+            <max-dist>5.0</max-dist>
+        </switch>
+
+        <switch>
+            <name>click-taxi-light-switch</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <property>/sim/model/c152/sound/click-taxi-light</property>
+            </condition>
+            <position>
+                <x>-0.3660</x>
+                <y>0.3350</y>
+                <z>-0.3500</z>
+            </position>
+            <reference-dist>0.2</reference-dist>
+            <max-dist>5.0</max-dist>
+        </switch>
+
+        <switch>
+            <name>click-nav-lights-switch</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <property>/sim/model/c152/sound/click-nav-lights</property>
+            </condition>
+            <position>
+                <x>-0.3660</x>
+                <y>0.3350</y>
+                <z>-0.3500</z>
+            </position>
+            <reference-dist>0.2</reference-dist>
+            <max-dist>5.0</max-dist>
+        </switch>
+
+        <switch>
+            <name>click-beacon-switch</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <property>/sim/model/c152/sound/click-beacon</property>
+            </condition>
+            <position>
+                <x>-0.3660</x>
+                <y>0.3350</y>
+                <z>-0.3500</z>
+            </position>
+            <reference-dist>0.2</reference-dist>
+            <max-dist>5.0</max-dist>
+        </switch>
+
+        <switch>
+            <name>click-strobe-switch</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <property>/sim/model/c152/sound/click-strobe</property>
+            </condition>
+            <position>
+                <x>-0.3660</x>
+                <y>0.3350</y>
+                <z>-0.3500</z>
+            </position>
+            <reference-dist>0.2</reference-dist>
+            <max-dist>5.0</max-dist>
+        </switch>
+
+        <switch>
+            <name>click-pitot-heat-switch</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <property>/sim/model/c152/sound/click-pitot-heat</property>
+            </condition>
+            <position>
+                <x>-0.3660</x>
+                <y>0.3350</y>
+                <z>-0.3500</z>
+            </position>
+            <reference-dist>0.2</reference-dist>
+            <max-dist>5.0</max-dist>
+        </switch>
+
   <stall>
    <name>stall</name>
    <mode>looped</mode>
@@ -257,16 +365,6 @@
    <max-dist>20.0</max-dist>
   </stall>
  
-  <kap140beep>
-   <name>KAP140Beep</name>
-   <type>avionics</type>
-   <mode>looped</mode>
-   <path>Sounds/stall.wav</path>
-   <condition>
-    <property>autopilot/KAP140/annunciators/beep/state</property>
-   </condition>
-  </kap140beep>
-
 </fx>
  
 </PropertyList>

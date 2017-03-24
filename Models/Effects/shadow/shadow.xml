@@ -5,20 +5,24 @@
     <path>shadow.ac</path>
 
     <offsets>
-        <pitch-deg>-0.3</pitch-deg>
-        <z-m>-0.38</z-m>
+        <pitch-deg>-0.7</pitch-deg>
+        <z-m>-0.295</z-m>
     </offsets>
 
-    <animation>
+      <animation>
         <object-name>shadow</object-name>
         <type>select</type>
         <condition>
-            <not>
-                <property>/sim/rendering/rembrandt/enabled</property>
-            </not>
+		<and>
+          <not>
+            <property>/sim/rendering/rembrandt/enabled</property>
+          </not>
+          <property>/sim/rendering/shaders/skydome</property>
+          <property>/sim/rendering/shadow-volume</property>
+		 </and>
         </condition>
-    </animation>
-
+      </animation>
+      
     <effect>
         <inherits-from>Effects/shadow-vol</inherits-from>
         <object-name>shadow</object-name>

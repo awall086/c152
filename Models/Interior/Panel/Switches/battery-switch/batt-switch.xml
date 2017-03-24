@@ -32,6 +32,10 @@
        <command>property-toggle</command>
        <property>controls/engines/engine[0]/master-bat</property>
      </binding>
+     <binding>
+         <command>nasal</command>
+         <script>c152.click("master-bat")</script>
+     </binding>
    </action>
    <hovered>
     <binding>

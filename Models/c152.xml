@@ -387,7 +387,60 @@
         </offsets>
     </model>
     
-    
+<!-- Elevator Trim -->
+    <animation>
+        <type>knob</type>
+        <object-name>elev_trim</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>-360</factor>
+        <drag-direction>vertical</drag-direction>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>1.634</x-m>
+            <y-m>-0.036</y-m>
+            <z-m>-0.084</z-m>
+        </center>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/flight/elevator-trim</property>
+                <factor>0.01</factor>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Elevator trim: %3f</label>
+                <tooltip-id>pitch-trim</tooltip-id>
+                <property>controls/flight/elevator-trim</property>
+            </binding>
+        </hovered>
+    </animation>
+
+<!--    <animation>
+        <type>rotate</type>
+        <object-name>ElevatorTrimPos</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>-12</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.406</x-m>
+            <y-m>-0.20</y-m>
+            <z-m>-0.48</z-m>
+        </center>
+    </animation> -->
+ 
     
 <!-- Cockpit Switches -->
 
@@ -438,6 +491,10 @@
        <command>property-toggle</command>
        <property>controls/lighting/landing-lights</property>
      </binding>
+     <binding>
+         <command>nasal</command>
+         <script>c152.click("landing-light")</script>
+     </binding>
    </action>
    <hovered>
     <binding>
@@ -476,6 +533,10 @@
      <binding>
        <command>property-toggle</command>
        <property>controls/lighting/taxi-light</property>
+     </binding>
+     <binding>
+         <command>nasal</command>
+         <script>c152.click("taxi-light")</script>
      </binding>
    </action>
    <hovered>
@@ -516,6 +577,10 @@
        <command>property-toggle</command>
        <property>controls/lighting/strobe</property>
      </binding>
+     <binding>
+         <command>nasal</command>
+         <script>c152.click("strobe")</script>
+     </binding>
    </action>
    <hovered>
     <binding>
@@ -555,11 +620,15 @@
        <command>property-toggle</command>
        <property>controls/lighting/beacon</property>
      </binding>
+     <binding>
+         <command>nasal</command>
+         <script>c152.click("beacon")</script>
+     </binding>
    </action>
    <hovered>
     <binding>
       <command>set-tooltip</command>
-      <tooltip-id>Strobe-switch</tooltip-id>
+      <tooltip-id>Beacon-switch</tooltip-id>
       <label>Beacon Light: %s</label>
       <mapping>on-off</mapping>
       <property>controls/lighting/beacon</property>
@@ -593,6 +662,10 @@
      <binding>
        <command>property-toggle</command>
        <property>controls/lighting/nav-lights</property>
+     </binding>
+     <binding>
+         <command>nasal</command>
+         <script>c152.click("nav-lights")</script>
      </binding>
    </action>
    <hovered>
@@ -632,6 +705,10 @@
      <binding>
        <command>property-toggle</command>
        <property>controls/anti-ice/pitot-heat</property>
+     </binding>
+     <binding>
+         <command>nasal</command>
+         <script>c152.click("pitot-heat")</script>
      </binding>
    </action>
    <hovered>
@@ -1289,6 +1366,25 @@
     </center>
 </animation>
  
+ <!-- Wheel fairings -->
+ 
+  <animation>
+   <type>select</type>
+   <object-name>FairingL</object-name>
+   <object-name>FairingR</object-name>
+   <condition>
+     <property>sim/model/c152/mw_fairing</property>
+   </condition>
+ </animation>
+ 
+  <animation>
+   <type>select</type>
+   <object-name>FairingN</object-name>
+   <condition>
+     <property>sim/model/c152/nw_fairing</property>
+   </condition>
+ </animation>
+
 <!-- Control surfaces -->
 
 <!-- Flaps -->

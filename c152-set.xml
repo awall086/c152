@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ************************************************************************
-JSBSim Cessna 152 with 3D cockpit.
+JSBSim Cessna 152 II with 3D cockpit.
 
 Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
 ************************************************************************
@@ -10,11 +10,13 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
 <PropertyList>
 
     <sim>
-        <description>Cessna 152 II </description>
-         <long-description>The Cessna 152  is a two-seat, single-engine, high-wing fixed-wing aircraft. 
-         First flown in 1977.
-        </long-description>
+        <description>Cessna 152 II (1981, model)</description>
+         <long-description>The Cessna 152 is a two-seat, single-engine, high-wing fixed-wing aircraft. First flown in 1977. A total of 7582 units was produced until 1985, when Cessna was ended production of their light aircrafts.</long-description>
    
+         <es>
+            <long-description>El Cessna 152 es un avion monomotor, de ala alta. Realizó su primer vuelo en 1977. Se construyeron un total de 7582 unidades hasta 1985, cuando Cessna finalizao la produccion de sus aviones ligeros.</long-description>
+        </es>
+
         <tags>
             <tag>ga</tag>
             <tag>cessna</tag>
@@ -23,8 +25,9 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             <tag>fixed-gear</tag>
         </tags>
   
-        <author>Adrián Fernández Gómez</author>
-        <status>alpha</status>
+        <author>awall86 (Adrian Fernandez Gomez), gsagostinho (Gilberto Agostinho), wlbragg (Wayne Bragg)</author>
+        <status>beta</status>
+        <aircraft-version>2017.1</aircraft-version>
   
         <rating>
             <FDM type="int">3</FDM>
@@ -38,19 +41,31 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
   
         <model>
             <path archive="y">Aircraft/c152/Models/c152.xml</path>   
-            <lighting>
+            <c152>
+              <nw_fairing type="bool">true</nw_fairing>
+              <mw_fairing type="bool">true</mw_fairing>
+              <lighting>
                 <taxi type="bool">false</taxi>
                 <landing type="bool">false</landing>
-            </lighting>
+              </lighting>
                  <!-- Event sounds -->
-            <sound>
-                <click-light type="bool">false</click-light>
-                <click-master type="bool">false</click-master>
-                <click-parking type="bool">false</click-parking>
+              <sound>
+                <click-master-bat type="bool">false</click-master-bat>
+                <click-master-alt type="bool">false</click-master-alt>
+                <click-landing-light type="bool">false</click-landing-light>
+                <click-taxi-light type="bool">false</click-taxi-light>
+                <click-nav-lights type="bool">false</click-nav-lights>
+                <click-strobe type="bool">false</click-strobe>
+                <click-beacon type="bool">false</click-beacon>
+                <click-pitot-heat type="bool">false</click-pitot-heat>
+                
+
+
                 <click-magneto-forward type="bool">false</click-magneto-forward>
                 <click-magneto-back type="bool">false</click-magneto-back>
                 <click-flaps type="bool">false</click-flaps>
-            </sound>
+              </sound>
+              </c152>
         </model>
 
         <menubar include="gui/dialogs/c152-menu.xml"/>
@@ -109,6 +124,10 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         </view>
   
         <systems>
+             <autopilot>
+                <path>Systems/glass-rain.xml</path>
+            </autopilot>
+ 
             <property-rule n="100">
                 <name>FiltersOnly</name>
                 <path>Systems/instruments.xml</path>
@@ -141,7 +160,11 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         <instrumentation>
             <path>Systems/instrumentation.xml</path>
         </instrumentation>
-        
+ 
+         <rendering>
+            <shadow-volume type="bool">true</shadow-volume>
+        </rendering>
+ 
     </sim>
 
     <!-- trim for level cruise -->
@@ -248,6 +271,7 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
  
     <nasal> 
         <c152>
+            <file>Nasal/c152.nas</file>
             <file>Nasal/light.nas</file>
             <file>Aircraft/Instruments-3d/ki266/ki266.nas</file>
         </c152>
