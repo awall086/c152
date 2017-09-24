@@ -36,6 +36,43 @@
         <input>instrumentation/nav[1]/gs-needle-deflection-norm</input>
         <output>instrumentation/nav[1]/filtered-gsNAV1-deflection</output>
     </filter>
+
+    <filter>
+        <name>Set MyProp</name>
+        <type>gain</type>
+        <input>
+            <property>/instrumentation/adf/frequencies/selected-khz</property>
+            <offset>-100</offset>
+        </input>
+        <output>
+            <property>/my-second-directory/my-variable</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Radio Dim/Bright</name>
+        <type>gain</type>
+        <input>
+            <property>/controls/lighting/radio-norm</property>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/radio</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Instruments Dim/Bright</name>
+        <type>gain</type>
+        <input>
+            <property>/controls/lighting/instruments-norm</property>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/instruments</property>
+        </output>
+    </filter>
+
     <logic>
         <name>Transponder On/Off</name>
         <input>
@@ -67,6 +104,8 @@
         </input>
         <output>
             <property>/sim/model/c152/lighting/trans</property>
+            <property>/sim/model/c152/lighting/radio</property>
         </output>
     </filter>
+
 </PropertyList>
