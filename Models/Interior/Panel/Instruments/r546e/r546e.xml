@@ -3,4 +3,154 @@
 
    <path>r546e.ac</path>
 
+    <animation>
+        <type>material</type>
+            <object-name>Digit_1000</object-name>
+            <object-name>Digit_100</object-name>
+            <object-name>Digit_10</object-name>
+            <object-name>Digit_1</object-name>
+        <emission>
+            <red>0.98</red>
+            <green>0.51</green>
+            <blue>0.0</blue>
+            <factor-prop>/sim/model/c152/lighting/radio</factor-prop>
+        </emission>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Digit_1000</object-name>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Digit_100</object-name>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>100</step>
+        <factor>0.001</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Digit_10</object-name>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>10</step>
+        <factor>0.01</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Digit_1</object-name>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>1</step>
+        <factor>0.1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<animation>
+    <type>knob</type>
+    <object-name>Knob_Digit_100</object-name>
+    <property>instrumentation/adf/frequencies/selected-khz</property>
+    <factor>-0.25</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.021</x-m>
+      <y-m>-0.039</y-m>
+      <z-m>-0.016</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+                <factor>-100.0</factor>
+                <min>100</min>
+                <max>1799</max>
+                <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+<animation>
+    <type>knob</type>
+    <object-name>Knob_Digit_10</object-name>
+    <property>instrumentation/adf/frequencies/selected-khz</property>
+    <factor>-0.25</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.021</x-m>
+      <y-m>-0.000</y-m>
+      <z-m>-0.016</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+                <factor>-10.0</factor>
+                <min>10</min>
+                <max>1799</max>
+                <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+ 
+  <animation>
+    <type>knob</type>
+    <object-name>Knob_Digit_1</object-name>
+    <property>instrumentation/adf/frequencies/selected-khz</property>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.021</x-m>
+      <y-m>0.038</y-m>
+      <z-m>-0.016</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+                <factor>-1.0</factor>
+                <min>1</min>
+                <max>1799</max>
+                <wrap>true</wrap>
+               
+      </binding>
+    </action>
+  </animation>
+
 </PropertyList>

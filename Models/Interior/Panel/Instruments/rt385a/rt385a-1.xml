@@ -49,8 +49,6 @@
     <red>1</red>
     <green>1</green>
     <blue>1</blue>
-    
-
   </params>
 
   <path>rt385a.ac</path>
@@ -168,6 +166,28 @@
     <object-name>CommUse</object-name>
     <object-name>NavUse</object-name>
   </effect>
+
+    <animation>
+        <type>material</type>
+            <object-name>CommUse100K</object-name>
+            <object-name>CommUse100M</object-name>
+            <object-name>CommUse10K</object-name>
+            <object-name>CommUse10M</object-name>
+            <object-name>CommUse1M</object-name>
+            <object-name>CommUseDot</object-name>
+            <object-name>NavUse100K</object-name>
+            <object-name>NavUse100M</object-name>
+            <object-name>NavUse10K</object-name>
+            <object-name>NavUse10M</object-name>
+            <object-name>NavUse1M</object-name>
+            <object-name>NavUseDot</object-name>
+        <emission>
+            <red>0.6</red>
+            <green>0.25</green>
+            <blue>0.00025</blue>
+            <factor-prop>/sim/model/c152/lighting/radio</factor-prop>
+        </emission>
+    </animation>
   
   <!-- comm part -->
 

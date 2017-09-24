@@ -3,19 +3,39 @@
 <PropertyList>
 
  <path>light_control.ac</path>
- <texture-path>Aircraft/c172p/Models</texture-path>
- 
-  <!--
- <effect>
-  <inherits-from>../../../../Effects/interior/c172p-flashlight</inherits-from>
-   <object-name>LightKnob</object-name>
- </effect>
- -->
  
 <!--     Panel/radio light control    -->
  <animation>
   <type>knob</type>
-  <object-name>LightKnob</object-name>
+  <object-name>Radio_Knob</object-name>
+  
+  <visible>true</visible>
+  <action>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/radio-norm</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>1.0</max>
+      <wrap>0</wrap>
+    </binding>
+  </action>
+  
+  <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>radio-brightness</tooltip-id>
+      <label>Radio Lighting: %3d%%</label>
+      <property>controls/lighting/radio-norm</property>
+      <mapping>percent</mapping>
+    </binding>
+  </hovered>
+ </animation>
+
+ <animation>
+  <type>knob</type>
+  <object-name>Panel_Knob</object-name>
   
   <visible>true</visible>
   <action>
@@ -33,8 +53,8 @@
   <hovered>
     <binding>
       <command>set-tooltip</command>
-      <tooltip-id>lighting-brightness</tooltip-id>
-      <label>Instrument Lighting: %3d%%</label>
+      <tooltip-id>panel-brightness</tooltip-id>
+      <label>Instruments Lighting: %3d%%</label>
       <property>controls/lighting/instruments-norm</property>
       <mapping>percent</mapping>
     </binding>

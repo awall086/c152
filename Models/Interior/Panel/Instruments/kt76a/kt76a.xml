@@ -120,7 +120,7 @@
                     <value>1</value>
                 </equals>
                 <greater-than>
-                    <property>/sim/model/c172p/lighting/trans</property>
+                    <property>/sim/model/c152/lighting/trans</property>
                     <value>0.0</value>
                 </greater-than>
             </and>
@@ -129,7 +129,7 @@
             <red>0.9</red>
             <green>0.7</green>
             <blue>0.7</blue>
-            <factor-prop>/sim/model/c172p/lighting/trans</factor-prop>
+            <factor-prop>/sim/model/c152/lighting/trans</factor-prop>
         </emission>
     </animation>
 
@@ -146,7 +146,7 @@
                     <value>4</value>
                 </equals>
                 <greater-than>
-                    <property>/sim/model/c172p/lighting/trans</property>
+                    <property>/sim/model/c152/lighting/trans</property>
                     <value>0.0</value>
                 </greater-than>
             </and>
@@ -155,7 +155,7 @@
             <red>0.9</red>
             <green>0.7</green>
             <blue>0.7</blue>
-            <factor-prop>/sim/model/c172p/lighting/trans</factor-prop>
+            <factor-prop>/sim/model/c152/lighting/trans</factor-prop>
         </emission>
     </animation>
 
@@ -172,7 +172,7 @@
                     <value>5</value>
                 </equals>
                 <greater-than>
-                    <property>/sim/model/c172p/lighting/trans</property>
+                    <property>/sim/model/c152/lighting/trans</property>
                     <value>0.0</value>
                 </greater-than>
             </and>
@@ -181,7 +181,7 @@
             <red>0.9</red>
             <green>0.7</green>
             <blue>0.7</blue>
-            <factor-prop>/sim/model/c172p/lighting/trans</factor-prop>
+            <factor-prop>/sim/model/c152/lighting/trans</factor-prop>
         </emission>
     </animation>
 
@@ -198,7 +198,7 @@
                     <value>2</value>
                 </equals>
                 <greater-than>
-                    <property>/sim/model/c172p/lighting/trans</property>
+                    <property>/sim/model/c152/lighting/trans</property>
                     <value>0.0</value>
                 </greater-than>
             </and>
@@ -207,7 +207,7 @@
             <red>0.9</red>
             <green>0.7</green>
             <blue>0.7</blue>
-            <factor-prop>/sim/model/c172p/lighting/trans</factor-prop>
+            <factor-prop>/sim/model/c152/lighting/trans</factor-prop>
         </emission>
     </animation>
 
@@ -223,7 +223,7 @@
                     <property>sim/rendering/rembrandt/enabled</property>
                 </not>
                 <greater-than>
-                    <property>/sim/model/c172p/lighting/trans</property>
+                    <property>/sim/model/c152/lighting/trans</property>
                     <value>0.0</value>
                 </greater-than>
             </and>
@@ -232,7 +232,7 @@
             <red>0.9</red>
             <green>0.7</green>
             <blue>0.7</blue>
-            <factor-prop>/sim/model/c172p/lighting/trans</factor-prop>
+            <factor-prop>/sim/model/c152/lighting/trans</factor-prop>
         </emission>
     </animation>
 

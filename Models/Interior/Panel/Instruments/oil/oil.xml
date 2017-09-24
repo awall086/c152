@@ -6,14 +6,14 @@
 
  <animation>
   <type>material</type>
-  <object-name>Oil-base</object-name>
+  <object-name>Oil_base</object-name>
   <object-name>OilPressNeedle</object-name>
   <object-name>OilTempNeedle</object-name>
   <emission>
-   <red>1.0</red>
-   <green>0.2</green>
+   <red>0.98</red>
+   <green>0.51</green>
    <blue>0.0</blue>
-   <factor-prop>sim/model/material/instruments/factor</factor-prop>
+   <factor-prop>/sim/model/c152/lighting/instruments</factor-prop>
   </emission>
  </animation>
 

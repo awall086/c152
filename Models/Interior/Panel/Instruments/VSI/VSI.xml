@@ -19,10 +19,10 @@
   <object-name>Face</object-name>
   <object-name>PointerTip</object-name>
   <emission>
-   <red>1.0</red>
-   <green>0.2</green>
+   <red>0.98</red>
+   <green>0.51</green>
    <blue>0.0</blue>
-   <factor-prop>sim/model//material/instruments/factor</factor-prop>
+   <factor-prop>/sim/model/c152/lighting/instruments</factor-prop>
   </emission>
  </animation>
 
