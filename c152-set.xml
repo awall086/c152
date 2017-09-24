@@ -80,9 +80,9 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         <view>
             <internal type="bool" archive="y">true</internal>
             <config>
-                <x-offset-m archive="y" type="double">-0.20</x-offset-m>
-                <y-offset-m archive="y" type="double">0.515</y-offset-m>
-                <z-offset-m archive="y" type="double">2.56</z-offset-m>
+                <x-offset-m archive="y" type="double">-0.25</x-offset-m>
+                <y-offset-m archive="y" type="double">0.415</y-offset-m>
+                <z-offset-m archive="y" type="double">2.46</z-offset-m>
                 <pitch-offset-deg type="double">-4</pitch-offset-deg>
             </config>
         </view>
@@ -142,6 +142,8 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         <sound>
             <path archive="y">c152-sound.xml</path>
         </sound>
+ 
+        <checklists include="c152-checklists.xml"/>
  
         <dimensions>
             <radius-m type="double">5</radius-m>
@@ -265,7 +267,12 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
  
         <max-positive-g>4.4</max-positive-g>
         <max-negative-g>-1.76</max-negative-g>
-    
+
+        <mass-and-balance>
+            <maximum-ramp-mass-lbs>1675</maximum-ramp-mass-lbs>
+            <maximum-takeoff-mass-lbs>1670</maximum-takeoff-mass-lbs>
+            <maximum-landing-mass-lbs>1670</maximum-landing-mass-lbs>
+        </mass-and-balance>        
     </limits>
  
  
@@ -273,7 +280,7 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         <c152>
             <file>Nasal/c152.nas</file>
             <file>Nasal/light.nas</file>
-            <file>Aircraft/Instruments-3d/ki266/ki266.nas</file>
+            <file>Nasal/ki266.nas</file>
         </c152>
         <electrical>
             <file>Nasal/c152-electrical.nas</file>
@@ -301,12 +308,8 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         </weight>
     </payload>
 
-    <limits>
-        <mass-and-balance>
-            <maximum-ramp-mass-lbs>1675</maximum-ramp-mass-lbs>
-            <maximum-takeoff-mass-lbs>1670</maximum-takeoff-mass-lbs>
-            <maximum-landing-mass-lbs>1670</maximum-landing-mass-lbs>
-        </mass-and-balance>
-    </limits>
+  <my-second-directory>
+    <my-variable type="int">1</my-variable>
+  </my-second-directory>
 
 </PropertyList>

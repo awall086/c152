@@ -97,8 +97,8 @@
    <static_friction>  0.90 </static_friction>
    <dynamic_friction> 0.78 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">        501.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">   835.00 </damping_coeff>
+   <spring_coeff unit="LBS/FT">       1100.00 </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">   935.00 </damping_coeff>
    <max_steer unit="DEG"> 35.00 </max_steer>
    <brake_group>NONE</brake_group>
    <retractable>0</retractable>
@@ -192,7 +192,7 @@
   <tank type="FUEL" number="0">
      <location unit="IN">
        <x> 138.82 </x>
-       <y>   0.00 </y>
+       <y>  56.70 </y>
        <z>  -7.23 </z>
      </location>
      <capacity unit="LBS"> 123.58 </capacity>
@@ -202,7 +202,7 @@
   <tank type="FUEL" number="1">
      <location unit="IN">
        <x> 138.82 </x>
-       <y>   0.00 </y>
+       <y>  -56.70 </y>
        <z>  -7.23 </z>
      </location>
      <capacity unit="LBS"> 123.58 </capacity>
