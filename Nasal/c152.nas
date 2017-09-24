@@ -50,7 +50,6 @@ var reset_system = func {
     }
 };
 
-
 ##########################################
 # SetListerner must be at the end of this file
 ##########################################
