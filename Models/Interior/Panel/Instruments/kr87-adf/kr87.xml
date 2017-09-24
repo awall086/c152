@@ -70,10 +70,10 @@
         <object-name>knobs.FLT</object-name>
         <object-name>knobs.SET</object-name>
         <emission>
-          <red>0.5</red>
-          <green>0.1</green>
-          <blue>0.00005</blue>
-          <factor-prop>sim/model/material/instruments/factor</factor-prop>
+            <red>0.98</red>
+            <green>0.51</green>
+            <blue>0.0</blue>
+            <factor-prop>/sim/model/c152/lighting/instruments</factor-prop>
         </emission>
     </animation>
     
