@@ -1,0 +1,54 @@
+    <!-- Parking Brake -->
+    <animation>
+        <type>translate</type>
+        <object-name>ParkingBrake</object-name>
+        <property alias="/params/controls/parking-lever"/>
+        <factor>0.04</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>ParkingBrake</object-name>
+        <property alias="/params/controls/parking-lever"/>
+        <factor>90</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.36</x-m>
+            <y-m>-0.20</y-m>
+            <z-m>-0.33</z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>ParkingBrake</object-name>
+        <visible>true</visible>
+        <action>
+            <name>Select</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/model/c172p/brake-parking</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c172p.click("parking", 1.6)</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Parking brake: %s</label>
+                <property>/sim/model/c172p/brake-parking</property>
+                <tooltip-id>parking-brake</tooltip-id>
+                <mapping>on-off</mapping>
+            </binding>
+        </hovered>
+    </animation>

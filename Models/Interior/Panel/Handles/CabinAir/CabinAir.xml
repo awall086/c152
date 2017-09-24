@@ -2,13 +2,14 @@
 
 <PropertyList>
 
-    <path>Throttle.ac</path>
-    
+ <path>CabinAir.ac</path>
+ 
+    <!-- Cabin Air -->
     <animation>
         <type>translate</type>
-        <object-name>Throttle</object-name>
-        <property>controls/engines/engine[0]/throttle</property>
-        <factor>-0.064</factor>
+        <object-name>CabinAir</object-name>
+        <property>/environment/aircraft-effects/cabin-air-set</property>
+        <factor>0.03</factor>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -17,28 +18,29 @@
     </animation>
     <animation>
         <type>slider</type>
-        <object-name>Throttle</object-name>
+        <object-name>CabinAir</object-name>
         <visible>true</visible>
         <drag-direction>vertical</drag-direction>
         <action>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/engines/engine[0]/throttle</property>
+                <property>/environment/aircraft-effects/cabin-air-set</property>
                 <factor>0.05</factor>
                 <min>0</min>
                 <max>1</max>
                 <wrap>0</wrap>
-            </binding>
+            </binding>        
         </action>
         <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <label>Throttle: %3d%%</label>
-                <measure-text>Throttle: 100%</measure-text>
-                <tooltip-id>throttle</tooltip-id>
+                <label>Cabin Air: %3d%%</label>
+                <measure-text>Cabin Air: 100%</measure-text>
+                <tooltip-id>cabinair</tooltip-id>
                 <mapping>percent</mapping>
-                <property>controls/engines/engine[0]/throttle</property>
+                <property>/environment/aircraft-effects/cabin-air-set</property>
             </binding>
         </hovered>
     </animation>
+
 </PropertyList>
