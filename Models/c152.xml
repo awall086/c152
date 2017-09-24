@@ -14,13 +14,22 @@
    <object-name>LandingLight</object-name>
 </effect>
 
+<effect>    
+   <inherits-from>Effects/glass</inherits-from>
+   <object-name>WindShield_int</object-name>
+   <object-name>RearWindows_int</object-name>
+</effect>
+
 <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>NavLightLOn</object-name>
     <object-name>NavLightROn</object-name>
+    <object-name>NavLightTOn</object-name>
     <object-name>BeaconLightOn</object-name>
     <object-name>StrobeROn</object-name>
     <object-name>StrobeLOn</object-name>
+    <object-name>propellerF</object-name>
+    <object-name>propellerR</object-name>
 </effect>
 
     <!-- exterior effects -->
@@ -50,6 +59,39 @@
         <object-name>RDoor-ext</object-name>  
     </effect>
 
+    <!-- Green navigation light on starboard side (right) -->
+    <model>
+        <name>nav-light-right</name>
+        <path>Effects/lights/procedural_light_nav_right.xml</path>
+        <offsets>
+            <x-m>2.2186</x-m>
+            <y-m>5.027</y-m>
+            <z-m>0.6818</z-m>
+        </offsets>
+    </model>
+
+    <!-- Red navigation light on port side (left) -->
+    <model>
+        <name>nav-light-left</name>
+        <path>Effects/lights/procedural_light_nav_left.xml</path>
+        <offsets>
+            <x-m>2.2186</x-m>
+            <y-m>-5.027</y-m>
+            <z-m>0.6818</z-m>
+        </offsets>
+    </model>
+
+    <!-- White navigation light on Tail -->
+    <model>
+        <name>nav-light-tail</name>
+        <path>Effects/lights/procedural_light_nav_tail.xml</path>
+        <offsets>
+            <x-m>7.357</x-m>
+            <y-m>0.0</y-m>
+            <z-m>1.175</z-m>
+        </offsets>
+    </model>
+ 
 <!-- Cockpit Instruments -->
 
     <model>
@@ -302,8 +344,8 @@
         <path>Interior/Panel/Instruments/light/light_control.xml</path>
         <offsets>
             <x-m>1.658</x-m>
-            <y-m>-0.280</y-m>
-            <z-m>-0.042</z-m>
+            <y-m>-0.275</y-m>
+            <z-m>-0.044</z-m>
         </offsets>
     </model>
     
@@ -386,62 +428,59 @@
             <z-m>0.000</z-m>
         </offsets>
     </model>
-    
+
 <!-- Elevator Trim -->
-    <animation>
-        <type>knob</type>
-        <object-name>elev_trim</object-name>
-        <property>controls/flight/elevator-trim</property>
-        <factor>-360</factor>
-        <drag-direction>vertical</drag-direction>
-        <axis>
-            <x>0.0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-        <center>
+    
+    <model>
+        <name>TrimWheel</name>
+        <path>Interior/Panel/Handles/TrimWheel/TrimWheel.xml</path>
+        <offsets>
             <x-m>1.634</x-m>
             <y-m>-0.036</y-m>
             <z-m>-0.084</z-m>
-        </center>
-        <action>
-            <binding>
-                <command>property-adjust</command>
-                <property>controls/flight/elevator-trim</property>
-                <factor>0.01</factor>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>0</wrap>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <label>Elevator trim: %3f</label>
-                <tooltip-id>pitch-trim</tooltip-id>
-                <property>controls/flight/elevator-trim</property>
-            </binding>
-        </hovered>
-    </animation>
-
-<!--    <animation>
-        <type>rotate</type>
-        <object-name>ElevatorTrimPos</object-name>
-        <property>controls/flight/elevator-trim</property>
-        <factor>-12</factor>
-        <axis>
-            <x>0.0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-        <center>
-            <x-m>-0.406</x-m>
-            <y-m>-0.20</y-m>
-            <z-m>-0.48</z-m>
-        </center>
-    </animation> -->
- 
+        </offsets>
+    </model>
     
+    <model>
+        <name>CarbHeat</name>
+        <path>Interior/Panel/Handles/CarbHeat/CarbHeat.xml</path>
+        <offsets>
+            <x-m>1.655</x-m>
+            <y-m>-0.080</y-m>
+            <z-m>0.005</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>ParkBrake</name>
+        <path>Interior/Panel/Handles/ParkBrake/ParkBrake.xml</path>
+        <offsets>
+            <x-m>1.655</x-m>
+            <y-m>-0.450</y-m>
+            <z-m>0.005</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>CabinHeat</name>
+        <path>Interior/Panel/Handles/CabinHeat/CabinHeat.xml</path>
+        <offsets>
+            <x-m>1.655</x-m>
+            <y-m>0.264</y-m>
+            <z-m>0.005</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>CabinHeat</name>
+        <path>Interior/Panel/Handles/CabinAir/CabinAir.xml</path>
+        <offsets>
+            <x-m>1.655</x-m>
+            <y-m>0.214</y-m>
+            <z-m>0.005</z-m>
+        </offsets>
+    </model>
+
 <!-- Cockpit Switches -->
 
     <model>
@@ -722,10 +761,54 @@
    </hovered>
 </animation>
 
+    <!-- ================================================================== -->
+    <!-- ALS Lighting                                                       -->
+    <!-- ================================================================== -->
+
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-left</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property>controls/lighting/nav-lights</property>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>                
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-right</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property>controls/lighting/nav-lights</property>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>                
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-tail</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property>controls/lighting/nav-lights</property>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>                
+        </condition>
+    </animation>
+
+    <!-- ================================================================== -->
+    <!-- Rembrandt and Default Lighting                                     -->
+    <!-- ================================================================== -->
+
+
  <animation>
    <type>select</type>
    <object-name>NavLightLOn</object-name>
    <object-name>NavLightROn</object-name>
+   <object-name>NavLightTOn</object-name>
    <condition>
      <property>controls/lighting/nav-lights</property>
    </condition>
@@ -785,6 +868,33 @@
     </emission>
 </animation>
 
+<!-- Tail Nav Light -->
+<animation>
+    <type>translate</type>
+    <object-name>NavLightTOn</object-name>
+    <offset-m>7.42</offset-m>
+    <axis>
+		<x>6.687</x>
+		<y>0</y>
+		<z>1.085</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>billboard</type>
+    <object-name>NavLightTOn</object-name>
+</animation>
+
+<animation>
+    <type>material</type> 
+    <object-name>NavLightTOn</object-name>
+    <emission>	
+        <red>1</red>	
+        <green>1</green>	
+        <blue>1</blue>
+    </emission>
+</animation>
+
 <!-- Beacon Light -->
 
 <animation>
@@ -798,11 +908,11 @@
 <animation>
     <type>translate</type>
     <object-name>BeaconLightOn</object-name>
-    <offset-m>6.807</offset-m>
+    <offset-m>6.805</offset-m>
     <axis>
 		<x>6.487</x>
-		<y>0</y>
-		<z>1.205</z>
+		<y>0.03</y>
+		<z>1.215</z>
 	</axis>
 </animation>
 
