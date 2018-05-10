@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <piston_engine name="lyc_O-235">
-  <minmp unit="INHG">          8.6 </minmp>
+  <minmp unit="INHG">         10.4 </minmp>
   <maxmp unit="INHG">         28.5 </maxmp>
   <displacement unit="IN3"> 233.30 </displacement>
   <maxhp>        110.00 </maxhp>
@@ -10,14 +10,14 @@
   <bore unit="IN"> 4.375 </bore>
   <stroke unit="IN">  3.875  </stroke>
   <idlerpm>      550.0 </idlerpm>
-  <maxrpm>      2700.0 </maxrpm>
+  <maxrpm>      2550.0 </maxrpm>
   <maxthrottle>    1.0 </maxthrottle><!-- Deprecated -->
-  <minthrottle>    0.1 </minthrottle><!-- Deprecated -->
-  <sparkfaildrop>  0.1 </sparkfaildrop>
-<!--  <volumetric-efficiency> 0.85 </volumetric-efficiency>
-  <compression-ratio> 6.5 </compression-ratio> -->
+  <minthrottle>    0.0 </minthrottle><!-- Deprecated -->
+  <sparkfaildrop>  0.25 </sparkfaildrop>
+  <volumetric-efficiency> 0.75 </volumetric-efficiency>
+  <compression-ratio> 6.5 </compression-ratio> 
 
 <!-- Optional items that affect engine performance -->
  <!-- Defining <bsfc> over-rides the built-in horsepower calculations -->
- <!--<bsfc>           0.45 </bsfc>-->
+  <bsfc> 0.45 </bsfc>
 </piston_engine>

@@ -19,8 +19,11 @@
   <ixx>   2.01 </ixx>
   <diameter unit="IN">  68.0 </diameter>
   <numblades> 2 </numblades>
-    <minpitch> 22 </minpitch>
-    <maxpitch> 22 </maxpitch>
+  <minpitch> 28 </minpitch>
+  <maxpitch> 28 </maxpitch>
+  <gearratio> 1 </gearratio>
+  <cp_factor> 1.00 </cp_factor>
+  <ct_factor> 1.00 </ct_factor>    
 
 
     <table name="C_THRUST" type="internal">
