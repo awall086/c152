@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>Primer.ac</path>
+ 
+    <!-- Carb Heat -->
+    <animation>
+        <type>pick</type>
+        <object-name>PrimerHandle</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>c152.pumpPrimer();</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>primer</tooltip-id>
+                <label>Engine primer (%1d)</label>
+                <property>controls/engines/engine/primer</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>PrimerHandle</object-name>
+        <property>/controls/engines/engine/primer-lever</property>
+        <factor>0.03</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+
+</PropertyList>
