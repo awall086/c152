@@ -462,6 +462,16 @@
     </model>
 
     <model>
+        <name>Primer</name>
+        <path>Interior/Panel/Handles/Primer/Primer.xml</path>
+        <offsets>
+            <x-m>1.655</x-m>
+            <y-m>-0.450</y-m>
+            <z-m>-0.043</z-m>
+        </offsets>
+    </model>
+    
+    <model>
         <name>CabinHeat</name>
         <path>Interior/Panel/Handles/CabinHeat/CabinHeat.xml</path>
         <offsets>
