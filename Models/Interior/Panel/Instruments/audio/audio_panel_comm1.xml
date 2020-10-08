@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <!--
+        Bendix/King KMA20 Marker/Audio panel
+
+        Created by Torsten Dreyer, December 2008
+
+        You might want to use the following code in your aircraft's nasal
+        init function to keep the settings of the device persistent between
+        flightgear sessions
+
+        aircraft.data.add(
+        "instrumentation/kma20/test",
+        "instrumentation/kma20/auto",
+        "instrumentation/kma20/com1",
+        "instrumentation/kma20/com2",
+        "instrumentation/kma20/nav1",
+        "instrumentation/kma20/nav2",
+        "instrumentation/kma20/adf",
+        "instrumentation/kma20/dme",
+        "instrumentation/kma20/mkr",
+        "instrumentation/kma20/sens",
+        "instrumentation/kma20/knob"
+        );
+    -->
+
+    <params>
+        <power>/systems/electrical/outputs/audio-panel[0]</power>
+        <com1>instrumentation/kma20/com1</com1>
+    </params>
+
+    <path>audio_switch.ac</path>
+
+
+    <animation>
+        <type>knob</type>
+        <object-name>audio_switch</object-name>
+        <proxy-name>COM1Up</proxy-name>
+        <proxy-name>COM1Down</proxy-name>
+        <drag-direction>vertical</drag-direction>
+        <drag-scale-px>30</drag-scale-px>
+        <property alias="../../params/com1"/>
+        <factor>30</factor>
+        <axis>
+            <y>1</y>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <z-m>0.0</z-m>
+        </center>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property alias="../../../../params/com1"/>
+                <factor>-1</factor>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c172p.click("kma20")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>audio-com1</tooltip-id>
+                <property alias="../../../../params/com1"/>
+                <label>COM1: %s</label>
+                <mapping>nasal</mapping>
+                <script>(arg[0] == -1) ? "SPEAKER" : (arg[0]==1) ? "HEADSET" : "OFF"</script>
+            </binding>
+        </hovered>
+    </animation>
+
+
+</PropertyList>

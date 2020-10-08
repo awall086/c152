@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This effect file is provided as a conveniency for usage on transparent objects. If you also need to use a normalmap along with trasnparency check the model-combined-bump.eff that is provided alongside this effect. You can add the Normalmap Include from there at the end of this effect, but be aware to respect the warnings provided in that file.
+
+Do not use as is.
+Please edit.
+Remove unnedeed settings.
+WARNING: do not remove the Transparency include at the end-->
+
+<PropertyList>
+		<name>Effects/c152-glass</name>
+    <inherits-from>Effects/model-combined</inherits-from>
+		<parameters>
+	<!-- Normal Map -->
+			<normalmap-enabled type="int"> 0 </normalmap-enabled>
+			<lightmap-enabled type="int"> 0 </lightmap-enabled>
+	<!-- Reflection -->
+			<reflection-enabled type="int"> 1 </reflection-enabled>
+			<reflect-map-enabled type="int"> 0 </reflect-map-enabled>
+			<reflection-correction type="float"> 0.5 </reflection-correction>
+			<reflection-dynamic type="int"> 1 </reflection-dynamic>
+			<reflection-fresnel type="float"> 0.2 </reflection-fresnel>
+			<reflection-rainbow type="float"> 0.1 </reflection-rainbow>
+			<reflection-noise type="float"> 0.0 </reflection-noise>
+	<!--Ambient correction -->
+			<ambient-correction type="float"> 0.2 </ambient-correction>
+			<dirt-enabled type="int"> 0 </dirt-enabled>
+
+<!--WARNING: Do not edit below this line -->
+<!-- ####################
+### TRANSPARENCY INCLUDE ###
+######################### -->
+	<rendering-hint>transparent</rendering-hint>
+	<transparent>true</transparent>
+	<render-bin>
+		<bin-number>5</bin-number>
+		<bin-name>DepthSortedBin</bin-name>
+	</render-bin>
+<!-- ########################
+### END TRANSPARENCY INCLUDE ###
+############################# -->
+	</parameters>
+<!-- 	Add normalmap include here if needed -->
+</PropertyList>

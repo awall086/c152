@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <filter>
+        <name>Nav Lights</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <greater-than> 
+                    <property>/systems/electrical/outputs/nav-lights</property>
+                    <value>16</value>
+                </greater-than>
+            </condition>
+            <property>controls/lighting/nav-lights-switch</property>
+        </input>
+        <output>
+            <property>controls/lighting/nav-lights</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Beacon</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <greater-than> 
+                    <property>/systems/electrical/outputs/beacon-pitot</property>
+                    <value>16</value>
+                </greater-than>
+            </condition>
+            <property>controls/lighting/beacon-switch</property>
+        </input>
+        <output>
+            <property>controls/lighting/beacon</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Strobe</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <greater-than> 
+                    <property>/systems/electrical/outputs/strobe</property>
+                    <value>16</value>
+                </greater-than>
+            </condition>
+            <property>controls/lighting/strobe-switch</property>
+        </input>
+        <output>
+            <property>controls/lighting/strobe</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Pitot</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <greater-than> 
+                    <property>/systems/electrical/outputs/beacon-pitot</property>
+                    <value>16</value>
+                </greater-than>
+            </condition>
+            <property>controls/anti-ice/pitot-heat-switch</property>
+        </input>
+        <output>
+            <property>controls/anti-ice/pitot-heat</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Radio_lights</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <greater-than> 
+                    <property>/systems/electrical/outputs/instrument-lights</property>
+                    <value>16</value>
+                </greater-than>
+            </condition>
+            <property>controls/lighting/radio-norm</property>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/radio</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>instrument_lights</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <greater-than> 
+                    <property>/systems/electrical/outputs/instrument-lights</property>
+                    <value>16</value>
+                </greater-than>
+            </condition>
+            <property>controls/lighting/instruments-norm</property>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/instruments</property>
+        </output>
+    </filter>
+
+</PropertyList>
