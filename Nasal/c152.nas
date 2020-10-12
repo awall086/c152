@@ -1,4 +1,11 @@
 ##########################################
+# ALS Beacon Light
+##########################################
+
+var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
+aircraft.light.new("sim/model/c152/lighting/beacon", [0.025, 1.5], beacon_switch);
+
+##########################################
 # Autostart
 ##########################################
 

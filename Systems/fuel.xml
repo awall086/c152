@@ -4,9 +4,6 @@
 <!-- tank[0] collector tank connected to the engine fuel pump, tank[1] and tank[2] feeds the collector through valves.
 Negative Gs (<-0.5g) cuts the supply to the collector tanks -->
 
-   <property value="1">propulsion/tank[1]/collector-valve</property>
-   <property value="1">propulsion/tank[2]/collector-valve</property>
-
   <channel name="Fuel pumping">    
 
     <switch>
@@ -14,7 +11,7 @@ Negative Gs (<-0.5g) cuts the supply to the collector tanks -->
       <test logic="OR" value="0">
         propulsion/tank[1]/collector-valve EQ 0
         propulsion/tank[1]/contents-lbs LE 0
-        propulsion/tank[0]/contents-lbs GE 0.49 <!-- 1 lb below capacity -->
+        propulsion/tank[0]/contents-lbs GE 0.09 <!-- 1 lb below capacity -->
         accelerations/Nz LE -0.5
       </test>
       <output>propulsion/tank[1]/external-flow-rate-pps</output>
@@ -25,7 +22,7 @@ Negative Gs (<-0.5g) cuts the supply to the collector tanks -->
       <test logic="OR" value="0">
         propulsion/tank[2]/collector-valve EQ 0
         propulsion/tank[2]/contents-lbs LE 0
-        propulsion/tank[0]/contents-lbs GE 0.49 <!-- 1 lb below capacity -->
+        propulsion/tank[0]/contents-lbs GE 0.09 <!-- 1 lb below capacity -->
         accelerations/Nz LE -0.5 
       </test>
       <output>propulsion/tank[2]/external-flow-rate-pps</output>

@@ -8,7 +8,7 @@
     <animation>
         <type>translate</type>
         <object-name>circuitbreaker</object-name>
-        <property>/controls/circuit-breakers/bcn_pitot</property>
+        <property>/controls/circuit-breakers/beacon_pitot</property>
         <factor>-0.005</factor>
         <axis>
             <x>1.0</x>
@@ -26,7 +26,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/controls/circuit-breakers/bcn_pitot</property>
+                <property>/controls/circuit-breakers/beacon_pitot</property>
             </binding>
         </action>
         <hovered>
@@ -35,7 +35,7 @@
                 <tooltip-id>bcn_pitot_breaker</tooltip-id>
                 <label>Beacon light and pitot heat breaker: %s</label>
                 <mapping>on-off</mapping>
-                <property>/controls/circuit-breakers/bcn_pitot</property>
+                <property>/controls/circuit-breakers/beacon_pitot</property>
             </binding>
         </hovered>
     </animation>

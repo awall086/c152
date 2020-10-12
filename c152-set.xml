@@ -84,8 +84,8 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             <internal type="bool" archive="y">true</internal>
             <config>
                 <x-offset-m archive="y" type="double">-0.25</x-offset-m>
-                <y-offset-m archive="y" type="double">0.415</y-offset-m>
-                <z-offset-m archive="y" type="double">2.46</z-offset-m>
+                <y-offset-m archive="y" type="double">0.395</y-offset-m>
+                <z-offset-m archive="y" type="double">2.56</z-offset-m>
                 <pitch-offset-deg type="double">-4</pitch-offset-deg>
             </config>
         </view>
@@ -126,30 +126,60 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             </config>
         </view>
 
-  <key n="96">
-      <name>Backtick</name>
-      <desc>Open marker adjust dialog</desc>
-      <binding>
-          <command>dialog-show</command>
-          <dialog-name>marker-adjust</dialog-name>
-      </binding>
-  </key>
+        <key n="96">
+            <name>Backtick</name>
+            <desc>Open marker adjust dialog</desc>
+            <binding>
+                <command>dialog-show</command>
+                <dialog-name>marker-adjust</dialog-name>
+            </binding>
+        </key>
 
         <!-- Splash screens. One is randomly chosen when FlightGear starts -->
         <previews>
             <preview>
-                <type>cockpit</type>
+                <type>exterior</type>
                 <path>c152-preview0.jpg</path>
-                <splash type="bool">false</splash>
+                <splash type="bool">true</splash>
             </preview>
             <preview>
-                <type>exterior</type>
+                <type>cockpit</type>
                 <path>c152-preview1.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>exterior</type>
                 <path>c152-preview2.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>c152-preview3.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview4.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview5.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview6.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview7.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>c152-preview8.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
         </previews>
@@ -199,9 +229,8 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         </jsbsim>
     </fdm>
 
-    <!-- trim for level cruise -->
-
     <controls>
+
         <flight>
             <rudder-trim type="double">0.0</rudder-trim>
         </flight>
@@ -231,11 +260,12 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
 	<switches>
             <master-bat type="bool">false</master-bat>
             <master-alt type="bool">false</master-alt>
+            <magnetos type="double">0</magnetos>
 	</switches>
 
 	<circuit-breakers>
 	    <fuel_ind type="bool">true</fuel_ind>
-	    <bcn_pitot type="bool">true</bcn_pitot>
+	    <beacon_pitot type="bool">true</beacon_pitot>
 	    <strobe_lt type="bool">true</strobe_lt>
 	    <landing_lt type="bool">true</landing_lt>
 	    <flaps type="bool">true</flaps>
@@ -246,30 +276,35 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
 
     </controls>
 
-  <consumables>
-    <fuel>
-      <tank n="0">
-        <name type="string">carb Bowl</name>
-      </tank>
-      <tank n="1">
-        <name type="string">Left Wing</name>
-        <capacity-gal_us type="double">13.0</capacity-gal_us>
-        <unusable-gal_us type="double">0.75</unusable-gal_us>
-        <level-gal_us type="double">10</level-gal_us>
-      </tank>
-      <tank n="2">
-        <name type="string">Right Wing</name>
-        <capacity-gal_us type="double">13.0</capacity-gal_us>
-        <unusable-gal_us type="double">0.75</unusable-gal_us>
-        <level-gal_us type="double">10</level-gal_us>
-      </tank>
-    </fuel>
-  </consumables>
+    <consumables>
+
+        <fuel>
+            <tank n="0">
+                <name type="string">carb Bowl</name>
+            </tank>
+            
+            <tank n="1">
+                <name type="string">Left Wing</name>
+                <capacity-gal_us type="double">13.0</capacity-gal_us>
+                <unusable-gal_us type="double">0.75</unusable-gal_us>
+                <level-gal_us type="double">10</level-gal_us>
+            </tank>
+
+           <tank n="2">
+               <name type="string">Right Wing</name>
+               <capacity-gal_us type="double">13.0</capacity-gal_us>
+               <unusable-gal_us type="double">0.75</unusable-gal_us>
+               <level-gal_us type="double">10</level-gal_us>
+           </tank>
+        </fuel>
+
+    </consumables>
 
     <nasal>
         <c152>
             <file>Nasal/c152.nas</file>
             <file>Nasal/liveries.nas</file>
+            <file>Nasal/light-manager.nas</file>
         </c152>
 
         <electrical>
@@ -329,8 +364,6 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             <min-lb type="double">0.0</min-lb>
             <max-lb type="double">120.0</max-lb> <!-- WARNING: Max baggage "by the book" is 120lbs or less! -->
         </weight>
-        <pax-state type="int">0</pax-state>
-        <securing-state type="int">0</securing-state>
     </payload>
 
     <instrumentation>
@@ -354,6 +387,5 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             <test type="int">0</test>
         </marker-beacon>
     </instrumentation>
-
 
 </PropertyList>

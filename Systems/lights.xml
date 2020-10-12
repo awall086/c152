@@ -2,6 +2,103 @@
 
 <PropertyList>
 
+    <logic>
+        <name>Lighting Landing On/Off</name>
+        <input>
+            <and>
+                <less-than>
+                    <property>/systems/electrical/outputs/landing-light</property>
+                    <value>31.5</value>
+                </less-than>
+                <greater-than>
+                    <property>/systems/electrical/outputs/landing-light</property>
+                    <value>20.0</value>
+                </greater-than>
+                <property>/controls/lighting/landing-light</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/landing</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Lighting Taxi On/Off</name>
+        <input>
+            <and>
+                <less-than>
+                    <property>/systems/electrical/outputs/taxi-light</property>
+                    <value>31.5</value>
+                </less-than>
+                <greater-than>
+                    <property>/systems/electrical/outputs/taxi-light</property>
+                    <value>20.0</value>
+                </greater-than>
+                <property>/controls/lighting/taxi-light</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/taxi</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>ALS Lighting Landing</name>
+        <input>
+            <and>
+                <property>/sim/current-view/internal</property>
+                <property>/sim/model/c152/lighting/landing</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>ALS Lighting Taxi</name>
+        <input>
+            <and>
+                <property>/sim/current-view/internal</property>
+                <property>/sim/model/c152/lighting/taxi</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/rendering/als-secondary-lights/use-alt-landing-light</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>ALS Lighting Exterior Landing</name>
+        <input>
+            <and>
+                <not>
+                    <property>/sim/current-view/internal</property>
+                </not>
+                <property>/sim/model/c152/lighting/landing</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/rendering/als-secondary-lights/use-landing-light-ext</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>ALS Lighting Exterior Taxi</name>
+        <input>
+            <and>
+                <not>
+                    <property>/sim/current-view/internal</property>
+                </not>
+                <property>/sim/model/c152/lighting/taxi</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/rendering/als-secondary-lights/use-taxi-light-ext</property>
+        </output>
+    </logic>
+
+
     <filter>
         <name>Nav Lights</name>
         <type>gain</type>
@@ -25,7 +122,7 @@
         <input>
             <condition>
                 <greater-than> 
-                    <property>/systems/electrical/outputs/beacon-pitot</property>
+                    <property>/systems/electrical/outputs/beacon_pitot</property>
                     <value>16</value>
                 </greater-than>
             </condition>

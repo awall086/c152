@@ -217,7 +217,7 @@
         <y>    0.0 </y>
         <z>    0.0 </z>
       </location>
-      <capacity unit="LBS">  0.50 </capacity>
+      <capacity unit="LBS">  0.10 </capacity>
       <contents unit="LBS">  0.00 </contents>
       <type>AVGAS</type>  
     </tank>
@@ -463,7 +463,6 @@
 
       <function name="aero/function/ground-effect-factor-lift">
          <description>Change in lift due to ground effect factor</description>
-         <product>
             <table>
                <independentVar>aero/h_b-mac-ft</independentVar>
                <tableData>
@@ -482,12 +481,10 @@
                   1.1  1.0
                </tableData>
             </table>
-         </product>
       </function>
 
       <function name="aero/function/ground-effect-factor-drag">
          <description>Change in drag due to ground effect</description>
-         <product>
             <table>
                <independentVar>aero/h_b-mac-ft</independentVar>
                <tableData>
@@ -506,7 +503,6 @@
                   1.1  1.0
                </tableData>
             </table>
-         </product>
       </function>
 
         <axis name="DRAG">
@@ -652,7 +648,9 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/flap-pos-deg</property>
-                    <value>0.01333</value>
+<!--                    <value>0.01333</value> -->
+                    <value>0.01033</value>
+
                 </product>
             </function>
             <function name="aero/coefficient/dCLsb">

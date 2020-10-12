@@ -126,9 +126,9 @@ var electricsystem=func{
 
     # Landing Light Power
     if ( getprop("/controls/circuit-breakers/landing_lt") ) {
-        setprop("/systems/electrical/outputs/landing-lights", bus_volts);
+        setprop("/systems/electrical/outputs/landing-light", bus_volts);
     } else {
-        setprop("/systems/electrical/outputs/landing-lights", 0.0 );
+        setprop("/systems/electrical/outputs/landing-light", 0.0 );
     }    
         
     # Taxi Lights Power
