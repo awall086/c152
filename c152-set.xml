@@ -371,9 +371,15 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             <volume-norm type="double">0.0</volume-norm>
             <power-btn type="bool">false</power-btn>
         </adf>
-        <comm>
+        <comm n="0">
             <volume type="double">0.0</volume>
+            <power-btn type="bool">false</power-btn>
         </comm>
+        <comm n="1">
+            <volume type="double">0.0</volume>
+            <power-btn type="bool">false</power-btn>
+        </comm>
+
         <transponder>
             <ident_status type="int">0</ident_status>
             <ident_light type="double">0.0</ident_light>
