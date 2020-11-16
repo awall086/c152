@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0"?>
 
 <PropertyList>
@@ -31,32 +30,3 @@
  </emission>
 </animation> 
 </PropertyList>
-=======
-<?xml version="1.0"?>
-
-<PropertyList>
-    <path>highvolt.ac</path>
-
-<animation>
- <type>material</type> 
- <object-name>highvolt_light</object-name>
- <condition>		
-    <and>
-        <greater-than>		
-            <property>/systems/electrical/volts</property>
-            <value>0.0</value>
-        </greater-than>
-        <less-than>		
-            <property>/systems/electrical/suppliers/alternator</property>
-            <value>22.0</value>
-        </less-than>
-      </and>
- </condition>
- <emission>	
-  <red>1</red>	
-  <green>0</green>	
-  <blue>0</blue>
- </emission>
-</animation> 
-</PropertyList>
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
