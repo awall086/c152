@@ -1,43 +1,12 @@
 <?xml version="1.0"?>
 <PropertyList>
 
-<<<<<<< HEAD
     <params>
         <com1>instrumentation/audio/com1</com1>
-=======
-    <!--
-        Bendix/King KMA20 Marker/Audio panel
-
-        Created by Torsten Dreyer, December 2008
-
-        You might want to use the following code in your aircraft's nasal
-        init function to keep the settings of the device persistent between
-        flightgear sessions
-
-        aircraft.data.add(
-        "instrumentation/kma20/test",
-        "instrumentation/kma20/auto",
-        "instrumentation/kma20/com1",
-        "instrumentation/kma20/com2",
-        "instrumentation/kma20/nav1",
-        "instrumentation/kma20/nav2",
-        "instrumentation/kma20/adf",
-        "instrumentation/kma20/dme",
-        "instrumentation/kma20/mkr",
-        "instrumentation/kma20/sens",
-        "instrumentation/kma20/knob"
-        );
-    -->
-
-    <params>
-        <power>/systems/electrical/outputs/audio-panel[0]</power>
-        <com1>instrumentation/kma20/com1</com1>
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
     </params>
 
     <path>audio_switch.ac</path>
 
-<<<<<<< HEAD
     <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
         <object-name>audio_switch</object-name>
@@ -48,14 +17,6 @@
         <object-name>audio_switch</object-name>
  <!--       <proxy-name>COM1Up</proxy-name>
         <proxy-name>COM1Down</proxy-name> -->
-=======
-
-    <animation>
-        <type>knob</type>
-        <object-name>audio_switch</object-name>
-        <proxy-name>COM1Up</proxy-name>
-        <proxy-name>COM1Down</proxy-name>
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
         <drag-direction>vertical</drag-direction>
         <drag-scale-px>30</drag-scale-px>
         <property alias="../../params/com1"/>
@@ -78,11 +39,7 @@
             </binding>
             <binding>
                 <command>nasal</command>
-<<<<<<< HEAD
                 <script>c152.click("audio")</script>
-=======
-                <script>c172p.click("kma20")</script>
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
             </binding>
         </action>
         <hovered>
