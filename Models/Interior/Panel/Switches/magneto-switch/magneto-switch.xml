@@ -3,6 +3,7 @@
 <PropertyList>
 
  <path>magneto-switch.ac</path>
+<<<<<<< HEAD
 
     <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
@@ -10,6 +11,20 @@
         <object-name>start</object-name>
         <object-name>magsw</object-name>
     </effect>
+=======
+ 
+  <!--
+ <effect>
+   <inherits-from>../../../../Effects/interior/c172p-flashlight</inherits-from>
+   <object-name>key</object-name>
+   <object-name>start</object-name>
+   <object-name>magsw</object-name>
+   <object-name>click-L</object-name>
+   <object-name>click-R</object-name>
+   <object-name>click-S</object-name>
+ </effect>
+-->
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
 
  <animation>
   <type>material</type>

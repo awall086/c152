@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ************************************************************************
@@ -416,3 +417,402 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
 
 
 </PropertyList>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+************************************************************************
+JSBSim Cessna 152 II with 3D cockpit.
+
+Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
+************************************************************************
+-->
+
+<PropertyList>
+
+    <sim>
+        <description>Cessna 152 (1978, model)</description>
+         <long-description>The Cessna 152 is a two-seat, single-engine, high-wing fixed-wing aircraft. First flown in 1977. A total of 7582 units was produced until 1985, when Cessna was ended production of their light aircrafts.</long-description>
+   
+         <es>
+            <long-description>El Cessna 152 es un avion monomotor, de ala alta. Realizó su primer vuelo en 1977. Se construyeron un total de 7582 unidades hasta 1985, cuando Cessna finalizao la produccion de sus aviones ligeros.</long-description>
+        </es>
+
+        <tags>
+            <tag>ga</tag>
+            <tag>cessna</tag>
+            <tag>piston</tag>
+            <tag>single-engine</tag>
+            <tag>fixed-gear</tag>
+        </tags>
+  
+        <author>awall86 (Adrian Fernandez Gomez), gsagostinho (Gilberto Agostinho), wlbragg (Wayne Bragg)</author>
+        <status>beta</status>
+        <aircraft-version>2020.1.1A</aircraft-version>
+  
+        <rating>
+            <FDM type="int">3</FDM>
+            <systems type="int">5</systems>
+            <model type="int">4</model>
+            <cockpit type="int">4</cockpit>
+        </rating>
+
+        <flight-model archive="y">jsb</flight-model>
+        <aero archive="y">c152</aero>
+  
+        <model>
+            <path archive="y">Aircraft/c152/Models/c152.xml</path>   
+
+            <!-- Default livery -->
+            <livery>
+                <name type="string">N80271</name>
+            </livery>
+
+            <c152>
+              <nw_fairing type="bool">true</nw_fairing>
+              <mw_fairing type="bool">true</mw_fairing>
+              <lighting>
+                <taxi type="bool">false</taxi>
+                <landing type="bool">false</landing>
+              </lighting>
+                 <!-- Event sounds -->
+              <sound>
+                <click-master-bat type="bool">false</click-master-bat>
+                <click-master-alt type="bool">false</click-master-alt>
+                <click-landing-light type="bool">false</click-landing-light>
+                <click-taxi-light type="bool">false</click-taxi-light>
+                <click-nav-lights type="bool">false</click-nav-lights>
+                <click-strobe type="bool">false</click-strobe>
+                <click-beacon type="bool">false</click-beacon>
+                <click-pitot-heat type="bool">false</click-pitot-heat>
+                <click-magneto-forward type="bool">false</click-magneto-forward>
+                <click-magneto-back type="bool">false</click-magneto-back>
+                <click-flaps type="bool">false</click-flaps>
+              </sound>
+            </c152>
+        </model>
+
+        <menubar include="gui/dialogs/c152-menu.xml"/>
+
+        <startup>
+            <splash-texture>Splash1.png</splash-texture>
+        </startup>
+
+
+  <!-- position the pilot viewpoint and angle -->
+ 
+        <view>
+            <internal type="bool" archive="y">true</internal>
+            <config>
+                <x-offset-m archive="y" type="double">-0.25</x-offset-m>
+                <y-offset-m archive="y" type="double">0.395</y-offset-m>
+                <z-offset-m archive="y" type="double">2.56</z-offset-m>
+                <pitch-offset-deg type="double">-4</pitch-offset-deg>
+            </config>
+        </view>
+  
+        <view n="1">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="2">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="3">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="4">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="5">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <view n="6">
+            <config>
+                <target-z-offset-m archive="y" type="double"> 2 </target-z-offset-m>
+            </config>
+        </view>
+
+        <key n="96">
+            <name>Backtick</name>
+            <desc>Open marker adjust dialog</desc>
+            <binding>
+                <command>dialog-show</command>
+                <dialog-name>marker-adjust</dialog-name>
+            </binding>
+        </key>
+
+        <!-- Splash screens. One is randomly chosen when FlightGear starts -->
+        <previews>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview0.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>c152-preview1.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview2.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>c152-preview3.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview4.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview5.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview6.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>c152-preview7.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>c152-preview8.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+        </previews>
+
+        <systems>
+            <property-rule n="100">
+                <name>gear_agl_m</name>
+                <path archive="y">Aircraft/c152/Systems/gearAGL.xml</path>
+            </property-rule>            
+
+            <property-rule n="101">
+                <path archive="y">Aircraft/c152/Systems/engine.xml</path>
+            </property-rule>
+            
+	    <property-rule n="102">
+                <name>FiltersOnly</name>
+                <path>Systems/instruments.xml</path>
+            </property-rule>
+
+            <property-rule n="103">
+                <path archive="y">Aircraft/c152/Systems/lights.xml</path>
+            </property-rule>
+	</systems>
+
+        <checklists include="c152-checklists.xml"/>          
+
+        <sound>
+            <path archive="y">c152-sound.xml</path>
+        </sound>
+ 
+         <rendering>
+            <shadow-volume type="bool">true</shadow-volume>
+        </rendering>
+ 
+    </sim>
+
+    <fdm>
+        <jsbsim>
+            <propulsion>
+                <tank n="1">
+                    <collector-valve type="int">0</collector-valve>
+                </tank>
+                <tank n="2">
+                    <collector-valve type="int">0</collector-valve>
+                </tank>
+            </propulsion>
+        </jsbsim>
+    </fdm>
+
+    <controls>
+
+        <flight>
+            <rudder-trim type="double">0.0</rudder-trim>
+        </flight>
+
+        <engines>
+            <engine n="0">
+                <magnetos type="int">0</magnetos>
+                <master-bat type="bool">false</master-bat>
+                <master-alt type="bool">false</master-alt>
+                <mixture type="double">0</mixture>
+            </engine>   
+        </engines>
+
+        <lighting>
+            <landing-lights type="bool">false</landing-lights>
+            <taxi-light type="bool">false</taxi-light>
+            <strobe type="bool">false</strobe>
+            <beacon type="bool">false</beacon>
+            <nav-lights type="bool">false</nav-lights>
+            <nav-lights-switch type="bool">false</nav-lights-switch>
+        </lighting>
+
+        <gear>
+            <brake-parking type="bool">true</brake-parking>
+        </gear>
+
+	<switches>
+            <master-bat type="bool">false</master-bat>
+            <master-alt type="bool">false</master-alt>
+            <magnetos type="double">0</magnetos>
+	</switches>
+
+	<circuit-breakers>
+	    <fuel_ind type="bool">true</fuel_ind>
+	    <beacon_pitot type="bool">true</beacon_pitot>
+	    <strobe_lt type="bool">true</strobe_lt>
+	    <landing_lt type="bool">true</landing_lt>
+	    <flaps type="bool">true</flaps>
+	    <instr_lt type="bool">true</instr_lt>
+	    <nav_lt type="bool">true</nav_lt>
+	    <radio1 type="bool">true</radio1>
+	</circuit-breakers>
+
+    </controls>
+
+    <consumables>
+
+        <fuel>
+            <tank n="0">
+                <name type="string">carb Bowl</name>
+            </tank>
+            
+            <tank n="1">
+                <name type="string">Left Wing</name>
+                <capacity-gal_us type="double">13.0</capacity-gal_us>
+                <unusable-gal_us type="double">0.75</unusable-gal_us>
+                <level-gal_us type="double">10</level-gal_us>
+            </tank>
+
+           <tank n="2">
+               <name type="string">Right Wing</name>
+               <capacity-gal_us type="double">13.0</capacity-gal_us>
+               <unusable-gal_us type="double">0.75</unusable-gal_us>
+               <level-gal_us type="double">10</level-gal_us>
+           </tank>
+        </fuel>
+
+    </consumables>
+
+    <nasal>
+        <c152>
+            <file>Nasal/c152.nas</file>
+            <file>Nasal/liveries.nas</file>
+            <file>Nasal/light-manager.nas</file>
+        </c152>
+
+        <electrical>
+            <file>Nasal/electric_system.nas</file>
+        </electrical>
+    </nasal>
+    
+    <systems>
+        <electrical>
+            <battery-status type="double">100.0</battery-status>
+	</electrical>
+    </systems>
+
+  
+    <limits>
+        <max-flap-extension-speed>
+            <flaps>0.333333</flaps>
+            <speed>85</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.666666</flaps>
+            <speed>85</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>1.000</flaps>
+            <speed>85</speed>
+        </max-flap-extension-speed>
+ 
+        <vne>149</vne>
+ 
+        <max-positive-g>4.4</max-positive-g>
+        <max-negative-g>-1.76</max-negative-g>
+
+        <mass-and-balance>
+            <maximum-ramp-mass-lbs>1675</maximum-ramp-mass-lbs>
+            <maximum-takeoff-mass-lbs>1670</maximum-takeoff-mass-lbs>
+            <maximum-landing-mass-lbs>1670</maximum-landing-mass-lbs>
+        </mass-and-balance>        
+    </limits>
+ 
+    <payload>
+        <weight>
+            <name type="string">Pilot</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+            <min-lb type="double">0.0</min-lb>
+            <max-lb type="double">300.0</max-lb>
+        </weight>
+        <weight>
+            <name type="string">Co-Pilot</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+            <min-lb type="double">0.0</min-lb>
+            <max-lb type="double">300.0</max-lb>
+        </weight>
+        <weight>
+            <name type="string">Baggage</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+            <min-lb type="double">0.0</min-lb>
+            <max-lb type="double">120.0</max-lb> <!-- WARNING: Max baggage "by the book" is 120lbs or less! -->
+        </weight>
+    </payload>
+
+    <instrumentation>
+        <adf>
+            <volume-norm type="double">0.0</volume-norm>
+            <power-btn type="bool">false</power-btn>
+        </adf>
+        <comm n="0">
+            <volume type="double">0.0</volume>
+            <power-btn type="bool">false</power-btn>
+        </comm>
+        <comm n="1">
+            <volume type="double">0.0</volume>
+            <power-btn type="bool">false</power-btn>
+        </comm>
+
+        <transponder>
+            <ident_status type="int">0</ident_status>
+            <ident_light type="double">0.0</ident_light>
+            <ident_light_status type="int">0</ident_light_status>
+            
+           <inputs>
+                <knob-mode type="int">0</knob-mode>
+            </inputs>
+        </transponder>
+        <marker-beacon>
+            <test type="int">0</test>
+        </marker-beacon>
+    </instrumentation>
+
+</PropertyList>
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7

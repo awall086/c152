@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 
 <PropertyList>
@@ -49,3 +50,51 @@
     </animation>
 
 </PropertyList>
+=======
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>CabinHeat.ac</path>
+ 
+    <!-- Cabin Heat -->
+    <animation>
+        <type>translate</type>
+        <object-name>CabinHeat</object-name>
+        <property>/environment/aircraft-effects/cabin-heat-set</property>
+        <factor>0.03</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>      
+        <type>slider</type>
+        <object-name>CabinHeat</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/environment/aircraft-effects/cabin-heat-set</property>
+                <factor>0.05</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>        
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Cabin Heat: %3d%%</label>
+                <measure-text>Cabin Heat: 100%</measure-text>
+                <tooltip-id>cabinheat</tooltip-id>
+                <mapping>percent</mapping>
+                <property>/environment/aircraft-effects/cabin-heat-set</property>
+            </binding>
+        </hovered>
+    </animation>
+
+</PropertyList>
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7

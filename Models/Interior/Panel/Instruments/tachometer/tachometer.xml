@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 
 <PropertyList>
@@ -61,3 +62,62 @@
  </animation>         
  
 </PropertyList>
+=======
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>tachometer.ac</path>
+
+    <params>
+        <engine>
+            <rpm>engines/engine[0]/rpm</rpm>
+        </engine>
+    </params>
+
+ <!--<animation>
+  <type>material</type>
+  <object-name>tachometer</object-name>
+  <object-name>needle</object-name>   
+  <emission>
+   <red>1.0</red>
+   <green>0.2</green>
+   <blue>0.0</blue>
+   <factor-prop>sim/model//material/instruments/factor</factor-prop>
+  </emission>
+ </animation> -->
+
+ <animation>
+  <type>material</type>
+  <object-name>Tachometer</object-name>
+  <object-name>needle</object-name>
+  <emission>
+   <red>0.98</red>
+   <green>0.51</green>
+   <blue>0.0</blue>
+   <factor-prop>/sim/model/c152/lighting/instruments</factor-prop>
+  </emission>
+ </animation>
+
+ <animation> 
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property alias="/params/engine/rpm"/>
+  <interpolation>
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>2700</ind><dep>200</dep></entry>
+  </interpolation>
+  <axis> 
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>  
+  </center>
+ </animation>         
+ 
+</PropertyList>
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7

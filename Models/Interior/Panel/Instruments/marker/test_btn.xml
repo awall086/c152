@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 
 <PropertyList>
@@ -37,3 +38,39 @@
  </animation>
 
 </PropertyList>
+=======
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>test_btn.ac</path>
+
+ <animation>
+  <type>pick</type>
+   <object-name>test_btn</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-toggle</command>
+      <property>/instrumentation/marker-beacon/test</property>
+    </binding>
+    <mod-up>
+     <binding>
+      <command>property-toggle</command>
+      <property>/instrumentation/marker-beacon/test</property>
+     </binding>
+    </mod-up>
+   </action>
+  
+  <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>marker_test_button</tooltip-id>
+      <label>Test marker beacon lights</label>
+    </binding>
+  </hovered>
+ </animation>
+
+</PropertyList>
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7

@@ -2,6 +2,7 @@
 
 <PropertyList>
 
+<<<<<<< HEAD
     <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
         <object-name>Ring</object-name>
@@ -10,6 +11,8 @@
         <object-name>Needle</object-name>e>
     </effect>
 
+=======
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
     <path>mag-compass.ac</path>
 
     <effect>

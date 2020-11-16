@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 
 <PropertyList>
@@ -11,3 +12,18 @@
     </effect>
 
 </PropertyList>
+=======
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>procedural_light.ac</path>
+    <nopreview/>
+
+    <effect>
+        <inherits-from>procedural-light-nav-left</inherits-from>
+        <object-name>procedural_light</object-name>
+    </effect>
+
+</PropertyList>
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7

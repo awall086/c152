@@ -4,11 +4,14 @@
 
  <path>batt-switch.ac</path>
 
+<<<<<<< HEAD
     <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
         <object-name>Batt_Switch</object-name>
     </effect>
 
+=======
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
 <!--	battery switch		-->
 <animation>
     <type>rotate</type>

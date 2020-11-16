@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 
 <PropertyList>
@@ -47,3 +48,49 @@
         </hovered>
     </animation>
 </PropertyList>
+=======
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>Mixture.ac</path>
+
+    <animation>
+        <type>translate</type>
+        <object-name>Mixture</object-name>
+        <property>controls/engines/engine/mixture</property>
+        <factor>-0.070</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>slider</type>
+        <object-name>Mixture</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine/mixture</property>
+                <factor>0.05</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Mixture: %3d%%</label>
+                <measure-text>Mixture: 100%</measure-text>
+                <tooltip-id>mixture</tooltip-id>
+                <mapping>percent</mapping>
+                <property>controls/engines/engine/mixture</property>
+            </binding>
+        </hovered>
+    </animation>
+</PropertyList>
+>>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
