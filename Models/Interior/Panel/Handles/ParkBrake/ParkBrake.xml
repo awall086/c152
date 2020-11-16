@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0"?>
 
 <PropertyList>
@@ -46,47 +45,3 @@
     </animation>
     
 </PropertyList>
-=======
-<?xml version="1.0"?>
-
-<PropertyList>
-
- <path>ParkBrake.ac</path>
- 
-    <!-- Parking Brake -->
-    <animation>
-        <type>translate</type>
-        <object-name>ParkBrake</object-name>
-        <property>/controls/gear/brake-parking</property>
-        <factor>0.03</factor>
-        <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-    <animation>
-        <type>pick</type>
-        <object-name>ParkBrake</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>/controls/gear/brake-parking</property>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <label>Parking brake: %s</label>
-                <property>/controls/gear/brake-parking</property>
-                <tooltip-id>parking-brake</tooltip-id>
-                <mapping>on-off</mapping>
-            </binding>
-        </hovered>
-    </animation>
-    
-</PropertyList>
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
