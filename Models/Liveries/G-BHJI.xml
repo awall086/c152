@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <sim>
+        <model>
+            <livery>
+                <name type="string">G-BHJI</name>
+                <index type="int">3</index>
+                <texture>Liveries\G-BHJI\c152-1.png</texture>
+                <texture2>Liveries\G-BHJI\c152.png</texture2>
+                <decals>Liveries\G-BHJI\c152-decals.png</decals>
+                <decals2>Liveries\G-BHJI\c152-decals-2.png</decals2>
+            </livery>
+        </model>
+    </sim>
+</PropertyList>

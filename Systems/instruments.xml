@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <filter>
+        <name>CDI0 lowpass</name>
+        <debug>false</debug>
+        <type>exponential</type>
+        <filter-time>2.0</filter-time>
+        <input>instrumentation/nav[0]/heading-needle-deflection</input>
+        <output>instrumentation/nav[0]/filtered-cdiNAV0-deflection</output>
+    </filter>
+
+    <filter>
+        <name>GS0 lowpass</name>
+        <debug>false</debug>
+        <type>exponential</type>
+        <filter-time>2.0</filter-time>
+        <input>instrumentation/nav[0]/gs-needle-deflection-norm</input>
+        <output>instrumentation/nav[0]/filtered-gsNAV0-deflection</output>
+    </filter>
+
+    <logic>
+        <name>Comm 0 Serviceable</name>
+        <input>
+            <greater-than>
+                <property>systems/electrical/outputs/comm[0]</property>
+                <value>6.0</value>
+            </greater-than>
+        </input>
+        <output>
+            <property>instrumentation/comm[0]/serviceable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Comm 0 On/Off</name>
+        <input>
+            <and>
+                <property>instrumentation/comm[0]/serviceable</property>
+                <property>instrumentation/comm[0]/power-btn</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/c172p/lighting/comm0-power</property>
+        </output>
+    </logic>
+
+    <filter>
+        <name>IM Bright</name>
+        <type>gain</type>
+        <input>
+            <expression>
+                <sum>
+                    <property>/instrumentation/marker-beacon/inner</property>
+                    <property>/instrumentation/marker-beacon/test</property>
+                </sum>
+            </expression>
+        </input>
+        <output>
+            <property>/instrumentation/marker-beacon/imBright</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>MM Bright</name>
+        <type>gain</type>
+        <input>
+            <expression>
+                <sum>
+                    <property>/instrumentation/marker-beacon/middle</property>
+                    <property>/instrumentation/marker-beacon/test</property>
+                </sum>
+            </expression>
+        </input>
+        <output>
+            <property>/instrumentation/marker-beacon/mmBright</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>OM Bright</name>
+        <type>gain</type>
+        <input>
+            <expression>
+                <sum>
+                    <property>/instrumentation/marker-beacon/outer</property>
+                    <property>/instrumentation/marker-beacon/test</property>
+                </sum>
+            </expression>
+        </input>
+        <output>
+            <property>/instrumentation/marker-beacon/omBright</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Comm 0 Dim/Bright</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <property>/sim/model/c172p/lighting/comm0-power</property>
+            </condition>
+            <property>/controls/lighting/radio-norm</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/c172p/lighting/comm0</property>
+        </output>
+    </filter>
+
+
+    <logic>
+        <name>Transponder Serviceable</name>
+        <input>
+            <greater-than>
+                <property>systems/electrical/outputs/transponder</property>
+                <value>6.0</value>
+            </greater-than>
+        </input>
+        <output>
+            <property>instrumentation/transponder/serviceable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Transponder On/Off</name>
+        <input>
+            <and>
+                <property>instrumentation/transponder/serviceable</property>
+                <property>instrumentation/transponder/inputs/knob-mode</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/transponder-power</property>
+        </output>
+    </logic>
+
+    <filter>
+        <name>Transponder Dim/Bright</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <property>/sim/model/c152/lighting/transponder-power</property>
+            </condition>
+            <property>/controls/lighting/radio-norm</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/trans</property>
+        </output>
+    </filter>
+
+</PropertyList>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+    <name>c152-interiorcompartment</name>
+    <inherits-from>Effects/model-interior</inherits-from>
+    <parameters>
+        <texture n="4">
+            <type>cubemap</type>
+            <images>
+                <positive-x>Aircraft/c152/Models/Effects/interior/white.png</positive-x>
+                <negative-x>Aircraft/c152/Models/Effects/interior/white.png</negative-x>
+                <positive-y>Aircraft/c152/Models/Effects/interior/white.png</positive-y>
+                <negative-y>Aircraft/c152/Models/Effects/interior/white.png</negative-y>
+                <positive-z>Aircraft/c152/Models/Effects/interior/white.png</positive-z>
+                <negative-z>Aircraft/c152/Models/Effects/interior/white.png</negative-z>
+            </images>
+        </texture>
+<!--        <light-filter-one type="vec3d">0.3 0.22 0.1</light-filter-one> -->
+        <light-filter-one type="vec3d">0.2 0.12 0</light-filter-one>
+        <light-radius type="float">50</light-radius>
+    </parameters>
+</PropertyList>

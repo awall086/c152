@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>marker_knob.ac</path>
+
+    <effect>
+        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
+        <object-name>marker_knob_dim</object-name>
+    </effect>
+ 
+<!--     Panel/radio light control    -->
+ <animation>
+  <type>knob</type>
+  <object-name>marker_knob_dim</object-name>
+  
+  <visible>true</visible>
+  <action>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/marker-beacon/dim</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>1.0</max>
+      <wrap>0</wrap>
+    </binding>
+  </action>
+  
+  <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>marker_bacon_brightness</tooltip-id>
+      <label>Marker beacon dimming: %3d%%</label>
+      <property>instrumentation/marker-beacon/dim</property>
+      <mapping>percent</mapping>
+    </binding>
+  </hovered>
+ </animation>
+
+ <animation>
+  <type>knob</type>
+  <object-name>marker_knob_vol</object-name>
+  
+  <visible>true</visible>
+  <action>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/marker-beacon/volume</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>1.0</max>
+      <wrap>0</wrap>
+    </binding>
+  </action>
+  
+  <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>marker_beacon_volume</tooltip-id>
+      <label>Marker beacon volume: %3d%%</label>
+      <property>instrumentation/marker-beacon/volume</property>
+      <mapping>percent</mapping>
+    </binding>
+  </hovered>
+ </animation>
+
+</PropertyList>

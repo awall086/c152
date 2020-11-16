@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <!--
+        Bendix/King KMA20 Marker/Audio panel
+
+        Created by Torsten Dreyer, December 2008
+
+        You might want to use the following code in your aircraft's nasal
+        init function to keep the settings of the device persistent between
+        flightgear sessions
+
+        aircraft.data.add(
+        "instrumentation/kma20/test",
+        "instrumentation/kma20/auto",
+        "instrumentation/kma20/com1",
+        "instrumentation/kma20/com2",
+        "instrumentation/kma20/nav1",
+        "instrumentation/kma20/nav2",
+        "instrumentation/kma20/adf",
+        "instrumentation/kma20/dme",
+        "instrumentation/kma20/mkr",
+        "instrumentation/kma20/sens",
+        "instrumentation/kma20/knob"
+        );
+    -->
+    <effect>
+        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
+        <object-name>mm</object-name>
+        <object-name>mm_light</object-name>
+    </effect>
+    
+    <params>
+        <power>/systems/electrical/outputs/audio-panel</power>
+    </params>
+
+    <path>mm.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>mm_light</object-name>
+        <condition>
+            <and>
+                <less-than>
+                    <property alias="/params/power"/>
+                    <value>31.5</value>
+                </less-than>
+                <greater-than>
+                    <property alias="/params/power"/>
+                    <value>20.0</value>
+                </greater-than>
+            </and>
+        </condition>
+        <emission>
+            <red>1.0</red>
+            <green>1.0</green>
+            <blue>1.0</blue>
+            <factor-prop>/instrumentation/marker-beacon/mmBright</factor-prop>
+        </emission>
+    </animation>
+
+</PropertyList>

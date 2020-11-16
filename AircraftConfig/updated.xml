@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright (c) 2020 Josh Davidson (Octal450) -->
+
+<!-- Adapted to Cessna 152 by Adrian Fernandez (awall86) -->
+
+<PropertyList>
+
+	<name>aircraft-config-updated</name>
+	<layout>vbox</layout>
+	<color>
+		<red>0</red>
+		<green>0</green>
+		<blue>0.2</blue>
+		<alpha>0.95</alpha>
+	</color>	
+	<group>
+		<layout>hbox</layout>
+		<text>
+			<halign>left</halign>
+			<label>Congratulations!</label>
+		</text>
+		<button>
+			<color>
+				<red>0</red>
+				<green>0</green>
+				<blue>0.5</blue>
+				<alpha>0.95</alpha>
+			</color>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>X</legend>
+			<key>Esc</key>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	
+	<hrule/>
+	
+	<group>
+		<layout>vbox</layout>
+		
+		<text>
+			<halign>left</halign>
+			<label>The Aircraft Config has detected that your aircraft was installed for the first time, or updated successfully!</label>
+		</text>
+		
+		<group>
+			<layout>hbox</layout>
+			<halign>left</halign>
+			
+			<text>
+				<halign>left</halign>
+				<label>You have been upgraded to revision:</label>
+			</text>
+			
+			<text>
+				<halign>left</halign>
+				<border>1</border>
+				<label>99999</label>
+				<property>/systems/acconfig/revision</property>
+				<live>1</live>
+			</text>
+			
+		</group>
+			
+		<text>
+			<halign>left</halign>
+			<label>This screen will only appear after a fresh install, or update. Thank you for choosing Cessna 152!</label>
+		</text>
+	</group>
+	
+	<hrule/>
+
+	<group>
+		<layout>hbox</layout>
+		
+		<button>
+			<color>
+				<red>0</red>
+				<green>0</green>
+				<blue>0.5</blue>
+				<alpha>0.95</alpha>
+			</color>
+			<halign>center</halign>
+			<legend>Continue</legend>
+			<pref-width>350</pref-width>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	
+</PropertyList>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>CarbHeat.ac</path>
+
+    <effect>
+        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
+        <object-name>CarbHeat</object-name>
+    </effect>
+     
+    <!-- Carb Heat -->
+    <animation>
+        <type>translate</type>
+        <object-name>CarbHeat</object-name>
+        <property>/controls/anti-ice/engine/carb-heat</property>
+        <factor>0.03</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>CarbHeat</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/anti-ice/engine/carb-heat</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>carburetor-heat</tooltip-id>
+                <label>Carburetor: %s</label>
+                <mapping>nasal</mapping>
+                <property>/controls/anti-ice/engine/carb-heat</property>
+                <script>
+                    var modes = ['COLD', 'HEATED'];
+                    return modes[arg[0]];
+                </script>
+            </binding>
+        </hovered>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+   <path>r546e.ac</path>
+
+    <effect>
+        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
+            <object-name>Chassis</object-name>
+            <object-name>Chasis-1</object-name>
+            <object-name>Digit_1000</object-name>
+            <object-name>Digit_100</object-name>
+            <object-name>Digit_10</object-name>
+            <object-name>Digit_1</object-name>
+            <object-name>Knob_Digit_1000</object-name>
+            <object-name>Knob_Digit_100</object-name>
+            <object-name>Knob_Digit_10</object-name>
+            <object-name>Knob_Digit_1</object-name>
+            <object-name>Knob_ADF_on</object-name>
+            <object-name>Knob_ADF_mode</object-name>
+    </effect>
+
+
+    <animation>
+        <type>material</type>
+            <object-name>Digit_1000</object-name>
+            <object-name>Digit_100</object-name>
+            <object-name>Digit_10</object-name>
+            <object-name>Digit_1</object-name>
+        <emission>
+            <red>0.98</red>
+            <green>0.51</green>
+            <blue>0.0</blue>
+            <factor-prop>/sim/model/c152/lighting/radio</factor-prop>
+        </emission>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Digit_1000</object-name>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Digit_100</object-name>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>100</step>
+        <factor>0.001</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Digit_10</object-name>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>10</step>
+        <factor>0.01</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>Digit_1</object-name>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>1</step>
+        <factor>0.1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    
+<animation>
+    <type>knob</type>
+    <object-name>Knob_Digit_100</object-name>
+    <property>instrumentation/adf/frequencies/digit100</property>
+    <factor>-2.5</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m> 0.00473</x-m>
+      <y-m>-0.03947</y-m>
+      <z-m>-0.01573</z-m>
+    </center>
+    <action>
+        <binding>
+            <command>property-adjust</command>
+            <property>/instrumentation/adf/frequencies/digit100-khz</property>
+            <factor>1</factor>
+            <min>2</min>
+            <max>18</max>
+            <resolution>1</resolution>
+            <wrap>true</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/digit100</property>
+            <factor>4</factor>
+            <min>0</min>
+            <max>360</max>
+            <wrap>true</wrap>               
+        </binding>
+    </action>
+  </animation>
+
+<animation>
+    <type>knob</type>
+    <object-name>Knob_Digit_10</object-name>
+    <property>instrumentation/adf/frequencies/digit10</property>
+    <factor>-2.5</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m> 0.00471</x-m>
+      <y-m>-0.00042</y-m>
+      <z-m>-0.01573</z-m>
+    </center>
+    <action>
+        <binding>
+            <command>property-adjust</command>
+            <property>/instrumentation/adf/frequencies/digit10-khz</property>
+            <factor>1</factor>
+            <min>0</min>
+            <max>10</max>
+            <resolution>1</resolution>
+            <wrap>true</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/digit10</property>
+            <factor>4</factor>
+            <min>0</min>
+            <max>360</max>
+            <wrap>true</wrap>               
+        </binding>
+    </action>
+  </animation>
+
+ 
+  <animation>
+    <type>knob</type>
+    <object-name>Knob_Digit_1</object-name>
+    <property>instrumentation/adf/frequencies/digit1</property>
+    <factor>-2.5</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m> 0.00471</x-m>
+      <y-m> 0.03767</y-m>
+      <z-m>-0.01573</z-m>
+    </center>
+    <action>
+        <binding>
+            <command>property-adjust</command>
+            <property>/instrumentation/adf/frequencies/digit1-khz</property>
+            <factor>1</factor>
+            <min>0</min>
+            <max>10</max>
+            <resolution>1</resolution>
+            <wrap>true</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/adf/frequencies/digit1</property>
+            <factor>4</factor>
+            <min>0</min>
+            <max>360</max>
+            <wrap>true</wrap>               
+        </binding>
+    </action>
+  </animation> 
+
+    <!-- volume knob -->
+    <animation>
+        <type>knob</type>
+        <object-name>Knob_ADF_on</object-name>
+        
+        <property>/instrumentation/adf[0]/volume-norm</property>
+        <factor>-270</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m> 0.00381</x-m>
+            <y-m>-0.07691</y-m>
+            <z-m>-0.03129</z-m>
+        </center>
+        
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/volume-norm</property>
+                <factor>0.1</factor>
+                <min>0</min>
+                <max>1.0</max>
+            </binding>
+            
+            <!-- switch on if volume greater than 0.0 -->
+            <binding>
+                <condition>
+                    <greater-than>
+                        <property>/instrumentation/adf[0]/volume-norm</property>
+                        <value>0.0</value>
+                    </greater-than>
+                </condition>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/power-btn</property>
+                <value type="bool">1</value>
+            </binding>
+    
+            <!-- switch off if volume less than 0.1 -->
+            <binding>
+                <condition>
+                    <less-than>
+                        <property>/instrumentation/adf[0]/volume-norm</property>
+                        <value>0.1</value>
+                    </less-than>
+                </condition>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/power-btn</property>
+                <value type="bool">0</value>
+            </binding>
+
+            <binding>
+                <command>nasal</command>
+                <script>c152.click("kr87-adf-dial")</script>
+            </binding>
+        </action>
+    </animation>
+
+
+  <animation>
+    <type>knob</type>
+    <visible>true</visible>
+    <object-name>Knob_ADF_mode</object-name>
+    <action>
+	<binding>
+	    <command>property-adjust</command>
+	    <property>/instrumentation/adf[0]/actual-mode</property>
+      <factor>1</factor>
+      <min>0</min>
+      <max>2</max>
+      <wrap>0</wrap>
+	</binding>
+    </action>
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>ADF_selector_mode</tooltip-id>
+      <label>ADF Mode: %s</label>
+      <mapping>nasal</mapping>
+      <script>
+        var modes = ['BFO', 'REC', 'ADF'];
+        return modes[arg[0]];
+      </script>
+      <property>/instrumentation/adf[0]/actual-mode</property>
+   </binding>
+   </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Knob_ADF_mode</object-name>
+    <property>/instrumentation/adf[0]/actual-mode</property>
+    <factor> 45 </factor>
+    <offset-deg>0</offset-deg>
+    <axis>
+      <x>  -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+        <center>
+            <x-m> 0.00381</x-m>
+            <y-m> 0.07534</y-m>
+            <z-m>-0.03129</z-m>
+        </center> 
+ </animation>
+
+
+</PropertyList>

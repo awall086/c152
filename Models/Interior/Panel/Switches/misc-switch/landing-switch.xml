@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>misc-switch.ac</path>
+
+    <effect>
+        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
+        <object-name>misc-switch</object-name>
+    </effect>
+    
+<!--	Pitot heater switch		-->
+    <animation>
+        <type>rotate</type>
+        <object-name>misc-switch</object-name>
+        <property>controls/lighting/landing-light</property>
+        <factor>-35</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>misc-switch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-light</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c152.click("landing-light")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>Landing-switch</tooltip-id>
+                <label>Landing Light: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/landing-light</property>
+            </binding>
+        </hovered>
+    </animation>
+</PropertyList>
+
+
