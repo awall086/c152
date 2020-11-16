@@ -4,14 +4,11 @@
 
  <path>fuel-valve.ac</path>
 
-<<<<<<< HEAD
     <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
         <object-name>fuel-valve</object-name>
     </effect>
 
-=======
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
 <!--	fuel valve		-->
 <animation>
     <type>rotate</type>
