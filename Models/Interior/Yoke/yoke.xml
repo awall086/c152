@@ -1,15 +1,12 @@
 <?xml version="1.0" ?> 
   <PropertyList> 
     <path>yoke.ac</path> 
-<<<<<<< HEAD
 
     <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
         <object-name>Yoke</object-name>
     </effect>
 
-=======
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
     
  <animation>
   <type>translate</type>
