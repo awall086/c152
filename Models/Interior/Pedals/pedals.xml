@@ -2,21 +2,11 @@
   <PropertyList> 
     <path>pedals.ac</path> 
 
-<<<<<<< HEAD
     <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
         <object-name>LeftPedal</object-name>
         <object-name>RightPedal</object-name>
     </effect>
-=======
-  <!--
-	<effect>
-        <inherits-from>../../../../Effects/interior/c172p-interior</inherits-from>
-		<object-name>RightPedal</object-name>
-        <object-name>LeftPedal</object-name>
-    </effect>
--->
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
 
  <animation>
   <type>translate</type>
