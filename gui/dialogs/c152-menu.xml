@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0"?>
 
 <PropertyList>
@@ -51,57 +50,3 @@
     </default>
 
 </PropertyList>
-=======
-<?xml version="1.0"?>
-
-<PropertyList>
-
-    <default>
-
-        <menu n="10">
-            <label>Cessna C152 II</label>
-            <enabled type="bool">true</enabled>
-
-             <item>
-                <label>Autostart</label>
-                <binding>
-                    <command>nasal</command>
-                    <script>c152.autostart()</script>
-                </binding>
-            </item>
-
-            <item>
-                <label>Select Livery</label>
-                <binding>
-                    <command>nasal</command>
-                    <script>aircraft.livery.dialog.toggle()</script>
-                </binding>
-            </item> 
-
-            <item>
-                <label>Aircraft Options</label>
-                <binding>
-                    <command>dialog-show</command>
-                    <dialog-name>aircraft-dialog</dialog-name>
-                </binding>
-            </item>
-	    
-            <item>
-                <label>------------------</label>
-                <enabled>false</enabled>
-            </item>
-            
-            <item>
-                <label>About This Aircraft</label>
-                <binding>
-                    <command>dialog-show</command>
-                    <dialog-name>c152-about-dialog</dialog-name>
-                </binding>
-
-            </item>	    
-        </menu>
-
-    </default>
-
-</PropertyList>
->>>>>>> 894cb672cb232daa88351d95513f4a07b79625f7
