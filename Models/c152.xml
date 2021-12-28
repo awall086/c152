@@ -28,6 +28,30 @@
         <object-name>LandingLight</object-name>
     </effect> 
 
+    <effect>
+        <inherits-from>Aircraft/c152/Models/Effects/interior/interior-shadow</inherits-from>
+        <object-name>panelup</object-name>
+        <object-name>panel</object-name>
+        <object-name>panelbottom</object-name>
+        <object-name>panelbottom2</object-name>
+        <object-name>panelbottom3</object-name>
+        <object-name>panelbottom4</object-name>
+        <object-name>panelbottom5</object-name>
+        <object-name>ThrottleMount</object-name>
+        <object-name>MixtureMount</object-name>
+	<object-name>YokeMount</object-name>
+	<object-name>Door-intL</object-name>
+	<object-name>Door-intR</object-name>
+	<object-name>cabin</object-name>
+	<object-name>cabin_floor</object-name>
+	<object-name>pilotseat_left</object-name>
+	<object-name>CircuitbreakerR2</object-name>
+	<object-name>CircuitbreakerR3</object-name>
+	<object-name>CircuitbreakerR4</object-name>
+        <object-name>Sun_Visor_L</object-name>
+        <object-name>Sun_Visor_R</object-name> 
+    </effect> 
+
     <effect>    
         <inherits-from>Effects/glass</inherits-from>
         <object-name>WindShield_int</object-name>
