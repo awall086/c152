@@ -17,7 +17,7 @@
 
 <propeller name="prop">
   <ixx>   2.01 </ixx>
-  <diameter unit="IN">  68.0 </diameter>
+  <diameter unit="IN">  69.0 </diameter>
   <numblades> 2 </numblades>
   <minpitch> 28 </minpitch>
   <maxpitch> 28 </maxpitch>
