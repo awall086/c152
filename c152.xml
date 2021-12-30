@@ -222,6 +222,17 @@
       <type>AVGAS</type>  
     </tank>
 
+    <tank type="FUEL" number="1">
+      <location unit="IN">
+        <x> 138.82 </x>
+        <y>  -56.70 </y>
+        <z>  -7.23 </z>
+      </location>
+      <capacity unit="LBS"> 78.0 </capacity>
+      <contents unit="LBS">  61.79 </contents>
+      <type>AVGAS</type>  
+    </tank>
+    
     <tank type="FUEL" number="2">
       <location unit="IN">
         <x> 138.82 </x>
@@ -233,18 +244,6 @@
       <contents unit="LBS">  61.79 </contents>
       <type>AVGAS</type>
     </tank>
-
-    <tank type="FUEL" number="1">
-      <location unit="IN">
-        <x> 138.82 </x>
-        <y>  -56.70 </y>
-        <z>  -7.23 </z>
-      </location>
-      <capacity unit="LBS"> 78.0 </capacity>
-      <contents unit="LBS">  61.79 </contents>
-      <type>AVGAS</type>  
-    </tank>
-
   </propulsion>
 
   <system file="fuel"/>
@@ -509,7 +508,6 @@
             <function name="aero/coefficient/CD0">
                 <description>Drag_at_zero_lift</description>
                 <product>
-                    <property>aero/function/ground-effect-factor-drag</property>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                       <table>
@@ -547,6 +545,7 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>aero/cl-squared</property>
+                    <property>aero/function/ground-effect-factor-drag</property>
                     <value>0.0100</value>
                 </product>
             </function>
@@ -557,15 +556,6 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/flap-pos-deg</property>
                     <value>0.0010</value>
-                </product>
-            </function>
-            <function name="aero/coefficient/CDsb">
-                <description>Drag_due_to_speedbrakes</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>fcs/speedbrake-pos-norm</property>
-                    <value>0.0280</value>
                 </product>
             </function>
             <function name="aero/coefficient/CDbeta">
@@ -651,15 +641,6 @@
 <!--                    <value>0.01333</value> -->
                     <value>0.01033</value>
 
-                </product>
-            </function>
-            <function name="aero/coefficient/dCLsb">
-                <description>Delta_Lift_due_to_speedbrake</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>fcs/speedbrake-pos-norm</property>
-                    <value>0.0000</value>
                 </product>
             </function>
             <function name="aero/coefficient/CLde">
