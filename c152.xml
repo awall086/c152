@@ -44,7 +44,7 @@
    <wing_incidence>          2.00 </wing_incidence>
    <chord     unit="FT" >    4.77 </chord>
    <htailarea unit="FT2">   19.09 </htailarea>
-   <htailarm  unit="FT" >   16.53 </htailarm>
+   <htailarm  unit="FT" >   10.53 </htailarm>
    <vtailarea unit="FT2">   11.93 </vtailarea>
    <vtailarm  unit="FT" >   16.05 </vtailarm>
    <location name="AERORP" unit="IN">
@@ -55,7 +55,7 @@
    <location name="EYEPOINT" unit="IN">
      <x>  37.60 </x>
      <y> -18.00 </y>
-     <z>  45.00 </z>
+     <z>  40.00 </z>
    </location>
    <location name="VRP" unit="IN">
      <x>0</x>
@@ -65,37 +65,41 @@
  </metrics>
 
  <mass_balance>
-   <ixx unit="SLUG*FT2">       715 </ixx>
-   <iyy unit="SLUG*FT2">       662 </iyy>
-   <izz unit="SLUG*FT2">      1283 </izz>
-   <emptywt unit="LBS" >      1133 </emptywt>
+   <ixx unit="SLUG*FT2">  715 </ixx>
+   <iyy unit="SLUG*FT2">  662 </iyy>
+   <izz unit="SLUG*FT2"> 1283 </izz>
+   <ixy unit="SLUG*FT2"> -0 </ixy>
+   <ixz unit="SLUG*FT2"> -0 </ixz>
+   <iyz unit="SLUG*FT2"> -0 </iyz>   
+   <emptywt unit="LBS" > 1109 </emptywt>
    <location name="CG" unit="IN">
+<!--     <x> 138.82 </x> -->
      <x> 138.82 </x>
      <y>   0.00 </y>
-     <z>  -7.23 </z>
+     <z> -9.23 </z>
    </location>
         
     <pointmass name="Pilot">
-        <weight unit="LBS"> 160 </weight>
+        <weight unit="LBS"> 176.37 </weight>
         <location name="POINTMASS" unit="IN">
             <x> 140 </x>
-            <y> -14 </y>
-            <z> -7.23 </z>
+            <y> -18 </y>
+            <z> -6.23 </z>
         </location>
     </pointmass>
 
     <pointmass name="Co-Pilot">
-        <weight unit="LBS"> 160 </weight>
+        <weight unit="LBS"> 176.37 </weight>
         <location name="POINTMASS" unit="IN">
             <x> 140 </x>
-            <y> 14 </y>
-            <z> -7.23 </z>
+            <y> 18 </y>
+            <z> -6.23 </z>
         </location>
     </pointmass>
     
     <pointmass name="Baggage">
         <description> Medium </description>
-        <weight unit="LBS"> 30 </weight>
+        <weight unit="LBS"> 120 </weight>
         <location name="POINTMASS" unit="IN">
             <x> 168.82 </x>
             <y>   0.00 </y>
@@ -114,11 +118,11 @@
      <y>   0.00 </y>
      <z> -45.55 </z>
    </location>
-   <static_friction>  0.78 </static_friction>
+   <static_friction>  0.82 </static_friction>
    <dynamic_friction> 0.52 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT"> 2700.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC"> 900.00 </damping_coeff>
+   <spring_coeff unit="LBS/FT"> 2800.00 </spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC"> 934.00 </damping_coeff>
    <max_steer unit="DEG"> 30.00 </max_steer>
    <brake_group>NONE</brake_group>
    <retractable>0</retractable>
@@ -128,9 +132,9 @@
    <location unit="IN">
      <x> 144.37 </x>
      <y> -36.07 </y>
-     <z> -47.85 </z>
+     <z> -48.85 </z>
    </location>
-   <static_friction>  0.78 </static_friction>
+   <static_friction>  0.82 </static_friction>
    <dynamic_friction> 0.52 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       4200.00 </spring_coeff>
@@ -144,9 +148,9 @@
    <location unit="IN">
      <x> 144.37 </x>
      <y>  36.07 </y>
-     <z> -47.85 </z>
+     <z> -48.85 </z>
    </location>
-   <static_friction>  0.78 </static_friction>
+   <static_friction>  0.82 </static_friction>
    <dynamic_friction> 0.52 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       4200.00 </spring_coeff>
@@ -179,6 +183,23 @@
     <spring_coeff unit="LBS/FT">       1670.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1670.00 </damping_coeff>
   </contact>
+
+  <contact type="BOGEY" name="TAIL_SKID">
+      <location unit="IN">
+          <x> 370.33 </x>
+          <y> 0 </y>
+          <z> -8.15 </z>
+      </location>
+      <static_friction> 1.0 </static_friction>
+      <dynamic_friction> 1.0 </dynamic_friction>
+      <rolling_friction> 1.0 </rolling_friction>
+      <spring_coeff unit="LBS/FT"> 1900 </spring_coeff>
+      <damping_coeff unit="LBS/FT/SEC"> 540 </damping_coeff>
+      <max_steer unit="DEG"> 0.0 </max_steer>
+      <brake_group> NONE </brake_group>
+      <retractable>0</retractable>
+    </contact>
+
  </ground_reactions>
 
   <propulsion>
@@ -755,7 +776,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>metrics/cbarw-ft</property>
                     <property>aero/alpha-rad</property>
-                    <value>-5.2000</value>
+                    <value>-1.2000</value>
                 </product>
             </function>
             <function name="aero/coefficient/Cmde">
