@@ -155,6 +155,8 @@
         <inherits-from>Aircraft/c152/Models/Effects/exterior/bumpspec-1</inherits-from>
         <object-name>LeftAileron</object-name>
         <object-name>RightAileron</object-name>
+        <object-name>cone</object-name>
+        <object-name>cone_slow</object-name>
         <object-name>LFlap</object-name>
         <object-name>RFlap</object-name>
         <object-name>RWing</object-name>
