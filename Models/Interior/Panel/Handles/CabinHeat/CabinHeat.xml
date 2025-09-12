@@ -2,12 +2,7 @@
 
 <PropertyList>
 
- <path>CabinHeat.ac</path>
-
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>CabinHeat</object-name>
-    </effect>
+	<path>CabinHeat.ac</path>
  
     <!-- Cabin Heat -->
     <animation>
