@@ -122,7 +122,7 @@
         <input>
             <condition>
                 <greater-than> 
-                    <property>/systems/electrical/outputs/beacon_pitot</property>
+                    <property>/systems/electrical/outputs/beacon-pitot</property>
                     <value>16</value>
                 </greater-than>
             </condition>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- (c) 2015, wlbragg. http://forum.flightgear.org/viewtopic.php?f=4&t=25157&start=75#p232085
+Under the GPL. Used by shadows under ALS -->
+
+<PropertyList>
+
+    <filter>
+        <name>Right door opened</name>
+        <type>gain</type>
+        <enable>
+            <condition>
+                <or>
+                    <equals>
+                        <property>/sim/model/door-positions/rightDoor/position-norm</property>
+                        <value>1.0</value>
+                    </equals>
+                    <equals>
+                        <property>/sim/model/door-positions/rightDoor/position-norm</property>
+                        <value>0.0</value>
+                    </equals>
+                </or>
+            </condition>
+        </enable>
+        <input>
+            <condition>
+                <equals>
+                    <property>/sim/model/door-positions/rightDoor/position-norm</property>
+                    <value>1.0</value>
+                </equals>
+            </condition>
+            <value>1.0</value>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>/sim/model/door-positions/rightDoor/position-norm</property>
+                    <value>0.0</value>
+                </equals>
+            </condition>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/door-positions/rightDoor/opened</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Left door opened</name>
+        <type>gain</type>
+        <enable>
+            <condition>
+                <or>
+                    <equals>
+                        <property>/sim/model/door-positions/leftDoor/position-norm</property>
+                        <value>1.0</value>
+                    </equals>
+                    <equals>
+                        <property>/sim/model/door-positions/leftDoor/position-norm</property>
+                        <value>0.0</value>
+                    </equals>
+                </or>
+            </condition>
+        </enable>
+        <input>
+            <condition>
+                <equals>
+                    <property>/sim/model/door-positions/leftDoor/position-norm</property>
+                    <value>1.0</value>
+                </equals>
+            </condition>
+            <value>1.0</value>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>/sim/model/door-positions/leftDoor/position-norm</property>
+                    <value>0.0</value>
+                </equals>
+            </condition>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/door-positions/leftDoor/opened</property>
+        </output>
+    </filter>
+
+    <!-- ================================================================== -->
+    <!-- Max range for doors   -->
+    <!-- ================================================================== -->
+	
+    <filter>
+        <name>Effective range for right door</name>
+        <type>gain</type>
+        <input>
+            <expression>
+                <product>
+                    <property>/sim/model/door-positions/rightDoor/position-norm</property>
+                    <max>
+                        <min>
+                            <difference>
+                                <value>1.0</value>
+                                <product>
+                                    <sum>
+                                        <property>/velocities/airspeed-kt</property>
+                                        <sin>
+                                            <product>
+                                                <value>1.07</value>
+                                                <property>/velocities/airspeed-kt</property>
+                                            </product>
+                                        </sin>
+                                    </sum>
+                                    <value>0.01</value>
+                                </product>
+                            </difference>
+                            <value>1.0</value>
+                        </min>
+                        <value>0.51</value>
+                    </max>
+                </product>
+            </expression>
+        </input>
+        <output>
+            <property>/sim/model/door-positions/rightDoor/position-norm-effective</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Effective range for left door</name>
+        <type>gain</type>
+        <input>
+            <expression>
+                <product>
+                    <property>/sim/model/door-positions/leftDoor/position-norm</property>
+                    <max>
+                        <min>
+                            <difference>
+                                <value>1.0</value>
+                                <product>
+                                    <sum>
+                                        <property>/velocities/airspeed-kt</property>
+                                        <sin>
+                                            <product>
+                                                <value>1.38</value>
+                                                <property>/velocities/airspeed-kt</property>
+                                            </product>
+                                        </sin>
+                                    </sum>
+                                    <value>0.01</value>
+                                </product>
+                            </difference>
+                            <value>1.0</value>
+                        </min>
+                        <value>0.51</value>
+                    </max>
+                </product>
+            </expression>
+        </input>
+        <output>
+            <property>/sim/model/door-positions/leftDoor/position-norm-effective</property>
+        </output>
+    </filter>
+
+</PropertyList>

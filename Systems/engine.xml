@@ -51,4 +51,63 @@
         </output>
     </filter>
 
+    <logic>
+        <name>Engine Starter</name>
+        <input>
+            <and>
+                <less-than>
+                    <property>/systems/electrical/outputs/starter</property>
+                    <value>28.5</value>
+                </less-than>
+                <greater-than>
+                    <property>/systems/electrical/outputs/starter</property>
+                    <value>18.0</value>
+                </greater-than>
+				<property>/controls/switches/starter</property>
+            </and>
+        </input>
+        <output>
+            <property>/controls/engines/engine[0]/starter</property>
+        </output>
+    </logic>
+
+   <logic>
+        <name>fuel tank 1 On/Off</name>
+        <input>
+			<property>controls/fuel/fuel-on</property>
+        </input>
+        <output>
+            <property>/fdm/jsbsim/propulsion/tank[1]/collector-valve</property>
+        </output>
+    </logic>
+
+   <logic>
+        <name>fuel tank 2 On/Off</name>
+        <input>
+			<property>controls/fuel/fuel-on</property>
+        </input>
+        <output>
+            <property>/fdm/jsbsim/propulsion/tank[2]/collector-valve</property>
+        </output>
+    </logic>
+
+    <filter>
+        <name>Controls Primer Lever</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>1.1</max-rate-of-change>
+        <enable>
+            <condition>
+                <not>
+                    <property>/sim/freeze/replay-state</property>
+                </not>
+            </condition>
+        </enable>
+        <input>
+            <property>/controls/engines/engine/primer-lever</property>
+        </input>
+        <output>
+            <property>/sim/model/c152/cockpit/primer-lever-animation</property>
+        </output>
+    </filter>
+	
 </PropertyList>

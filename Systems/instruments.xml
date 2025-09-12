@@ -20,6 +20,24 @@
         <output>instrumentation/nav[0]/filtered-gsNAV0-deflection</output>
     </filter>
 
+    <filter>
+        <name>CDI1 lowpass</name>
+        <debug>false</debug>
+        <type>exponential</type>
+        <filter-time>2.0</filter-time>
+        <input>instrumentation/nav[1]/heading-needle-deflection</input>
+        <output>instrumentation/nav[1]/filtered-cdiNAV1-deflection</output>
+    </filter>
+
+    <filter>
+        <name>GS1 lowpass</name>
+        <debug>false</debug>
+        <type>exponential</type>
+        <filter-time>2.0</filter-time>
+        <input>instrumentation/nav[1]/gs-needle-deflection-norm</input>
+        <output>instrumentation/nav[1]/filtered-gsNAV1-deflection</output>
+    </filter>
+	
     <logic>
         <name>Comm 0 Serviceable</name>
         <input>
@@ -42,10 +60,62 @@
             </and>
         </input>
         <output>
-            <property>/sim/model/c172p/lighting/comm0-power</property>
+            <property>/sim/model/c152/lighting/comm0-power</property>
         </output>
     </logic>
 
+    <logic>
+        <name>Comm 1 Serviceable</name>
+        <input>
+            <greater-than>
+                <property>systems/electrical/outputs/comm[1]</property>
+                <value>6.0</value>
+            </greater-than>
+        </input>
+        <output>
+            <property>instrumentation/comm[1]/serviceable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Comm 1 On/Off</name>
+        <input>
+            <and>
+                <property>instrumentation/comm[1]/serviceable</property>
+                <property>instrumentation/comm[1]/power-btn</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/comm1-power</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>kn62 Serviceable</name>
+        <input>
+            <greater-than>
+                <property>systems/electrical/outputs/dme</property>
+                <value>6.0</value>
+            </greater-than>
+        </input>
+        <output>
+            <property>instrumentation/dme/serviceable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>kn62 On/Off</name>
+        <input>
+            <and>
+                <property>instrumentation/dme/serviceable</property>
+                <property>instrumentation/dme/power</property>
+            </and>
+        </input>
+        <output>
+            <property>/instrumentation/dme/power-btn</property>
+        </output>
+    </logic>
+	
     <filter>
         <name>IM Bright</name>
         <type>gain</type>
@@ -99,7 +169,7 @@
         <type>gain</type>
         <input>
             <condition>
-                <property>/sim/model/c172p/lighting/comm0-power</property>
+                <property>/sim/model/c152/lighting/comm0-power</property>
             </condition>
             <property>/controls/lighting/radio-norm</property>
         </input>
@@ -107,10 +177,26 @@
             <value>0.0</value>
         </input>
         <output>
-            <property>/sim/model/c172p/lighting/comm0</property>
+            <property>/sim/model/c152/lighting/comm0</property>
         </output>
     </filter>
 
+    <filter>
+        <name>Comm 1 Dim/Bright</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <property>/sim/model/c152/lighting/comm1-power</property>
+            </condition>
+            <property>/controls/lighting/radio-norm</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/c152/lighting/comm1</property>
+        </output>
+    </filter>
 
     <logic>
         <name>Transponder Serviceable</name>
@@ -152,6 +238,63 @@
         </input>
         <output>
             <property>/sim/model/c152/lighting/trans</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Left fuel tank quantity</name>
+        <type>gain</type>
+        <input>
+            <condition>
+				<greater-than>
+					<property>/systems/electrical/outputs/fuel_ind</property>
+					<value>20.0</value>
+				</greater-than>
+            </condition>
+            <property>/consumables/fuel/tank[1]/level-gal_us</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/consumables/fuel/tank[1]/level-gal_us_norm</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Right fuel tank quantity</name>
+        <type>gain</type>
+        <input>
+            <condition>
+				<greater-than>
+					<property>/systems/electrical/outputs/fuel_ind</property>
+					<value>20.0</value>
+				</greater-than>
+            </condition>
+            <property>/consumables/fuel/tank[2]/level-gal_us</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/consumables/fuel/tank[2]/level-gal_us_norm</property>
+        </output>
+    </filter>
+	
+    <filter>
+        <name>GPS Night Mode</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <property>/instrumentation/garmin196/status</property>
+            </condition>
+            <property>/controls/lighting/gps-norm</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/instrumentation/garmin196/lite</property>
         </output>
     </filter>
 
