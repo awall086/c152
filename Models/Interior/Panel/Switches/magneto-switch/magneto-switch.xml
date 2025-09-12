@@ -4,12 +4,12 @@
 
  <path>magneto-switch.ac</path>
 
-    <effect>
+<!--    <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
         <object-name>key</object-name>
         <object-name>start</object-name>
         <object-name>magsw</object-name>
-    </effect>
+    </effect> -->
 
  <animation>
   <type>material</type>
@@ -76,7 +76,7 @@
      <button>0</button>
      <binding>
        <command>property-assign</command>
-       <property>controls/engines/engine/starter</property>
+       <property>controls/switches/starter</property>
        <value>1</value>
      </binding>
 <!--     <binding>
@@ -86,7 +86,7 @@
      <mod-up>
        <binding>
          <command>property-assign</command>
-         <property>controls/engines/engine/starter</property>
+         <property>controls/switches/starter</property>
          <value>0</value>
        </binding>
 <!--       <binding>
@@ -131,7 +131,7 @@
   <object-name>key.1</object-name>
   <condition>
    <not>
-    <property>controls/engines/engine/starter</property>
+    <property>controls/switches/starter</property>
    </not>
   </condition>
 </animation>
@@ -141,7 +141,7 @@
   <object-name>start</object-name>
   <object-name>start.1</object-name>
   <condition>
-    <property>controls/engines/engine/starter</property>
+    <property>controls/switches/starter</property>
   </condition>
 </animation>        
   
