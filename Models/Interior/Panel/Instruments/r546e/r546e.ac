@@ -1,8 +1,8 @@
 AC3Db
-MATERIAL "Material" rgb 0.800 0.800 0.800  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.700 0.700 0.700  shi 12 trans 0.000
+MATERIAL "Material"     rgb 0.800 0.800 0.800  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.700 0.700 0.700  shi 012 trans 0.000
 OBJECT world
-name "Blender_exporter_v2.26__r546e.ac"
-kids 13
+name "Blender_exporter_v2.27__r546e.ac"
+kids 11
 OBJECT poly
 name "Chasis-1"
 data 8
@@ -810,9 +810,6 @@ refs 4
 81 0.559449 0.288021
 84 0.558721 0.271965
 95 0.906032 0.271965
-kids 0
-OBJECT group
-name "CommUse"
 kids 0
 OBJECT poly
 name "Digit_1"
@@ -8586,7 +8583,4 @@ refs 4
 422 0.191349 0.491976
 426 0.179428 0.484011
 102 0.182685 0.479136
-kids 0
-OBJECT group
-name "NavUse"
 kids 0

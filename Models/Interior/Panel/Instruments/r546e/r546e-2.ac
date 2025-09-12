@@ -1,8 +1,8 @@
 AC3Db
-MATERIAL "ac3dmat1" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.200 0.200 0.200  shi 128 trans 0.000
-MATERIAL "ac3dmat4" rgb 1.000 0.467 0.000  amb 0.489 0.489 0.489  emis 0.000 0.000 0.000  spec 0.200 0.200 0.200  shi 128 trans 0.000
+MATERIAL "ac3dmat1"     rgb 0.800 0.800 0.800  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 012 trans 0.000
+MATERIAL "ac3dmat4"     rgb 1.000 0.467 0.000  amb 0.489 0.489 0.489  emis 0.000 0.000 0.000  spec 0.200 0.200 0.200  shi 128 trans 0.000
 OBJECT world
-name "Blender_exporter_v2.26__r546e-2.ac"
+name "Blender_exporter_v2.27__r546e-2.ac"
 kids 6
 OBJECT poly
 name "ADFNeedle"
