@@ -4,17 +4,16 @@
 
  <path>fuel-valve.ac</path>
 
-    <effect>
+<!--     <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
         <object-name>fuel-valve</object-name>
-    </effect>
+    </effect> -->
 
 <!--	fuel valve		-->
 <animation>
     <type>rotate</type>
     <object-name>fuel-valve</object-name>
-    <property>/fdm/jsbsim/propulsion/tank[1]/collector-valve</property>
-    <property>/fdm/jsbsim/propulsion/tank[2]/collector-valve</property>
+    <property>/controls/fuel/fuel-on</property>
     <factor>-90</factor>
     <axis>
         <x>0.0</x>
@@ -36,11 +35,7 @@
      <repeatable>false</repeatable>
      <binding>
        <command>property-toggle</command>
-    	<property>/fdm/jsbsim/propulsion/tank[1]/collector-valve</property>
-     </binding>
-     <binding>
-       <command>property-toggle</command>
-    	<property>/fdm/jsbsim/propulsion/tank[2]/collector-valve</property>
+    	<property>/controls/fuel/fuel-on</property>
      </binding>
    </action>
    <hovered>
@@ -49,7 +44,7 @@
       <tooltip-id>Fuel Valve</tooltip-id>
       <label>Fuel Valve: %s</label>
       <mapping>on-off</mapping>
-    <property>/fdm/jsbsim/propulsion/tank[1]/collector-valve</property>
+    <property>/controls/fuel/fuel-on</property>
    </binding>
    </hovered>
 </animation>        
