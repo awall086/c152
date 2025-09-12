@@ -1,1 +1,610 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <params>
+        <in-range>instrumentation/dme/in-range</in-range>
+        <power>instrumentation/dme/power</power>
+        <serviceable>instrumentation/dme/serviceable</serviceable>
+        <dme-mode>instrumentation/dme/switch-mode</dme-mode>
+        <electrical>systems/electrical/outputs/dme</electrical>
+    </params>
+
+ <path>kn62a.ac</path>
+
+	<animation>
+		<name>display</name>
+		<object-name>indicator_nm</object-name>
+		<object-name>nm_dec_1</object-name>
+		<object-name>nm_dec_2</object-name>
+		<object-name>nm_dec_3</object-name>
+		<object-name>dot</object-name>		
+		<object-name>nm_dec_1-1</object-name>
+		<object-name>nm_dec_2-1</object-name>
+		<object-name>nm_dec_3-1</object-name>
+		<object-name>nm_dec_1-null</object-name>
+		<object-name>nm_dec_2-null</object-name>
+		<object-name>nm_dec_3-null</object-name>
+		<object-name>indicator_kt</object-name>
+		<object-name>kt100</object-name>
+		<object-name>kt10</object-name>
+		<object-name>kt1</object-name>		
+		<object-name>kt100-null</object-name>
+		<object-name>kt10-null</object-name>
+		<object-name>kt1-null</object-name>
+		<object-name>indicator_mhz</object-name>    
+		<object-name>indicator_min</object-name>
+		<object-name>min1</object-name>		
+		<object-name>min10</object-name>
+		<object-name>min9</object-name>
+		<object-name>min99</object-name>	
+		<object-name>min1-null</object-name>		
+		<object-name>min10-null</object-name>
+		<object-name>freq100</object-name>
+		<object-name>freq10</object-name>
+		<object-name>freq1</object-name>
+		<object-name>freq01</object-name>
+		<object-name>freq001</object-name>
+		<object-name>dot_freq</object-name>		
+	</animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>freq100</object-name>
+		<object-name>freq10</object-name>
+		<object-name>freq1</object-name>
+		<object-name>freq01</object-name>
+		<object-name>freq001</object-name>
+		<object-name>dot_freq</object-name>
+		<object-name>indicator_mhz</object-name>
+        <condition>
+            <equals>
+				<property>instrumentation/dme/switch-position</property>
+				<value type="int">1</value>
+			</equals>
+		</condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>indicator_kt</object-name>
+		<object-name>indicator_min</object-name>
+        <condition>
+            <not>
+				<equals>
+					<property>instrumentation/dme/switch-position</property>
+					<value type="int">1</value>
+				</equals>
+			</not>
+		</condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>min9</object-name>
+		<object-name>min99</object-name>
+        <condition>
+			<and>
+				<greater-than>
+					<property>instrumentation/dme/indicated-time-min</property>
+					<value>99.000000001</value>
+				</greater-than>
+				<property>instrumentation/dme/in-range</property>
+				<not>
+                    <equals>
+						<property>instrumentation/dme/switch-position</property>
+						<value type="int">1</value>
+					</equals>
+				</not>
+			</and>
+		</condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>min1</object-name>
+		<object-name>min10</object-name>
+        <condition>
+			<and>
+				<and>
+					<less-than>
+						<property>instrumentation/dme/indicated-time-min</property>
+						<value>99.000000001</value>
+					</less-than>
+					<property>instrumentation/dme/in-range</property>
+				</and>
+				<not>
+                    <equals>
+						<property>instrumentation/dme/switch-position</property>
+						<value type="int">1</value>
+					</equals>
+				</not>
+			</and>
+		</condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>nm_dec_1-1</object-name>
+		<object-name>nm_dec_2-1</object-name>
+		<object-name>nm_dec_3-1</object-name>
+        <condition>
+			<and>
+				<greater-than>
+					<property>instrumentation/dme/indicated-distance-nm</property>
+					<value>99.9999999999</value>
+				</greater-than>
+ 				<property>instrumentation/dme/in-range</property>
+			</and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>nm_dec_1</object-name>
+		<object-name>nm_dec_2</object-name>
+		<object-name>nm_dec_3</object-name>
+		<object-name>dot</object-name>
+        <condition>
+			<and>
+				<less-than>
+					<property>instrumentation/dme/indicated-distance-nm</property>
+					<value>99.9999999999</value>
+				</less-than>
+ 				<property>instrumentation/dme/in-range</property>
+			</and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>min1-null</object-name>
+		<object-name>min10-null</object-name>
+		<object-name>kt100-null</object-name>
+		<object-name>kt10-null</object-name>
+		<object-name>kt1-null</object-name> 
+		<condition>
+			<and>
+ 				<not>
+					<equals>
+						<property>instrumentation/dme/switch-position</property>
+						<value type="int">1</value>
+					</equals>
+				</not>
+				<not>
+					<property>instrumentation/dme/in-range</property>
+				</not>
+			</and>
+		</condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>nm_dec_1-null</object-name>
+		<object-name>nm_dec_2-null</object-name>
+		<object-name>nm_dec_3-null</object-name>
+		<condition>
+			<not>
+ 				<property>instrumentation/dme/in-range</property>
+			</not>
+		</condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>kt100</object-name>
+		<object-name>kt10</object-name>
+		<object-name>kt1</object-name>
+        <condition>
+ 			<and>
+				<not>
+					<equals>
+						<property>instrumentation/dme/switch-position</property>
+						<value type="int">1</value>
+					</equals>
+				</not>
+				<property>instrumentation/dme/in-range</property>
+			</and>
+		</condition>
+    </animation>
+
+	
+    <animation>
+        <type>select</type>
+        <object-name>display</object-name>
+        <condition>
+            <property>instrumentation/dme/power-btn</property>
+        </condition>
+    </animation>
+
+    <!-- Power switch -->
+    <animation>
+        <type>translate</type>
+        <object-name>on-off-switch</object-name>
+        <property alias="../../params/power"/>
+        <factor>0.003</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>on-off-switch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property alias="../../../../params/power"/>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c152.click("dme-power")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>power-btn</tooltip-id>
+                <label>DME: %s</label>
+                <property alias="../../../../params/power"/>
+                <mapping>nasal</mapping>
+                <script>
+                  if(arg[0]) return 'ON';
+                  return 'OFF';
+                </script>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>slider</type>
+        <object-name>mode-select</object-name>
+        <property>instrumentation/dme/switch-position</property>
+        <factor>0.011</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/dme/switch-position</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>2</max>
+                <wrap>0</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>instrumentation/dme/switch-position</property>
+                        <value type="int">0</value>
+                    </equals>
+                </condition>
+                <command>property-assign</command>
+                <property>instrumentation/dme/frequencies/source</property>
+                <value>instrumentation/nav[0]/frequencies/selected-mhz</value>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>instrumentation/dme/switch-position</property>
+                        <value type="int">1</value>
+                    </equals>
+                </condition>
+                <command>property-assign</command>
+                <property>instrumentation/dme/frequencies/source</property>
+                <value>instrumentation/dme/frequencies/dme-selected-mhz</value>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>instrumentation/dme/switch-position</property>
+                        <value type="int">2</value>
+                    </equals>
+                </condition>
+                <command>property-assign</command>
+                <property>instrumentation/dme/frequencies/source</property>
+                <value>instrumentation/dme/frequencies/selected-mhz</value>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c152.click("dme-source")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>source-switch</tooltip-id>
+                <label>DME Source: %s</label>
+                <property>instrumentation/dme/switch-position</property>
+                <mapping>nasal</mapping>
+                <script>
+                  var m = arg[0];
+                  if (m == 0) return 'RMT';
+                  if (m == 2) return 'GS/T';
+                  return 'FREQ';
+                </script>
+            </binding>
+        </hovered>
+    </animation>
+
+
+	<animation>
+		<type>knob</type>
+		<object-name>dial_khz</object-name>
+		<property>instrumentation/dme/frequencies/dme-dial-khz</property>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.024886</x-m>
+			<y-m>0.074727</y-m>
+			<z-m>-0.004009</z-m>
+		</center>
+		<action>
+			<binding>
+				<condition>
+					<property>instrumentation/dme/power-btn</property>
+				</condition>
+				<command>property-adjust</command>
+				<property>instrumentation/dme/frequencies/dme-selected-mhz</property>
+				<factor>0.05</factor>
+				<min>0.0</min>
+				<max>1.0</max>
+				<resolution>0.050</resolution>
+				<wrap>true</wrap>
+				<mask>decimal</mask>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/dme/frequencies/dme-dial-khz</property>
+				<factor>4</factor>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>c152.click("rt385a-1-dial")</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<object-name>dial_mhz</object-name>
+		<property>instrumentation/dme/frequencies/dme-dial-mhz</property>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.024886</x-m>
+			<y-m>0.074727</y-m>
+			<z-m>-0.004009</z-m>
+		</center>
+		<action>
+			<binding>
+				<condition>
+					<property>instrumentation/dme/power-btn</property>
+				</condition>
+				<command>property-adjust</command>
+				<property>instrumentation/dme/frequencies/dme-selected-mhz</property>
+				<factor>1</factor>
+				<min>108.0</min>
+				<max>118.0</max>
+				<wrap>true</wrap>
+				<mask>integer</mask>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/dme/frequencies/dme-dial-mhz</property>
+				<factor>4</factor>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>c152.click("rt385a-1-dial")</script>
+			</binding>
+		</action>
+	</animation>
+
+    <animation>
+        <name>kt100</name>
+        <type>textranslate</type>
+        <object-name>kt100</object-name>
+        <property>instrumentation/dme/indicated-ground-speed-kt</property>
+        <step>100</step>
+        <factor>0.001</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <name>kt10</name>
+        <type>textranslate</type>
+        <object-name>kt10</object-name>
+        <property>instrumentation/dme/indicated-ground-speed-kt</property>
+        <step>10</step>
+        <factor>0.01</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <name>kt1</name>
+        <type>textranslate</type>
+        <object-name>kt1</object-name>
+        <property>instrumentation/dme/indicated-ground-speed-kt</property>
+        <step>1</step>
+        <factor>0.1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <name>nm_dec_1</name>
+        <type>textranslate</type>
+        <object-name>nm_dec_1</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <step>10</step>
+        <factor>0.01</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <name>nm_dec_2</name>
+        <type>textranslate</type>
+        <object-name>nm_dec_2</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <step>1</step>
+        <factor>0.1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <name>nm_dec_3</name>
+        <type>textranslate</type>
+        <object-name>nm_dec_3</object-name>
+        <property>instrumentation/dme/indicated-distance-nm</property>
+        <step>0.1</step>
+        <factor>1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <name>min10</name>
+        <type>textranslate</type>
+        <object-name>min10</object-name>
+        <property>instrumentation/dme/indicated-time-min</property>
+        <step>10</step>
+        <factor>0.01</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <name>min1</name>
+        <type>textranslate</type>
+        <object-name>min1</object-name>
+        <property>instrumentation/dme/indicated-time-min</property>
+        <step>1</step>
+        <factor>0.1</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>freq100</object-name>
+		<property>instrumentation/dme/frequencies/dme-selected-mhz</property>
+		<step>100</step>
+		<factor>0.001</factor>
+		<bias>0.0001</bias>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>freq10</object-name>
+		<property>instrumentation/dme/frequencies/dme-selected-mhz</property>
+		<step>10</step>
+		<factor>0.01</factor>
+		<bias>0.0001</bias>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>freq1</object-name>
+		<property>instrumentation/dme/frequencies/dme-selected-mhz</property>
+		<step>1</step>
+		<factor>0.1</factor>
+		<bias>0.0001</bias>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>freq01</object-name>
+		<property>instrumentation/dme/frequencies/dme-selected-mhz</property>
+		<step>0.1</step>
+		<factor>1</factor>
+		<bias>0.0001</bias>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>freq001</object-name>
+		<property>instrumentation/dme/frequencies/dme-selected-mhz</property>
+		<step>0.01</step>
+		<factor>10</factor>
+		<bias>0.0001</bias>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>
+
 
