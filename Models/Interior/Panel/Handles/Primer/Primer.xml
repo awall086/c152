@@ -2,14 +2,8 @@
 
 <PropertyList>
 
- <path>Primer.ac</path>
+	<path>Primer.ac</path>
 
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>PrimerHandle</object-name>
-    </effect>
-     
-    <!-- Carb Heat -->
     <animation>
         <type>pick</type>
         <object-name>PrimerHandle</object-name>
@@ -20,6 +14,14 @@
             <binding>
                 <command>nasal</command>
                 <script>c152.pumpPrimer();</script>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c152.click("primer-in", 1.2)</script>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c152.click("primer-out", 1.2)</script>
             </binding>
         </action>
         <hovered>
@@ -34,14 +36,13 @@
     <animation>
         <type>translate</type>
         <object-name>PrimerHandle</object-name>
-        <property>/controls/engines/engine/primer-lever</property>
-        <factor>0.03</factor>
+        <property>sim/model/c152/cockpit/primer-lever-animation</property>
+        <factor>0.043</factor>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
             <z>0.0</z>
         </axis>
     </animation>
-
-
+     
 </PropertyList>
