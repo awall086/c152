@@ -13,7 +13,7 @@
     <animation>
         <type>translate</type>
         <object-name>circuitbreaker</object-name>
-        <property>/controls/circuit-breakers/radio1</property>
+        <property>/controls/circuit-breakers/radio2</property>
         <factor>-0.005</factor>
         <axis>
             <x>1.0</x>
@@ -31,16 +31,16 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/controls/circuit-breakers/radio1</property>
+                <property>/controls/circuit-breakers/radio2</property>
             </binding>
         </action>
         <hovered>
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>radio1_breaker</tooltip-id>
-                <label>Radio 1 breaker: %s</label>
+                <label>Radio 2 breaker: %s</label>
                 <mapping>on-off</mapping>
-                <property>/controls/circuit-breakers/radio1</property>
+                <property>/controls/circuit-breakers/radio2</property>
             </binding>
         </hovered>
     </animation>

@@ -3,13 +3,8 @@
 <PropertyList>
 
  <path>circuitbreaker5.ac</path>
-
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>circuitbreaker</object-name>
-    </effect>
     
-<!--	radio 1 circuit breaker		-->
+<!--	fuel indicator circuit breaker		-->
     <animation>
         <type>translate</type>
         <object-name>circuitbreaker</object-name>
