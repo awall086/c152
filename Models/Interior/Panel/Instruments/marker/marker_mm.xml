@@ -22,19 +22,31 @@
         "instrumentation/kma20/mkr",
         "instrumentation/kma20/sens",
         "instrumentation/kma20/knob"
-        );
-    -->
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>mm</object-name>
-        <object-name>mm_light</object-name>
-    </effect>
+        ); -->
     
     <params>
         <power>/systems/electrical/outputs/audio-panel</power>
     </params>
 
     <path>mm.ac</path>
+
+    <animation>
+        <type>select</type>
+		<object-name>mm_light</object-name>		
+        <condition>
+                <and>
+                    <less-than>
+                        <property alias="/params/power"/>
+                        <value>31.5</value>
+                    </less-than>
+                    <greater-than>
+                        <property alias="/params/power"/>
+                        <value>20.0</value>
+                    </greater-than>
+					<property>/instrumentation/marker-beacon/mmBright</property>
+				</and>
+        </condition>
+    </animation>
 
     <animation>
         <type>material</type>
@@ -52,9 +64,9 @@
             </and>
         </condition>
         <emission>
-            <red>1.0</red>
-            <green>1.0</green>
-            <blue>1.0</blue>
+            <red>0.7</red>
+            <green>0.45</green>
+            <blue>0.0</blue>
             <factor-prop>/instrumentation/marker-beacon/mmBright</factor-prop>
         </emission>
     </animation>
