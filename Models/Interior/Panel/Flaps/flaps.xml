@@ -1,15 +1,7 @@
 <?xml version="1.0" ?> 
 <PropertyList> 
     <path>flaps.ac</path>
-
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>FlapPos</object-name>
-        <object-name>FlapSwitch</object-name>
-        <object-name>Flapback</object-name>
-    </effect>
-
-
+	
     <params>
         <flaps-lever>/sim/model/c152/cockpit/flaps-lever</flaps-lever>
     </params>
