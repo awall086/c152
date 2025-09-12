@@ -1,7 +1,7 @@
 AC3Db
-MATERIAL "Material.001" rgb 0.599 0.599 0.599  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.700 0.700 0.700  shi 12 trans 0.000
+MATERIAL "Material.001" rgb 0.599 0.599 0.599  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.700 0.700 0.700  shi 012 trans 0.000
 OBJECT world
-name "Blender_exporter_v2.26__CabinAir.ac"
+name "Blender_exporter_v2.27__CabinAir.ac"
 kids 1
 OBJECT poly
 name "CabinAir"
