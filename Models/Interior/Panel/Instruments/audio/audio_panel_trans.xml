@@ -22,13 +22,7 @@
         "instrumentation/kma20/mkr",
         "instrumentation/kma20/sens",
         "instrumentation/kma20/knob"
-        );
-    -->
-
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>audio_switch</object-name>
-    </effect>
+        ); -->
     
     <params>
         <power>/systems/electrical/outputs/audio-panel[0]</power>
@@ -36,7 +30,6 @@
     </params>
 
     <path>audio_switch.ac</path>
-
 
     <animation>
         <type>knob</type>
@@ -65,7 +58,7 @@
             </binding>
             <binding>
                 <command>nasal</command>
-                <script>c172p.click("kma20")</script>
+                <script>c152.click("audio")</script>
             </binding>
         </action>
         <hovered>
@@ -79,6 +72,5 @@
             </binding>
         </hovered>
     </animation>
-
 
 </PropertyList>

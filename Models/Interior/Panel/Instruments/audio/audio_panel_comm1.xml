@@ -7,16 +7,9 @@
 
     <path>audio_switch.ac</path>
 
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>audio_switch</object-name>
-    </effect>
-    
     <animation>
         <type>knob</type>
         <object-name>audio_switch</object-name>
- <!--       <proxy-name>COM1Up</proxy-name>
-        <proxy-name>COM1Down</proxy-name> -->
         <drag-direction>vertical</drag-direction>
         <drag-scale-px>30</drag-scale-px>
         <property alias="../../params/com1"/>
@@ -53,6 +46,5 @@
             </binding>
         </hovered>
     </animation>
-
 
 </PropertyList>
