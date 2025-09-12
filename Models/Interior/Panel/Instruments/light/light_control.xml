@@ -4,67 +4,57 @@
 
  <path>light_control.ac</path>
  
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>Radio_Knob</object-name>
-        <object-name>Panel_Knob</object-name>
-    </effect> 
- 
-<!--     Panel/radio light control    -->
- <animation>
-  <type>knob</type>
-  <object-name>Radio_Knob</object-name>
-  
-  <visible>true</visible>
-  <action>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>property-adjust</command>
-      <property>controls/lighting/radio-norm</property>
-      <factor>0.1</factor>
-      <min>0</min>
-      <max>1.0</max>
-      <wrap>0</wrap>
-    </binding>
-  </action>
-  
-  <hovered>
-    <binding>
-      <command>set-tooltip</command>
-      <tooltip-id>radio-brightness</tooltip-id>
-      <label>Radio Lighting: %3d%%</label>
-      <property>controls/lighting/radio-norm</property>
-      <mapping>percent</mapping>
-    </binding>
-  </hovered>
- </animation>
+	<!--     Panel/radio light control    -->
+	<animation>
+		<type>knob</type>
+		<object-name>Radio_Knob</object-name>
+		<visible>true</visible>
+		<action>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/radio-norm</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1.0</max>
+				<wrap>0</wrap>
+			</binding>
+		</action> 
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>radio-brightness</tooltip-id>
+				<label>Radio Lighting: %3d%%</label>
+				<property>controls/lighting/radio-norm</property>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
+	</animation>
 
- <animation>
-  <type>knob</type>
-  <object-name>Panel_Knob</object-name>
-  
-  <visible>true</visible>
-  <action>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>property-adjust</command>
-      <property>controls/lighting/instruments-norm</property>
-      <factor>0.1</factor>
-      <min>0</min>
-      <max>1.0</max>
-      <wrap>0</wrap>
-    </binding>
-  </action>
-  
-  <hovered>
-    <binding>
-      <command>set-tooltip</command>
-      <tooltip-id>panel-brightness</tooltip-id>
-      <label>Instruments Lighting: %3d%%</label>
-      <property>controls/lighting/instruments-norm</property>
-      <mapping>percent</mapping>
-    </binding>
-  </hovered>
- </animation>
+	<animation>
+		<type>knob</type>
+		<object-name>Panel_Knob</object-name>
+		<visible>true</visible>
+		<action>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/instruments-norm</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1.0</max>
+				<wrap>0</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>panel-brightness</tooltip-id>
+				<label>Instruments Lighting: %3d%%</label>
+				<property>controls/lighting/instruments-norm</property>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
+	</animation>
 
 </PropertyList>
