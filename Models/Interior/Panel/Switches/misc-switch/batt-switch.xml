@@ -2,19 +2,19 @@
 
 <PropertyList>
 
- <path>misc-switch.ac</path>
+ <path>red-switch.ac</path>
 
-<!--     <effect>
+<!--    <effect>
         <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>misc-switch</object-name>
+        <object-name>Red_Switch</object-name>
     </effect> -->
 
-<!--	Beacon Lights switch		-->
+<!--	battery switch		-->
 <animation>
     <type>rotate</type>
-    <object-name>misc-switch</object-name>
-    <property>controls/lighting/beacon-switch</property>
-    <factor>-37</factor>
+    <object-name>Red_Switch</object-name>
+    <property>controls/switches/master-bat</property>
+    <factor>-25</factor>
     <axis>
         <x>0.0</x>
         <y>1.0</y>
@@ -28,30 +28,31 @@
 </animation>
 <animation>
    <type>pick</type>
-   <object-name>misc-switch</object-name>
+   <object-name>Red_Switch</object-name>
    <visible>true</visible>
    <action>
      <button>0</button>
      <repeatable>false</repeatable>
      <binding>
        <command>property-toggle</command>
-       <property>controls/lighting/beacon-switch</property>
+       <property>controls/switches/master-bat</property>
      </binding>
      <binding>
          <command>nasal</command>
-         <script>c152.click("beacon")</script>
+         <script>c152.click("master-bat")</script>
      </binding>
    </action>
    <hovered>
     <binding>
       <command>set-tooltip</command>
-      <tooltip-id>Beacon-switch</tooltip-id>
-      <label>Beacon Light: %s</label>
+      <tooltip-id>Master-switch</tooltip-id>
+      <label>Master Batt: %s</label>
       <mapping>on-off</mapping>
-      <property>controls/lighting/beacon-switch</property>
+      <property>controls/switches/master-bat</property>
    </binding>
    </hovered>
-</animation>
+</animation>        
+
 </PropertyList>
 
 
