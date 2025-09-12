@@ -12,40 +12,40 @@
   flightgear sessions
 
   aircraft.data.add(
-    "instrumentation/comm[0]/volume",
-    "instrumentation/comm[0]/frequencies/selected-mhz",
-    "instrumentation/comm[0]/frequencies/standby-mhz",
-    "instrumentation/comm[0]/frequencies/dial-khz",
-    "instrumentation/comm[0]/frequencies/dial-mhz",
-    "instrumentation/comm[0]/test-btn",
-    "instrumentation/nav[0]/audio-btn",
-    "instrumentation/nav[0]/power-btn",
-    "instrumentation/nav[0]/frequencies/selected-mhz",
-    "instrumentation/nav[0]/frequencies/standby-mhz",
-    "instrumentation/nav[0]/frequencies/dial-khz",
-    "instrumentation/nav[0]/frequencies/dial-mhz",
+    "instrumentation/comm[1]/volume",
+    "instrumentation/comm[1]/frequencies/selected-mhz",
+    "instrumentation/comm[1]/frequencies/standby-mhz",
+    "instrumentation/comm[1]/frequencies/dial-khz",
+    "instrumentation/comm[1]/frequencies/dial-mhz",
+    "instrumentation/comm[1]/test-btn",
+    "instrumentation/nav[1]/audio-btn",
+    "instrumentation/nav[1]/power-btn",
+    "instrumentation/nav[1]/frequencies/selected-mhz",
+    "instrumentation/nav[1]/frequencies/standby-mhz",
+    "instrumentation/nav[1]/frequencies/dial-khz",
+    "instrumentation/nav[1]/frequencies/dial-mhz",
   );
   -->
 
 	<params>
-		<comm-serviceable>instrumentation/comm[0]/serviceable</comm-serviceable>
-		<nav-serviceable>instrumentation/nav[0]/serviceable</nav-serviceable>
-		<power-nav>instrumentation/nav[0]/power-btn</power-nav>
-		<power-comm>instrumentation/comm[0]/power-btn</power-comm>
+		<comm-serviceable>instrumentation/comm[1]/serviceable</comm-serviceable>
+		<nav-serviceable>instrumentation/nav[1]/serviceable</nav-serviceable>
+		<power-nav>instrumentation/nav[1]/power-btn</power-nav>
+		<power-comm>instrumentation/comm[1]/power-btn</power-comm>
 
-		<comm-frq-selected>instrumentation/comm[0]/frequencies/selected-mhz</comm-frq-selected>
-		<comm-dial-khz>instrumentation/comm[0]/frequencies/dial-khz</comm-dial-khz>
-		<comm-dial-mhz>instrumentation/comm[0]/frequencies/dial-mhz</comm-dial-mhz>
-		<comm-volume>instrumentation/comm[0]/volume</comm-volume>
-		<comm-test>instrumentation/comm[0]/test-btn</comm-test>
+		<comm-frq-selected>instrumentation/comm[1]/frequencies/selected-mhz</comm-frq-selected>
+		<comm-dial-khz>instrumentation/comm[1]/frequencies/dial-khz</comm-dial-khz>
+		<comm-dial-mhz>instrumentation/comm[1]/frequencies/dial-mhz</comm-dial-mhz>
+		<comm-volume>instrumentation/comm[1]/volume</comm-volume>
+		<comm-test>instrumentation/comm[1]/test-btn</comm-test>
 
-		<nav-frq-selected>instrumentation/nav[0]/frequencies/selected-mhz</nav-frq-selected>
-		<nav-dial-khz>instrumentation/nav[0]/frequencies/dial-khz</nav-dial-khz>
-		<nav-dial-mhz>instrumentation/nav[0]/frequencies/dial-mhz</nav-dial-mhz>
-		<nav-volume>instrumentation/nav[0]/volume</nav-volume>
-		<nav-audio>instrumentation/nav[0]/audio-btn</nav-audio>
+		<nav-frq-selected>instrumentation/nav[1]/frequencies/selected-mhz</nav-frq-selected>
+		<nav-dial-khz>instrumentation/nav[1]/frequencies/dial-khz</nav-dial-khz>
+		<nav-dial-mhz>instrumentation/nav[1]/frequencies/dial-mhz</nav-dial-mhz>
+		<nav-volume>instrumentation/nav[1]/volume</nav-volume>
+		<nav-audio>instrumentation/nav[1]/audio-btn</nav-audio>
 		
-		<dimming>instrumentation/comm[0]/dimming-norm</dimming>
+		<dimming>instrumentation/comm[1]/dimming-norm</dimming>
 		<red>1</red>
 		<green>1</green>
 		<blue>1</blue>
@@ -61,7 +61,7 @@
 				<property alias="../../../../params/comm-serviceable"/>
 				<property alias="../../../../params/power-comm"/>
 				<greater-than>
-					<property>systems/electrical/outputs/comm[0]</property>
+					<property>systems/electrical/outputs/comm[1]</property>
 					<value>6.0</value>
 				</greater-than>
 				<greater-than>
@@ -80,7 +80,7 @@
 				<property alias="../../../../params/nav-serviceable"/>
 				<property alias="../../../../params/power-comm"/>
 				<greater-than>
-					<property>systems/electrical/outputs/comm[0]</property>
+					<property>systems/electrical/outputs/comm[1]</property>
 					<value>6.0</value>
 				</greater-than>
 				<greater-than>
