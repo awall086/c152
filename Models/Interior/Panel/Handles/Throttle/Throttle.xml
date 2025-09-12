@@ -3,12 +3,7 @@
 <PropertyList>
 
     <path>Throttle.ac</path>
-
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-        <object-name>Throttle</object-name>
-    </effect>
-       
+      
     <animation>
         <type>translate</type>
         <object-name>Throttle</object-name>
