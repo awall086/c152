@@ -62,7 +62,7 @@
 	
 
 	<checkbox>
-                <halign>right</halign>
+                <halign>left</halign>
                 <label>Add/remove main wheels fairing</label>
                 <property>/sim/model/c152/mw_fairing</property>
                 <live>true</live>
@@ -76,36 +76,277 @@
 	</checkbox>
         </group>
 	<hrule/>
-	
-<group>
-	<layout>vbox</layout>
-	<padding>6</padding>
-	<checkbox>
+
+
+	<group>
+		<layout>vbox</layout>
+		<padding>6</padding>
+		<checkbox>
+			<halign>left</halign>
+            <label>Show/Hide Yokes</label>
+            <property>/sim/model/hide-yoke</property>
+            <live>true</live>
+            <binding>
+				<command>property-toggle</command>
+				<property>/sim/model/hide-yoke</property>
+            </binding>
+			<binding>
+                <command>dialog-update</command>
+            </binding>
+		</checkbox>
+        </group>
+		
+		<hrule/>
+
+		<group>	
+			<layout>vbox</layout>
+			<padding>6</padding> 
+			 <text>
+                <label>Panel options</label>
+                <halign>center</halign>
+            </text>
+        <hrule/>			
+			<checkbox>
                 <halign>left</halign>
-                <label>Show/Hide Yokes</label>
-                    <property>/sim/model/hide-yoke</property>
+                <label>Add/Remove Comm2-Nav2 system</label>
+                <property>/sim/model/c152/instrumentation/vor2_installed</property>
                 <live>true</live>
                 <binding>
                     <command>property-toggle</command>
-                    <property>/sim/model/hide-yoke</property>
+                    <property>/sim/model/c152/instrumentation/vor2_installed</property>
                 </binding>
-	<binding>
-                    <command>dialog-update</command>
-                </binding>
-	</checkbox>
+            </checkbox>	
 
             <checkbox>
                 <halign>left</halign>
-                <label>Show shadow</label>
-                <property>/sim/rendering/shadow-volume</property>
+                <label>Show/Hide Garmin GPSMap 196</label>
+                <property>/sim/model/c152/garmin196-visible</property>
                 <live>true</live>
                 <binding>
                     <command>property-toggle</command>
-                    <property>/sim/rendering/shadow-volume</property>
+                    <property>/sim/model/c152/garmin196-visible</property>
+                </binding>
+            </checkbox>
+
+            <checkbox>
+                <halign>left</halign>
+                <label>Show/Hide Bendix King KN-62A DME</label>
+                <property>/sim/model/c152/kn62a-visible</property>
+                <live>true</live>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/sim/model/c152/kn62a-visible</property>
                 </binding>
             </checkbox>
         </group>	
 	
         <hrule/>
+
+		<group>
+			<layout>vbox</layout>
+			<padding>6</padding>
+			<text>
+				<label>Ground services</label>
+				<halign>center</halign>
+			</text>
+		</group>
+
+		<hrule/>
+		
+		<group>
+			<layout>hbox</layout>
+			<padding>6</padding>
+            <checkbox>
+                <halign>left</halign>
+                <label>Place left safety cone</label>
+                <live>true</live>
+                <property>/sim/coneL/enable</property>
+                <enable>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>0.1</value>
+                    </less-than>
+                </enable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/sim/coneL/enable</property>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
+
+            <checkbox>
+                <halign>left</halign>
+                <label>Place right safety cone</label>
+                <live>true</live>
+                <property>/sim/coneR/enable</property>
+                <enable>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>0.1</value>
+                    </less-than>
+                </enable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/sim/coneR/enable</property>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
+	</group>	
+    
+    <hrule/>
+	
+	<group>
+		<layout>hbox</layout>
+		<padding>6</padding>
+		<checkbox>
+            <halign>left</halign>
+            <label>Place nose wheel chock</label>
+            <live>true</live>
+			<property>/sim/chocks001/enable</property>
+			<enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>0.1</value>
+                </less-than>
+			</enable>
+            <binding>
+				<command>property-toggle</command>
+				<property>/sim/chocks001/enable</property>
+            </binding>
+			<binding>
+                <command>dialog-update</command>
+            </binding>
+		</checkbox>
+	
+		<checkbox>
+            <halign>center</halign>
+            <label>Place left wheel chock</label>
+            <live>true</live>
+			<property>/sim/chocks002/enable</property>
+			<enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>0.1</value>
+                </less-than>
+			</enable>
+            <binding>
+                <command>property-toggle</command>
+				<property>/sim/chocks002/enable</property>
+            </binding>
+			<binding>
+                <command>dialog-update</command>
+            </binding>
+		</checkbox>
+	
+		<checkbox>
+            <halign>right</halign>
+            <label>Place right wheel chock</label>
+			<live>true</live>
+			<property>/sim/chocks003/enable</property>
+			<enable>
+                <less-than>
+                <property>velocities/groundspeed-kt</property>
+                <value>0.1</value>
+                </less-than>
+			</enable>
+            <binding>
+                <command>property-toggle</command>
+				<property>/sim/chocks003/enable</property>
+            </binding>
+			<binding>
+				<command>dialog-update</command>
+            </binding>
+		</checkbox>
+	</group>	
+    
+    <hrule/>
+ 
+	<group>
+		<layout>hbox</layout>
+		<padding>6</padding>
+            <checkbox>
+                <halign>left</halign>
+                <label>Place Ground Power Unit</label>
+                <live>true</live>
+                <property>/sim/gpu/enable</property>
+                <enable>
+                    <and>
+                        <less-than>
+                            <property>velocities/groundspeed-kt</property>
+                            <value>0.1</value>
+                        </less-than>
+                        <not>
+                            <property>/controls/electric/external-power</property>
+                        </not>
+                    </and>
+                </enable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/sim/gpu/enable</property>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Connect GPU to aircraft</label>
+				<live>true</live>
+				<property>/controls/electric/external-power</property>
+				<enable>
+					<property>/sim/gpu/enable</property>
+				</enable>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/electric/external-power</property>
+				</binding>
+				<binding>
+					<command>dialog-update</command>
+				</binding>
+			</checkbox> 
+										
+	</group>
+	
+	<hrule/>
+
+	<group>
+		<layout>vbox</layout>
+		<padding>6</padding> 
+			<checkbox>
+                <halign>left</halign>
+                <label>Attach Towbar</label>
+                <property>/fdm/jsbsim/external_reactions/towbar/attached</property>
+                <live>true</live>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/fdm/jsbsim/external_reactions/towbar/attached</property>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/fdm/jsbsim/external_reactions/towbar/steer-deg</property>
+                    <value>0</value>
+                </binding>
+                <binding>
+                    <command>dialog-update</command><!-- makes sure that command is still there when dialog is closed-->
+                </binding>
+                <enable>
+                    <and>
+                        <property>gear/gear[0]/wow</property>
+                        <less-than>
+                            <property>velocities/groundspeed-kt</property>
+                            <value>1.0</value>
+                        </less-than>
+                        <less-than>
+                            <property>/engines/engine/thruster/rpm</property>
+                            <value>0.01</value>
+                        </less-than>
+                    </and>
+                </enable>
+            </checkbox>
+	</group>
 
 </PropertyList>
