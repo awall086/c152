@@ -3,22 +3,6 @@
 
    <path>rt359a.ac</path>
 
-    <effect>
-        <inherits-from>Aircraft/c152/Models/Effects/interior/c152-interior-compartment</inherits-from>
-            <object-name>Chassis</object-name>
-            <object-name>Chasis-1</object-name>
-            <object-name>Digit_1000</object-name>
-            <object-name>Digit_100</object-name>
-            <object-name>Digit_10</object-name>
-            <object-name>Digit_1</object-name>
-            <object-name>Knob_Digit_1000</object-name>
-            <object-name>Knob_Digit_100</object-name>
-            <object-name>Knob_Digit_10</object-name>
-            <object-name>Knob_Digit_1</object-name>
-            <object-name>knobmode</object-name>
-            <object-name>reply</object-name>
-    </effect>
-
     <animation>
         <type>material</type>
             <object-name>Digit_1000</object-name>
@@ -160,45 +144,44 @@
         </axis>
     </animation>
 
-  <animation>
-    <type>knob</type>
-    <object-name>Knob_digit_100</object-name>
-    <property>instrumentation/transponder/inputs/digit[2]</property>
-    <factor>-0.25</factor>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-    <center>
-           <x-m>0.01360</x-m>
-           <y-m>0.00523</y-m>
-           <z-m>-0.00462</z-m>
-    </center>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/transponder/inputs/digit[2]</property>
-                <factor>-1.0</factor>
-                <min>0</min>
-                <max>8</max>
-                <wrap>true</wrap>
-      </binding>
-    </action>
-      <hovered>
-          <binding>
-              <command>set-tooltip</command>
-              <tooltip-id>transponder-squawk</tooltip-id>
-              <label>Squawk: %s</label>
-              <property>instrumentation/transponder/id-code</property>
-              <mapping>nasal</mapping>
-              <script>
-                  return sprintf("%04d", arg[0]);
-              </script>
-          </binding>
-      </hovered> 
-
-  </animation>
+	<animation>
+		<type>knob</type>
+		<object-name>Knob_digit_100</object-name>
+		<property>instrumentation/transponder/inputs/digit[2]</property>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.01360</x-m>
+			<y-m>0.00523</y-m>
+			 <z-m>-0.00462</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/inputs/digit[2]</property>
+				<factor>-1.0</factor>
+				<min>0</min>
+				<max>8</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-squawk</tooltip-id>
+				<label>Squawk: %s</label>
+				<property>instrumentation/transponder/id-code</property>
+				<mapping>nasal</mapping>
+				<script>
+					return sprintf("%04d", arg[0]);
+				</script>
+			</binding>
+		</hovered> 
+	</animation>
 
     <animation>
         <type>rotate</type>
@@ -217,45 +200,44 @@
         </axis>
     </animation>
 
-  <animation>
-    <type>knob</type>
-    <object-name>Knob_digit_10</object-name>
-    <property>instrumentation/transponder/inputs/digit[1]</property>
-    <factor>-0.25</factor>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-    <center>
-           <x-m>0.01360</x-m>
-           <y-m>0.03753</y-m>
-           <z-m>-0.00462</z-m>
-    </center>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/transponder/inputs/digit[1]</property>
-                <factor>-1.0</factor>
-                <min>0</min>
-                <max>8</max>
-                <wrap>true</wrap>
-      </binding>
-    </action>
-      <hovered>
-          <binding>
-              <command>set-tooltip</command>
-              <tooltip-id>transponder-squawk</tooltip-id>
-              <label>Squawk: %s</label>
-              <property>instrumentation/transponder/id-code</property>
-              <mapping>nasal</mapping>
-              <script>
-                  return sprintf("%04d", arg[0]);
-              </script>
-          </binding>
-      </hovered> 
-
-  </animation>
+	<animation>
+		<type>knob</type>
+		<object-name>Knob_digit_10</object-name>
+		<property>instrumentation/transponder/inputs/digit[1]</property>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.01360</x-m>
+			<y-m>0.03753</y-m>
+			<z-m>-0.00462</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/inputs/digit[1]</property>
+				<factor>-1.0</factor>
+				<min>0</min>
+				<max>8</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-squawk</tooltip-id>
+				<label>Squawk: %s</label>
+				<property>instrumentation/transponder/id-code</property>
+				<mapping>nasal</mapping>
+				<script>
+					return sprintf("%04d", arg[0]);
+				</script>
+			</binding>
+		</hovered> 
+	</animation>
 
     <animation>
         <type>rotate</type>
@@ -263,9 +245,9 @@
         <property>instrumentation/transponder/inputs/digit[0]</property>
         <factor>10</factor>
         <center>
-           <x-m>0.01360</x-m>
-           <y-m>0.07037</y-m>
-           <z-m>-0.00462</z-m>
+			<x-m>0.01360</x-m>
+			<y-m>0.07037</y-m>
+			<z-m>-0.00462</z-m>
         </center>
         <axis>
             <x> -1 </x>
@@ -274,44 +256,44 @@
         </axis>
     </animation>
 
-  <animation>
-    <type>knob</type>
-    <object-name>Knob_digit_1</object-name>
-    <property>instrumentation/transponder/inputs/digit[0]</property>
-    <factor>-0.25</factor>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-    <center>
-           <x-m>0.01360</x-m>
-           <y-m>0.07037</y-m>
-           <z-m>-0.00462</z-m>
-    </center>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/transponder/inputs/digit[0]</property>
-                <factor>-1.0</factor>
-                <min>0</min>
-                <max>8</max>
-                <wrap>true</wrap>
-      </binding>
-    </action>
-      <hovered>
-          <binding>
-              <command>set-tooltip</command>
-              <tooltip-id>transponder-squawk</tooltip-id>
-              <label>Squawk: %s</label>
-              <property>instrumentation/transponder/id-code</property>
-              <mapping>nasal</mapping>
-              <script>
-                  return sprintf("%04d", arg[0]);
-              </script>
-          </binding>
-      </hovered> 
-  </animation>
+	<animation>
+		<type>knob</type>
+		<object-name>Knob_digit_1</object-name>
+		<property>instrumentation/transponder/inputs/digit[0]</property>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.01360</x-m>
+			<y-m>0.07037</y-m>
+			<z-m>-0.00462</z-m>
+		</center>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/inputs/digit[0]</property>
+				<factor>-1.0</factor>
+				<min>0</min>
+				<max>8</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-squawk</tooltip-id>
+				<label>Squawk: %s</label>
+				<property>instrumentation/transponder/id-code</property>
+				<mapping>nasal</mapping>
+				<script>
+					return sprintf("%04d", arg[0]);
+				</script>
+			</binding>
+		</hovered> 
+	</animation>
 
     <animation>
         <type>knob</type>
