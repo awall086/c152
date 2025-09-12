@@ -212,6 +212,10 @@
                         <value>1</value>
                     </equals>
                     <equals>
+                        <property>/controls/circuit-breakers/radio2</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
                         <property>/controls/circuit-breakers/strobe_lt</property>
                         <value>1</value>
                     </equals>
@@ -249,6 +253,11 @@
             <binding>
                 <command>property-assign</command>
                 <property>/controls/circuit-breakers/radio1</property>
+                <value>1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/circuit-breakers/radio2</property>
                 <value>1</value>
             </binding>
             <binding>
@@ -489,11 +498,11 @@
                 </condition>
                 <binding>
                     <command>nasal</command>
-                    <script>c172p.leftDoor.close();</script>
+                    <script>c152.leftDoor.close();</script>
                 </binding>
                 <binding>
                     <command>nasal</command>
-                    <script>c172p.rightDoor.close();</script>
+                    <script>c152.rightDoor.close();</script>
                 </binding>
             </item>
             <item>
@@ -608,11 +617,11 @@
                 <condition>
                     <and>
                         <greater-than>
-                            <property>/engines/active-engine/rpm</property>
+                            <property>/engines/engine[0]/rpm</property>
                             <value>1600</value>
                         </greater-than>
                         <less-than>
-                            <property>/engines/active-engine/rpm</property>
+                            <property>/engines/engine[0]/rpm</property>
                             <value>1800</value>
                         </less-than>
                     </and>
@@ -1098,11 +1107,11 @@
             <condition>
                 <and>
                     <greater-than>
-                        <property>/engines/active-engine/rpm</property>
+                        <property>/engines/engine[0]/rpm</property>
                         <value>1900</value>
                     </greater-than>
                     <less-than>
-                        <property>/engines/active-engine/rpm</property>
+                        <property>/engines/engine[0]/rpm</property>
                         <value>2550</value>
                     </less-than>
                 </and>

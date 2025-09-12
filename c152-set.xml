@@ -10,7 +10,7 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
 <PropertyList>
 
     <sim>
-        <description>Cessna 152 (1978, model)</description>
+        <description>Cessna 152 (1978)</description>
          <long-description>The Cessna 152 is a two-seat, single-engine, high-wing fixed-wing aircraft. First flown in 1977. A total of 7582 units was produced until 1985, when Cessna was ended production of their light aircrafts.</long-description>
    
          <es>
@@ -26,15 +26,15 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         </tags>
   
         <author>awall86 (Adrian Fernandez Gomez), gsagostinho (Gilberto Agostinho), wlbragg (Wayne Bragg)
-        A special thanks to Octal450 (Josh Davidson) for your excelent Aircraft Configuration Utility</author>
+        A special thanks to Octal450 (Josh Davidson) for his excelent Aircraft Configuration Utility</author>
         <status>beta</status>
-        <aircraft-version>2020.1.1A</aircraft-version>
-        <minimum-fg-version>2020.1.1A</minimum-fg-version>
+        <aircraft-version>2024.1.1A</aircraft-version>
+        <minimum-fg-version>2024.1.1A</minimum-fg-version>
 
   
         <rating>
             <FDM type="int">3</FDM>
-            <systems type="int">5</systems>
+            <systems type="int">3</systems>
             <model type="int">4</model>
             <cockpit type="int">4</cockpit>
         </rating>
@@ -51,50 +51,77 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             </livery>
 
             <c152>
-              <nw_fairing type="bool">true</nw_fairing>
-              <mw_fairing type="bool">true</mw_fairing>
-              <sun_visor_l type="double">0.0</sun_visor_l>
-              <sun_visor_r type="double">0.0</sun_visor_r>              
-              <lighting>
-                <taxi type="bool">false</taxi>
-                <landing type="bool">false</landing>
-              </lighting>
+				<nw_fairing type="bool">false</nw_fairing>
+				<mw_fairing type="bool">false</mw_fairing>
+				<sun_visor_l type="double">0.0</sun_visor_l>
+				<sun_visor_r type="double">0.0</sun_visor_r>              
+				<garmin196-visible type="bool">false</garmin196-visible>
+				<kn62a-visible type="bool">false</kn62a-visible>
+				<lighting>
+					<taxi type="bool">false</taxi>
+					<landing type="bool">false</landing>
+					<beacon>
+						<enabled type="bool">true</enabled>
+					</beacon>
+					<strobe>
+						<enabled type="bool">true</enabled>
+					</strobe>
+					<gps-norm type="float">0</gps-norm>
+				</lighting>
                  <!-- Event sounds -->
-              <sound>
-                <click-master-bat type="bool">false</click-master-bat>
-                <click-master-alt type="bool">false</click-master-alt>
-                <click-landing-light type="bool">false</click-landing-light>
-                <click-taxi-light type="bool">false</click-taxi-light>
-                <click-nav-lights type="bool">false</click-nav-lights>
-                <click-strobe type="bool">false</click-strobe>
-                <click-beacon type="bool">false</click-beacon>
-                <click-pitot-heat type="bool">false</click-pitot-heat>
-                <click-magneto-forward type="bool">false</click-magneto-forward>
-                <click-magneto-back type="bool">false</click-magneto-back>
-                <click-flaps type="bool">false</click-flaps>
-              </sound>
-
+				<sound>
+					<click-master-bat type="bool">false</click-master-bat>
+					<click-master-alt type="bool">false</click-master-alt>
+					<click-landing-light type="bool">false</click-landing-light>
+					<click-taxi-light type="bool">false</click-taxi-light>
+					<click-nav-lights type="bool">false</click-nav-lights>
+					<click-strobe type="bool">false</click-strobe>
+					<click-beacon type="bool">false</click-beacon>
+					<click-pitot-heat type="bool">false</click-pitot-heat>
+					<click-magneto-forward type="bool">false</click-magneto-forward>
+					<click-magneto-back type="bool">false</click-magneto-back>
+					<click-flaps type="bool">false</click-flaps>
+				</sound>
+				<instrumentation>
+					<vor2_installed type="bool">false</vor2_installed>
+				</instrumentation>
             </c152>
-        </model>
+
+            <crew>
+                <pilot n="0">
+                    <pose include="Models/Human/pose-pilot.xml"/>
+                    <character>0</character>
+                    <outfit>0</outfit>
+                    <equipment>0</equipment>
+                </pilot>
+                <pilot n="1">
+                    <pose include="Models/Human/pose-copilot.xml"/>
+                    <character>0</character>
+                    <outfit>0</outfit>
+                    <equipment>0</equipment>
+                </pilot>
+            </crew> 
+
+            <!-- Human models persistent menu choice -->
+            <occupants type="bool">true</occupants>
+
+		</model>
 
         <gui n="0" include="gui/c152-gui.xml"/>
 
         <menubar include="gui/dialogs/c152-menu.xml"/>
 
-        <startup>
-            <splash-texture>Splash1.png</splash-texture>
-        </startup>
-
-  <!-- position the pilot viewpoint and angle -->
+	<!-- position the pilot viewpoint and angle -->
  
         <view>
             <internal type="bool" archive="y">true</internal>
             <config>
                 <x-offset-m archive="y" type="double">-0.25</x-offset-m>
-                <y-offset-m archive="y" type="double">0.395</y-offset-m>
+                <y-offset-m archive="y" type="double">0.390</y-offset-m>
                 <z-offset-m archive="y" type="double">2.56</z-offset-m>
-                <pitch-offset-deg type="double">-4</pitch-offset-deg>
-            </config>
+                <pitch-offset-deg type="double">-5</pitch-offset-deg>
+				<default-field-of-view-deg>65</default-field-of-view-deg> 
+			</config>
         </view>
   
         <view n="1">
@@ -146,75 +173,109 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
         <previews>
             <preview>
                 <type>exterior</type>
-                <path>c152-preview0.jpg</path>
+                <path>Previews/c152-preview0.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>cockpit</type>
-                <path>c152-preview1.jpg</path>
+                <path>Previews/c152-preview1.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>exterior</type>
-                <path>c152-preview2.jpg</path>
+                <path>Previews/c152-preview2.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Previews/c152-preview3.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>cockpit</type>
-                <path>c152-preview3.jpg</path>
+                <path>Previews/c152-preview4.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>exterior</type>
-                <path>c152-preview4.jpg</path>
+                <path>Previews/c152-preview5.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>exterior</type>
-                <path>c152-preview5.jpg</path>
+                <path>Previews/c152-preview6.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>exterior</type>
-                <path>c152-preview6.jpg</path>
+                <path>Previews/c152-preview7.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>exterior</type>
-                <path>c152-preview7.jpg</path>
+                <path>Previews/c152-preview8.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Previews/c152-preview9.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
             <preview>
                 <type>cockpit</type>
-                <path>c152-preview8.jpg</path>
+                <path>Previews/c152-preview10.jpg</path>
                 <splash type="bool">true</splash>
             </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Previews/c152-preview11.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>Previews/c152-preview12.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Previews/c152-preview13.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Previews/c152-preview14.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>>
         </previews>
 
         <systems>
+			<path>Aircraft/c152/Systems/systems.xml</path>
+		
             <property-rule n="100">
-                <name>gear_agl_m</name>
-                <path archive="y">Aircraft/c152/Systems/gearAGL.xml</path>
-            </property-rule>            
-
-            <property-rule n="101">
                 <path archive="y">Aircraft/c152/Systems/engine.xml</path>
             </property-rule>
             
-	    <property-rule n="102">
+			<property-rule n="101">
                 <name>FiltersOnly</name>
                 <path>Systems/instruments.xml</path>
             </property-rule>
 
-            <property-rule n="103">
+            <property-rule n="102">
                 <path archive="y">Aircraft/c152/Systems/lights.xml</path>
             </property-rule>
 
-            <autopilot n="0">
-                <path>Systems/glass-rain.xml</path>
-            </autopilot>
+            <property-rule n="103">
+                <path>Aircraft/c152/Systems/ground-effects.xml</path>
+            </property-rule>
 
-	</systems>
+            <property-rule n="104">
+                <path archive="y">Aircraft/c152/Systems/pax.xml</path>
+            </property-rule>
+
+            <autopilot n="0">
+                <path archive="y">Aircraft/c152/Systems/glass-rain.xml</path>
+            </autopilot>
+		</systems>
 
         <checklists include="c152-checklists.xml"/>          
 
@@ -225,6 +286,20 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
          <rendering>
             <shadow-volume type="bool">true</shadow-volume>
         </rendering>
+
+		<chocks>
+			<enable type="bool">false</enable>
+		</chocks>
+  
+        <multiplay>
+            <generic>
+                <float n="0" alias="/sim/model/door-positions/rightDoor/position-norm-effective"/>
+                <float n="1" alias="/sim/model/door-positions/leftDoor/position-norm-effective"/>
+				<float n="2" alias="/sim/model/door-positions/leftWindow/position-norm"/>
+                <float n="3" alias="/sim/model/door-positions/rightWindow/position-norm"/>
+				<float n="4" alias="/sim/model/door-positions/gloveboxDoor/position-norm"/>
+            </generic>
+        </multiplay>
  
     </sim>
 
@@ -246,14 +321,20 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
     </fdm>
 
     <controls>
-
         <flight>
             <rudder-trim type="double">0.0</rudder-trim>
         </flight>
 
+        <fuel>
+            <fuel-on type="int">0</fuel-on>
+        </fuel>
+		
         <engines>
             <engine n="0">
                 <magnetos type="int">0</magnetos>
+				<primer type="double">0</primer>
+                <primer-lever type="bool">false</primer-lever>
+                <use-primer type="bool">false</use-primer>
                 <master-bat type="bool">false</master-bat>
                 <master-alt type="bool">false</master-alt>
                 <mixture type="double">0</mixture>
@@ -267,33 +348,36 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             <beacon type="bool">false</beacon>
             <nav-lights type="bool">false</nav-lights>
             <nav-lights-switch type="bool">false</nav-lights-switch>
+			<int-lights type="bool">false</int-lights>
         </lighting>
 
         <gear>
             <brake-parking type="bool">true</brake-parking>
         </gear>
 
-	<switches>
+		<switches>
             <master-bat type="bool">false</master-bat>
+			<master-avionics type="bool">false</master-avionics>
             <master-alt type="bool">false</master-alt>
             <magnetos type="double">0</magnetos>
-	</switches>
+			<starter type="bool">false</starter>
+		</switches>
 
-	<circuit-breakers>
-	    <fuel_ind type="bool">true</fuel_ind>
-	    <beacon_pitot type="bool">true</beacon_pitot>
-	    <strobe_lt type="bool">true</strobe_lt>
-	    <landing_lt type="bool">true</landing_lt>
-	    <flaps type="bool">true</flaps>
-	    <instr_lt type="bool">true</instr_lt>
-	    <nav_lt type="bool">true</nav_lt>
-	    <radio1 type="bool">true</radio1>
-	</circuit-breakers>
-
+		<circuit-breakers>
+			<fuel_ind type="bool">true</fuel_ind>
+			<beacon_pitot type="bool">true</beacon_pitot>
+			<strobe_lt type="bool">true</strobe_lt>
+			<landing_lt type="bool">true</landing_lt>
+			<flaps type="bool">true</flaps>
+			<instr_lt type="bool">true</instr_lt>
+			<nav_lt type="bool">true</nav_lt>
+			<radio1 type="bool">true</radio1>
+			<radio2 type="bool">true</radio2>
+			<radio3 type="bool">true</radio3>			
+		</circuit-breakers>
     </controls>
 
     <consumables>
-
         <fuel>
             <tank n="0">
                 <name type="string">carb Bowl</name>
@@ -313,30 +397,39 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
                <level-gal_us type="double">10</level-gal_us>
            </tank>
         </fuel>
-
     </consumables>
 
     <nasal>
         <c152>
             <file>Nasal/c152.nas</file>
             <file>Nasal/liveries.nas</file>
+			<file>Nasal/engine.nas</file>
             <file>Nasal/light-manager.nas</file>
             <file>Nasal/views.nas</file>
+            <file>Nasal/doors.nas</file>
         </c152>
 
-	<acconfig>
-	    <file>Aircraft/c152/AircraftConfig/acconfig.nas</file>
-	</acconfig>
+		<acconfig>
+			<file>Aircraft/c152/AircraftConfig/acconfig.nas</file>
+		</acconfig>
 
         <electrical>
             <file>Nasal/electric_system.nas</file>
         </electrical>
+
+        <garmin196>
+            <file>Aircraft/c152/Models/interior/panel/instruments/garmin196/garmin196.nas</file>
+        </garmin196>
+
     </nasal>
     
     <systems>
         <electrical>
             <battery-status type="double">100.0</battery-status>
-	</electrical>
+			<outputs>
+				<flaps type="double">0.0</flaps>
+			</outputs>
+		</electrical>
     </systems>
  
     <limits>
@@ -399,20 +492,26 @@ Started October 04 2015 by Adrian Fernández Gómez alcala_sim@yahoo.com.ar
             <volume type="double">0.0</volume>
             <power-btn type="bool">false</power-btn>
         </comm>
-
         <transponder>
             <ident_status type="int">0</ident_status>
             <ident_light type="double">0.0</ident_light>
             <ident_light_status type="int">0</ident_light_status>
-            
-           <inputs>
+            <inputs>
                 <knob-mode type="int">0</knob-mode>
             </inputs>
         </transponder>
         <marker-beacon>
             <test type="int">0</test>
         </marker-beacon>
+        <dme>
+            <frequencies>
+				<dme-selected-mhz type="double">112.0</dme-selected-mhz>
+			</frequencies>
+            <switch-position type="int">0</switch-position>
+        </dme>
+        <garmin196>
+            <texture-file>Aircraft/c152/Models/interior/panel/instruments/garmin196/coque.png</texture-file>
+        </garmin196>
     </instrumentation>
-
 
 </PropertyList>
