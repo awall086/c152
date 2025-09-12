@@ -8,34 +8,34 @@
 var spinning = maketimer(0.10, func {
 	var spinning = getprop("/systems/acconfig/spinning");
 	if (spinning == 0) {
-		setprop("/systems/acconfig/spin", "=o===");
+		setprop("/systems/acconfig/spin", ">>---");
 		setprop("/systems/acconfig/spinning", 1);
 	} else if (spinning == 1) {
-		setprop("/systems/acconfig/spin", "==o==");
+		setprop("/systems/acconfig/spin", ">>>--");
 		setprop("/systems/acconfig/spinning", 2);
 	} else if (spinning == 2) {
-		setprop("/systems/acconfig/spin", "===o=");
+		setprop("/systems/acconfig/spin", ">>>>-");
 		setprop("/systems/acconfig/spinning", 3);
 	} else if (spinning == 3) {
-		setprop("/systems/acconfig/spin", "====o");
+		setprop("/systems/acconfig/spin", ">>>>>");
 		setprop("/systems/acconfig/spinning", 4);
 	} else if (spinning == 4) {
-		setprop("/systems/acconfig/spin", "===o=");
+		setprop("/systems/acconfig/spin", "->>>>");
 		setprop("/systems/acconfig/spinning", 5);
 	} else if (spinning == 5) {
-		setprop("/systems/acconfig/spin", "==o==");
+		setprop("/systems/acconfig/spin", "-->>>");
 		setprop("/systems/acconfig/spinning", 6);
 	} else if (spinning == 6) {
-		setprop("/systems/acconfig/spin", "=o===");
+		setprop("/systems/acconfig/spin", "--->>");
 		setprop("/systems/acconfig/spinning", 7);
 	} else if (spinning == 7) {
-		setprop("/systems/acconfig/spin", "o====");
+		setprop("/systems/acconfig/spin", "---->");
 		setprop("/systems/acconfig/spinning", 0);
 	}
 });
 
 setprop("/systems/acconfig/spinning", 0);
-setprop("/systems/acconfig/spin", "o====");
+setprop("/systems/acconfig/spin", ">----");
 setprop("/systems/acconfig/new-revision", "None");
 setprop("/systems/acconfig/out-of-date", 0);
 setprop("/systems/acconfig/options/welcome-skip", 0);
