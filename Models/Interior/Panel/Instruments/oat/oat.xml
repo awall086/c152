@@ -1,1 +1,31 @@
+<?xml version="1.0"?>
 
+<PropertyList>
+
+    <path>oat.ac</path>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>needle</object-name>
+        <property>environment/temperature-degc</property>
+       <interpolation>
+            <entry><ind>-40</ind><dep>   0  </dep></entry>
+			<entry><ind>-30</ind><dep>-32.62</dep></entry>
+			<entry><ind>-20</ind><dep>-63.21</dep></entry>
+			<entry><ind>-10</ind><dep>-93.41</dep></entry>
+			<entry><ind>  0</ind><dep>-123.83</dep></entry>
+			<entry><ind> 10</ind><dep>-150.49</dep></entry>
+			<entry><ind> 20</ind><dep>-177.68</dep></entry>
+			<entry><ind> 30</ind><dep>-207.28</dep></entry>
+			<entry><ind> 40</ind><dep>-237.10</dep></entry>
+			<entry><ind> 50</ind><dep>-266.86</dep></entry>
+			<entry><ind> 60</ind><dep>-299.83</dep></entry>
+        </interpolation>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+</PropertyList>
