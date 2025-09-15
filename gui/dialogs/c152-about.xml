@@ -86,7 +86,7 @@
                     <default-padding>6</default-padding>
                     <text>
                         <halign>left</halign>
-                        <label>Cessna 152 II - Version:</label>
+                        <label>Cessna 152 - Version:</label>
                     </text>
                     <text>
                         <halign>left</halign>
@@ -173,3 +173,4 @@
     </group>
 
 </PropertyList>
+
