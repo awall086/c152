@@ -7,7 +7,7 @@ Negative Gs (<-0.5g) cuts the supply to the collector tanks -->
   <channel name="Fuel pumping">    
 
     <switch>
-      <default value="-5"/>
+      <default value="-0.04"/>
       <test logic="OR" value="0">
         propulsion/tank[1]/collector-valve EQ 0
         propulsion/tank[1]/contents-lbs LE 0
@@ -18,7 +18,7 @@ Negative Gs (<-0.5g) cuts the supply to the collector tanks -->
     </switch>
 
     <switch>
-      <default value="-5"/>
+      <default value="-0.04"/>
       <test logic="OR" value="0">
         propulsion/tank[2]/collector-valve EQ 0
         propulsion/tank[2]/contents-lbs LE 0
