@@ -96,12 +96,14 @@ var electricsystem=func{
         setprop("/systems/electrical/outputs/nav[0]", bus_volts);
         setprop("/systems/electrical/outputs/audio-panel", bus_volts);
 		setprop("/systems/electrical/outputs/dme", bus_volts);
+		setprop("/systems/electrical/outputs/adf", bus_volts);
 
     } else {
         setprop("/systems/electrical/outputs/comm[0]", 0.0);
         setprop("/systems/electrical/outputs/nav[0]", 0.0);
         setprop("/systems/electrical/outputs/audio-panel", 0.0);
         setprop("/systems/electrical/outputs/dme", 0.0);
+		setprop("/systems/electrical/outputs/adf", 0.0);
     }
 
     # Comm-Nav2

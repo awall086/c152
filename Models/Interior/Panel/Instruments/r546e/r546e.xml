@@ -22,7 +22,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>Digit_1000</object-name>
-        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <property>instrumentation/adf[0]/frequencies/selected-khz</property>
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
@@ -35,7 +35,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>Digit_100</object-name>
-        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <property>instrumentation/adf[0]/frequencies/selected-khz</property>
         <step>100</step>
         <factor>0.001</factor>
         <axis>
@@ -48,7 +48,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>Digit_10</object-name>
-        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <property>instrumentation/adf[0]/frequencies/selected-khz</property>
         <step>10</step>
         <factor>0.01</factor>
         <axis>
@@ -61,7 +61,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>Digit_1</object-name>
-        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <property>instrumentation/adf[0]/frequencies/selected-khz</property>
         <step>1</step>
         <factor>0.1</factor>
         <axis>
@@ -74,7 +74,7 @@
 	<animation>
 		<type>knob</type>
 		<object-name>Knob_Digit_100</object-name>
-		<property>instrumentation/adf/frequencies/digit100</property>
+		<property>instrumentation/adf[0]/frequencies/digit100</property>
 		<factor>-2.5</factor>
 		<axis>
 		  <x>1</x>
@@ -89,7 +89,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>/instrumentation/adf/frequencies/digit100-khz</property>
+				<property>/instrumentation/adf[0]/frequencies/digit100-khz</property>
 				<factor>1</factor>
 				<min>2</min>
 				<max>18</max>
@@ -98,7 +98,7 @@
 			</binding>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/adf/frequencies/digit100</property>
+				<property>instrumentation/adf[0]/frequencies/digit100</property>
 				<factor>4</factor>
 				<min>0</min>
 				<max>360</max>
@@ -110,7 +110,7 @@
 	<animation>
 		<type>knob</type>
 		<object-name>Knob_Digit_10</object-name>
-		<property>instrumentation/adf/frequencies/digit10</property>
+		<property>instrumentation/adf[0]/frequencies/digit10</property>
 		<factor>-2.5</factor>
 		<axis>
 		  <x>1</x>
@@ -125,7 +125,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>/instrumentation/adf/frequencies/digit10-khz</property>
+				<property>/instrumentation/adf[0]/frequencies/digit10-khz</property>
 				<factor>1</factor>
 				<min>0</min>
 				<max>10</max>
@@ -134,7 +134,7 @@
 			</binding>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/adf/frequencies/digit10</property>
+				<property>instrumentation/adf[0]/frequencies/digit10</property>
 				<factor>4</factor>
 				<min>0</min>
 				<max>360</max>
@@ -147,7 +147,7 @@
 	<animation>
 		<type>knob</type>
 		<object-name>Knob_Digit_1</object-name>
-		<property>instrumentation/adf/frequencies/digit1</property>
+		<property>instrumentation/adf[0]/frequencies/digit1</property>
 		<factor>-2.5</factor>
 		<axis>
 		  <x>1</x>
@@ -162,7 +162,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>/instrumentation/adf/frequencies/digit1-khz</property>
+				<property>/instrumentation/adf[0]/frequencies/digit1-khz</property>
 				<factor>1</factor>
 				<min>0</min>
 				<max>10</max>
@@ -171,7 +171,7 @@
 			</binding>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/adf/frequencies/digit1</property>
+				<property>instrumentation/adf[0]/frequencies/digit1</property>
 				<factor>4</factor>
 				<min>0</min>
 				<max>360</max>
@@ -217,7 +217,7 @@
                 <property>/instrumentation/adf[0]/power-btn</property>
                 <value type="bool">1</value>
             </binding>
-    
+
             <!-- switch off if volume less than 0.1 -->
             <binding>
                 <condition>
@@ -236,6 +236,15 @@
                 <script>c152.click("kr87-adf-dial")</script>
             </binding>
         </action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-volume</tooltip-id>
+				<label>Volume: %3d%%</label>
+				<property>/instrumentation/adf[0]/volume-norm</property>
+				<mapping>percent</mapping>
+				</binding>
+		</hovered>
     </animation>
 
 	<animation>
